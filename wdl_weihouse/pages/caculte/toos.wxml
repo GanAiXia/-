@@ -1,0 +1,231 @@
+<view class="container">
+    <form bindreset="formReset" bindsubmit="formSubmit">
+        <view class="cktype">
+            <view class="bd">
+                <view bindtap="currmethod" class="bditem left active" data-index="1" wx:if="{{paymethod==1}}">
+                    <text>商业贷款</text>
+                </view>
+                <view bindtap="currmethod" class="bditem left" data-index="1" wx:else>
+                    <text>商业贷款</text>
+                </view>
+                <view bindtap="currmethod" class="bditem  active" data-index="2" wx:if="{{paymethod==2}}">
+                    <text>公积金贷款</text>
+                </view>
+                <view bindtap="currmethod" class="bditem " data-index="2" wx:else>
+                    <text>公积金贷款</text>
+                </view>
+                <view bindtap="currmethod" class="bditem right active" data-index="3" wx:if="{{paymethod==3}}">
+                    <text>组合贷款</text>
+                </view>
+                <view bindtap="currmethod" class="bditem right" data-index="3" wx:else>
+                    <text>组合贷款</text>
+                </view>
+            </view>
+        </view>
+        <view class="section">
+            <view class="caculate">
+                <view class="dput" wx:if="{{paymethod==1||paymethod==3}}">
+                    <view class="label">
+                        <text class="ft35">商业贷款总额：</text>
+                    </view>
+                    <view class="dele">
+                        <text class="tips ft30">万元</text>
+                        <input class="oneinput" maxlength="10" name="sy_total" placeholder="请输入总额" type="text"></input>
+                    </view>
+                </view>
+                <view class="dput" wx:if="{{paymethod==2||paymethod==3}}">
+                    <view class="label">
+                        <text class="ft35">公积金贷款总额：</text>
+                    </view>
+                    <view class="dele">
+                        <text class="tips ft30">万元</text>
+                        <input class="oneinput" maxlength="10" name="gjj_total" placeholder="请输入总额" type="text"></input>
+                    </view>
+                </view>
+                <view class="dput" wx:if="{{paymethod==1||paymethod==3}}">
+                    <view class="label">
+                        <text class="ft35">商业贷款利率：</text>
+                    </view>
+                    <view class="dele">
+                        <text class="tips ft30 iconfont icon-xiangyoujiantou"></text>
+                        <picker bindchange="bindPicker_lilv_sy" range="{{sy_lilv}}" value="{{sy_lilv_index}}">
+                            <view class="picker oneinput">
+      {{sy_lilv[sy_lilv_index]}}
+      </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="dput" wx:if="{{paymethod==2||paymethod==3}}">
+                    <view class="label">
+                        <text class="ft35">公积金贷款利率：</text>
+                    </view>
+                    <view class="dele">
+                        <text class="tips ft30 iconfont icon-xiangyoujiantou"></text>
+                        <picker bindchange="bindPicker_lilv" range="{{gjj_lilv}}" value="{{gjj_lilv_index}}">
+                            <view class="picker oneinput">
+      {{gjj_lilv[gjj_lilv_index]}}
+      </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="dput">
+                    <view class="label">
+                        <text class="ft35">贷款年限：</text>
+                    </view>
+                    <view class="dele">
+                        <text class="tips ft30 iconfont icon-xiangyoujiantou"></text>
+                        <picker bindchange="bindPicker_years" range="{{years}}" value="{{years_index}}">
+                            <view class="picker oneinput" id="areas">
+       {{years[years_index]}}
+      </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="dput" wx:if="{{fee_gjj_lilv}}">
+                    <view class="label">
+                        <text class="ft35">利率：</text>
+                    </view>
+                    <view class="dele">
+                        <text class="tips ft30  "> %</text>
+                        <view class="picker oneinput" id="areas">
+                 {{fee_gjj_lilv}}
+                </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="section ">
+            <view class="btnbd">
+                <button class="btn ft35" formType="submit" hoverClass="other-button-hover" type="default"> 开始计算 </button>
+            </view>
+        </view>
+    </form>
+    <view class="section result" wx:if="{{benxi.month_money}}">
+        <view class="restab">
+            <view bindtap="navtab" class="tabitem {{tabactive[0]}}" data-index="0">
+                <text class="tabtxt">等额本息</text>
+            </view>
+            <view bindtap="navtab" class="tabitem {{tabactive[1]}}" data-index="1">
+                <text class="tabtxt">等额本金</text>
+            </view>
+        </view>
+        <view class="benxi" wx:if="{{tabactive[0]=='active'}}">
+            <view class="total">
+                <view class="num">
+                    <text>{{benxi.month_money[0][1]}}</text>
+                </view>
+                <view class="txt">
+                    <text class="ft30">每月月供(元)</text>
+                </view>
+            </view>
+            <view class="per">
+                <view class="peritem">
+                    <view>
+                        <text>{{benxi.accrual}}</text>
+                    </view>
+                    <view>
+                        <text class="ft28">支付利息(万)</text>
+                    </view>
+                </view>
+                <view class="peritem">
+                    <view>
+                        <text>{{benxi.all_total}}</text>
+                    </view>
+                    <view>
+                        <text class="ft28">还款总额(万)</text>
+                    </view>
+                </view>
+            </view>
+            <view class="btitle">
+                <text class="ft40">还款明细</text>
+            </view>
+            <view class="monthlist">
+                <view class="bhead item">
+                    <view>
+                        <text>期次</text>
+                    </view>
+                    <view>
+                        <text>每月月供(元)</text>
+                    </view>
+                    <view>
+                        <text>剩余(元)</text>
+                    </view>
+                </view>
+                <view class="blist item" wx:for="{{benxi.month_money}}" wx:key="index">
+                    <view>
+                        <text>{{item[0]}}</text>
+                    </view>
+                    <view>
+                        <text>{{item[1]}}</text>
+                    </view>
+                    <view>
+                        <text>{{item[2]}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="benxi" wx:if="{{tabactive[1]=='active'}}">
+            <view class="total">
+                <view class="num">
+                    <text>{{benjin.month_money[0][1]}}</text>
+                </view>
+                <view class="txt">
+                    <text class="ft30">每月月供(元)</text>
+                </view>
+            </view>
+            <view class="per">
+                <view class="peritem">
+                    <view>
+                        <text>{{benjin.accrual}}</text>
+                    </view>
+                    <view>
+                        <text class="ft28">支付利息(万)</text>
+                    </view>
+                </view>
+                <view class="peritem">
+                    <view>
+                        <text>{{benjin.all_total}}</text>
+                    </view>
+                    <view>
+                        <text class="ft28">还款总额(万)</text>
+                    </view>
+                </view>
+                <view class="peritem">
+                    <view>
+                        <text>{{benjin.perdown}}</text>
+                    </view>
+                    <view>
+                        <text class="ft28">每月递减(元)</text>
+                    </view>
+                </view>
+            </view>
+            <view class="btitle">
+                <text class="ft40">还款明细</text>
+            </view>
+            <view class="monthlist">
+                <view class="bhead item">
+                    <view>
+                        <text>期次</text>
+                    </view>
+                    <view>
+                        <text>每月月供(元)</text>
+                    </view>
+                    <view>
+                        <text>剩余(元)</text>
+                    </view>
+                </view>
+                <view class="blist item" wx:for="{{benjin.month_money}}" wx:key="index">
+                    <view>
+                        <text>{{item[0]}}</text>
+                    </view>
+                    <view>
+                        <text>{{item[1]}}</text>
+                    </view>
+                    <view>
+                        <text>{{item[2]}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

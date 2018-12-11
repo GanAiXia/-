@@ -1,0 +1,229 @@
+page {
+    min-height: 100%;
+    background-color: #fff;
+}
+
+.container {
+    min-height: 100%;
+    background-color: #fff;
+    padding-top: 91rpx;
+    padding-bottom: 134rpx;
+}
+
+.search-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 91rpx;
+    padding: 10rpx;
+    font-size: 29rpx;
+    color: #333;
+    background-color: #f1f1f1;
+    z-index: 1000;
+}
+
+.search-header .filter {
+    position: relative;
+    margin: 10rpx auto;
+    background-color: #fff;
+    border-radius: 15rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 29rpx;
+    width: 90%;
+}
+
+.search-header .search-btn {
+    position: absolute;
+    right: 5rpx;
+    top: 5rpx;
+    width: 80rpx;
+    background: #f1f1f1;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 0;
+    margin: 0;
+    border-radius: 10rpx;
+    border-width: 0;
+    text-align: center;
+    color: #999;
+    font-size: 28rpx;
+}
+
+.search-header .icon {
+    position: absolute;
+    top: 1rpx;
+    left: 20rpx;
+    width: 40rpx;
+    height: 41rpx;
+    font-size: 32rpx;
+}
+
+.search-header .del {
+    position: absolute;
+    top: 3rpx;
+    right: 10rpx;
+    width: 53rpx;
+    height: 53rpx;
+    z-index: 10;
+}
+
+.bar_title {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 20rpx;
+}
+
+.search-header .keywrod {
+    position: absolute;
+    top: 0rpx;
+    left: 40rpx;
+    width: 376rpx;
+    height: 70rpx;
+    padding-left: 30rpx;
+}
+
+.secshop {
+    background-color: #fff;
+}
+
+.section {
+    margin: 30rpx;
+    margin-left: 45rpx;
+}
+
+.imagetxt .item:last-child {
+    border-bottom: 0rpx;
+}
+
+.imagetxt .item {
+    width: 100%;
+    display: block;
+    border-bottom: 1rpx solid #f1f1f1;
+    padding-top: 30rpx;
+    padding-bottom: 40rpx;
+    position: relative;
+    min-height: 180rpx;
+}
+
+.imgtag {
+    position: absolute;
+    left: 0rpx;
+    top: 40rpx;
+    background-color: #000;
+    color: #fff;
+    opacity: 0.5;
+    padding: 0 10rpx;
+    font-size: 24rpx;
+}
+
+.imagetxt .item .img {
+    float: left;
+    width: 200rpx;
+    height: 150rpx;
+    margin-top: 10rpx;
+}
+
+.imagetxt .right2 {
+    margin-left: 240rpx;
+    display: block;
+}
+
+.newshop .housetitle .name {
+    font-weight: bold;
+}
+
+.imagetxt .housetitle {
+    line-height: 40rpx;
+}
+
+.imagetxt .address {
+    color: #666;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.imagetxt .btags {
+    line-height: 30rpx;
+    height: 40rpx;
+}
+
+.imagetxt .housetitle .ttype {
+    font-size: 26rpx;
+    padding: 0 10rpx;
+    margin-left: 10rpx;
+    border-radius: 5rpx;
+}
+
+.imagetxt .housetitle .onsale {
+    font-size: 26rpx;
+    padding: 0 10rpx;
+    margin-left: 10rpx;
+    border-radius: 5rpx;
+}
+
+.imagetxt .btags {
+    margin-top: 10rpx;
+}
+
+.imagetxt .btags text {
+    padding: 0rpx 5rpx;
+    text-align: center;
+    margin-right: 12rpx;
+    vertical-align: middle;
+}
+
+.imagetxt .btags .keybg1 {
+    background: #D7F2FB;
+    color: #67A4D9;
+}
+
+.imagetxt .btags .keybg0 {
+    background: #D7F2FB;
+    color: #2EA0F1;
+}
+
+.imagetxt .btags .keybg2 {
+    background: #FDF1DC;
+    color: #F6A800;
+}
+
+.imagetxt .btags .keybg3 {
+    background: #D7F2FB;
+    color: #67A4D9;
+}
+
+.imagetxt .pricebd {
+    position: absolute;
+    right: 0rpx;
+    top: 10rpx;
+    text-align: right;
+}
+
+.imagetxt .pricebd text {
+    display: block;
+}
+
+.imagetxt .pricebd .num {
+    color: #ff0000;
+    font-size: 35rpx;
+    font-weight: 400;
+}
+
+.imagetxt .pricebd .per {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.loading {
+    text-align: center;
+    background-color: #f3f3f3;
+    padding: 10rpx;
+    margin-top: 90rpx;
+}
+
+.loading .msg {
+    color: #67A4D9;
+}

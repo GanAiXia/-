@@ -1,0 +1,37 @@
+<view class="container">
+    <map showLocation bindcontroltap="controltap" bindmarkertap="onMarkerclick" bindregionchange="regionchange" bindtap="maptap" controls="{{controls}}" id="map" includePoints="{{points}}" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" polyline="{{polyline}}" scale="15" style="{{mapstyle}}"></map>
+    <view class="search-con">
+        <scroll-view class="search-scroll" scrollX="true">
+            <view class="menuitem " wx:for="{{category}}" wx:key="index">
+                <text bindtap="change_category" class="ft30 {{tags==item.tags?'active':''}}" data-index="{{item.tags}}">{{item.name}} </text>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="newshop" style="background:#fff;" wx:if="{{item}}">
+        <view class="b">
+            <view class="item">
+                <navigator url="../newshop/index?id={{item.id}}">
+                    <image class="img" mode="aspectFill" src="{{item.house_face}}"></image>
+                    <view class="right2">
+                        <view class="housetitle">
+                            <text class="name">{{item.house_title}}</text>
+                            <text class="ttype bage-blue{{item.house_nature_key}}" wx:if="{{item.house_nature_key}}">{{item.house_nature[0]}}</text>
+                            <text class="onsale bage-green{{item.house_sale}}" wx:if="{{item.house_sale}}">{{item.house_sale_tag}}</text>
+                        </view>
+                        <view class="housebb">
+                            <text class="village">{{item.house_region}} </text>
+                            <text class="tag1">-{{item.house_address}} </text>
+                        </view>
+                        <view class="housemark">
+                            <text class="mark" wx:for="{{item.house_prowedt}}" wx:for-item="dot" wx:key="id">{{dot}}</text>
+                        </view>
+                        <view class="housearea">
+                            <text class="price">{{item.price_label}}{{item.price}}</text>
+                            <text class="sufix" wx:if="{{item.house_main}}"> 建面{{item.house_main}}</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

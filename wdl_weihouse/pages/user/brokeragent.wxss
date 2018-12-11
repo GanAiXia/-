@@ -1,0 +1,148 @@
+.page-body {
+    font-size: 30rpx;
+    background: #fff;
+    padding-bottom: 50rpx;
+}
+
+.clearfix::after {
+    content: '\20';
+    clear: both;
+    display: block;
+    height: 0;
+}
+
+.pline::after {
+    content: '\20';
+    clear: both;
+    display: block;
+    height: 0;
+}
+
+.ptitle {
+    line-height: 60rpx;
+    border-bottom: 1rpx solid #dadada;
+    padding-left: 20rpx;
+    font-size: 32rpx;
+    background-color: #f1f1f1;
+    height: 60rpx;
+    font-weight: bold;
+}
+
+.ptitle .ft22 {
+    font-weight: 100;
+    float: right;
+    margin-right: 30rpx;
+}
+
+.pline {
+    margin: 20rpx;
+    clear: both;
+}
+
+.pline-label {
+    line-height: 60rpx;
+}
+
+.oneinput {
+    background: #fff;
+    border: 1rpx solid #dadada;
+    border-radius: 1rpx;
+    padding: 0rpx 7rpx 0rpx 7rpx;
+    height: 62rpx;
+    line-height: 60rpx;
+    font-size: 28rpx;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.w20 {
+    width: 20%;
+}
+
+.w50 {
+    width: 49.9%;
+}
+
+.w80 {
+    width: 79%;
+}
+
+.w15 {
+    width: 15%;
+}
+
+.tips {
+    line-height: 62rpx;
+    margin-right: 20rpx;
+    border: 1px solid #dadada;
+    background-color: #f1f1f1;
+    border-left: 0px;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    height: 62rpx;
+    color: #999;
+}
+
+.textarea {
+    height: 200rpx;
+    border: 1rpx solid #dadada;
+    padding: 7rpx;
+    width: 95%;
+    font-size: 28rpx;
+}
+
+.btn-area {
+    padding: 30rpx;
+}
+
+.button {
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 18px;
+    background-color: #009688;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.upfile {
+    height: 200rpx;
+    padding: 20rpx;
+}
+
+.weui-uploader__file {
+    width: 77px;
+    height: 77px;
+    float: none;
+    vertical-align: top;
+}
+
+.scroll-view-item {
+    display: inline-block;
+}
+
+.weui-uploader__input-box {
+    float: none;
+}
+
+.imgview {
+    width: 77px;
+    height: 77px;
+}
+
+.weiui-uploader {
+    display: flex;
+    white-space: nowrap;
+    width: 710rpx;
+}

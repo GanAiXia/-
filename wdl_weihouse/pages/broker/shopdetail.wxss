@@ -1,0 +1,176 @@
+.shophead {
+    position: relative;
+    height: 420rpx;
+}
+
+.shophead .banner {
+    width: 100%;
+    height: 420rpx;
+}
+
+.shopname {
+    position: absolute;
+    bottom: 0rpx;
+    height: 100rpx;
+    width: 500rpx;
+    left: 50%;
+    padding-top: 0rpx;
+    margin-left: -250rpx;
+    background: #ffffff;
+    border-radius: 20rpx 20rpx 0 0;
+    text-align: center;
+    opacity: .9;
+}
+
+.shopname .t1 {
+    margin-top: 10rpx;
+}
+
+.shopname text {
+    font-weight: bold;
+    color: #00C683;
+}
+
+.shopnum {
+    display: flex;
+    flex-direction: row;
+    height: 80rpx;
+    background-color: #f1f1f1;
+}
+
+.shopnum .t1 {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.shopnum .t1 text {
+    font-size: 28rpx;
+    color: #888;
+}
+
+.shopnum .t1 text text {
+    color: #999;
+}
+
+.tmenu {
+    height: 90rpx;
+    background: #fff;
+    vertical-align: middle;
+}
+
+.tmenu .m1 {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    border-bottom: 2rpx solid #dadada;
+    height: 85rpx;
+    vertical-align: middle;
+    color: #888;
+}
+
+.tmenu .active {
+    border-bottom: 2rpx solid #00C683;
+    color: #00C683;
+    font-weight: bold;
+}
+
+.section {
+    height: 100%;
+    background-color: #fff;
+    padding-bottom: 150rpx;
+}
+
+.intro1 .bd {
+    padding: 30rpx 80rpx;
+    line-height: 40rpx;
+    text-align: justify;
+    font-size: 28rpx;
+}
+
+.intro1 .bd text {
+    color: #666;
+}
+
+.intro1 .title {
+    height: 60rpx;
+    line-height: 60rpx;
+    padding-left: 30rpx;
+    color: #999;
+    margin-top: 30rpx;
+}
+
+.intro1 .title .iconfont {
+    font-size: 40rpx;
+}
+
+.intro1 .title .txt {
+    font-size: 30rpx;
+    margin-left: 15rpx;
+}
+
+.tabbox {
+    min-height: 400rpx;
+}
+
+.tabbox .intro1 {
+    display: none;
+}
+
+.tabbox .active {
+    display: block;
+}
+
+.broker {
+    background: #fff;
+    margin-top: 10rpx;
+}
+
+.broker .bd {
+    padding: 30rpx;
+}
+
+.broker .broker-head {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    float: left;
+    margin-top: 0rpx;
+}
+
+.broker .name {
+    margin-left: 120rpx;
+    text-align: left;
+    vertical-align: top;
+}
+
+.broker .name text {
+    display: block;
+}
+
+.broker .txt {
+    display: inline-block;
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.broker .name .link {
+    text-align: center;
+    color: #bf0000;
+    width: 45%;
+    display: inline-block;
+    float: right;
+}
+
+.loading {
+    text-align: center;
+    background-color: #f3f3f3;
+    padding: 10rpx;
+    margin-top: 90rpx;
+}
+
+.loading .msg {
+    color: #67A4D9;
+}

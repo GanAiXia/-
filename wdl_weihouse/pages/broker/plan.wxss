@@ -1,0 +1,77 @@
+.section {
+    background-color: #ffffff;
+    padding: 30rpx;
+}
+
+.head {
+    padding: 30rpx;
+    padding-top: 0rpx;
+}
+
+.planbox {
+    margin-top: 20rpx;
+}
+
+.plan-title {
+    font-size: 30rpx;
+    border-top: #dadada 1rpx solid;
+    padding-top: 20rpx;
+    padding-left: 0rpx;
+    color: #777;
+}
+
+.plan-title .more {
+    float: right;
+    font-size: 35rpx;
+    margin-top: -10rpx;
+    color: #777;
+}
+
+.planbox .bd {
+    padding: 20rpx 0rpx;
+}
+
+.plan-desc .tips {
+    color: #999;
+}
+
+.plan-desc .dline {
+    line-height: 30rpx;
+    margin-top: 15rpx;
+}
+
+.dline .num {
+    color: #ff0000;
+}
+
+.dline .dinput {
+    padding: 10rpx;
+}
+
+.plan-btn {
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.plan-btn .btn {
+    float: right;
+    font-size: 30rpx;
+    width: 160rpx;
+    text-align: center;
+}
+
+.btn-default {
+    border: #dadada 1rpx solid;
+    border-radius: 5rpx;
+    padding: 0rpx 10rpx;
+    background-color: #dadada;
+    color: #888;
+}
+
+.btn-default2 {
+    border: #17A8E2 1rpx solid;
+    border-radius: 5rpx;
+    padding: 0rpx 10rpx;
+    background-color: #17A8E2;
+    color: #fff;
+}

@@ -1,0 +1,105 @@
+<view class="container">
+    <view class="member-photo">
+        <view class="member-photo-left bb2">
+            <text class="iconfont icon-shoucang"></text>
+            <text> {{broker.fav}}</text>
+            <text>收藏</text>
+        </view>
+        <view class="member-photo-img">
+            <view>
+                <image class="active" src="{{broker.thumb}}" wx:if="{{broker.thumb}}"></image>
+                <image class="active" src="{{avatar}}" wx:else></image>
+            </view>
+            <text class="member-photo-name">{{username}}</text>
+        </view>
+        <view class="member-photo-right bb2">
+            <text class="iconfont icon-xiaoxi"></text>
+            <text> {{broker.view}}</text>
+            <text>浏览</text>
+        </view>
+    </view>
+    <view class="section" wx:if="{{type==1}}">
+        <view class="pagetitle">
+            <view class="h1"></view>
+            <view class="h1 title">
+                <text>账户余额 : </text>
+                <text class="red num">{{broker.member.credit2}}</text>
+                <text> 元</text>
+            </view>
+            <view class="h1">
+                <navigator url="../user/buy">
+                    <text class="btn">充值</text>
+                </navigator>
+            </view>
+        </view>
+        <view class="acttitle">
+            <text class="ft34">账户操作</text>
+        </view>
+        <view class="bartitle">
+            <view class="ttt">
+                <text class="iconfont icon-qian1 blue"></text>
+                <text class="txt"> 余额充值 </text>
+            </view>
+            <view class="more">
+                <navigator class="a" url="../user/buy">
+                    <text class=""> 充值 </text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </navigator>
+            </view>
+        </view>
+        <view class="bartitle">
+            <view class="ttt">
+                <text class="iconfont icon-wodedingdan blue"></text>
+                <text class="txt"> 消费记录 </text>
+            </view>
+            <view class="more">
+                <navigator class="a" url="../user/log?type={{type}}">
+                    <text> 查看 </text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{type==2}}">
+        <view class="pagetitle">
+            <view class="h1"></view>
+            <view class="h1 title">
+                <text>积分剩余 : </text>
+                <text class="red num">{{broker.member.credit1}}</text>
+                <text></text>
+            </view>
+            <view class="h1">
+                <navigator url="../user/ruleinfo?type={{type}}">
+                    <text class="btn">兑换规则</text>
+                </navigator>
+            </view>
+        </view>
+        <view class="acttitle">
+            <text class="ft34">账户操作</text>
+        </view>
+        <view class="bartitle">
+            <view class="ttt">
+                <text class="iconfont icon-jifen1 red"></text>
+                <text class="txt"> 积分兑换 </text>
+            </view>
+            <view class="more">
+                <navigator class="a" url="../user/trans">
+                    <text class=""> 兑换 </text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </navigator>
+            </view>
+        </view>
+        <view class="bartitle">
+            <view class="ttt">
+                <text class="iconfont icon-wodedingdan red"></text>
+                <text class="txt"> 积分记录 </text>
+            </view>
+            <view class="more">
+                <navigator class="a" url="../user/log?type={{type}}">
+                    <text> 查看 </text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

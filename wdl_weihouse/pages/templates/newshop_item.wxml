@@ -1,0 +1,25 @@
+<template name="newshop_item">
+    <view class="item" wx:for="{{newhouse}}" wx:key="index">
+        <navigator url="../newshop/index?id={{item.hid}}">
+            <image backgroundSize="cover" class="img" src="{{item.house_face}}"></image>
+            <view class="right2">
+                <view class="housetitle">
+                    <text class="name ft30">{{item.house_title}}</text>
+                    <text class="ttype bage-blue{{item.house_nature_key}}" wx:if="{{item.house_nature_key}}">{{item.house_nature[0]}}</text>
+                    <text class="onsale bage-green{{item.house_sale}}" wx:if="{{item.house_sale}}">{{item.house_sale_tag}}</text>
+                </view>
+                <view class="address eclips1">
+                    <text class="ft26" wx:if="{{item.house_region}}">{{item.house_region}} </text>
+                    <text class="ft26" wx:if="{{item.house_address}}"> -{{item.house_address}}</text>
+                </view>
+                <view class="housemark">
+                    <text class="mark" wx:for="{{item.house_prowedt}}" wx:for-item="dot" wx:key="id">{{dot}}</text>
+                </view>
+                <view class="newhousepricebd">
+                    <text class="num">{{item.price_label}}{{item.price}}  </text>
+                    <text class="per" wx:if="{{item.house_main}}">建面{{item.house_main}}</text>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</template>

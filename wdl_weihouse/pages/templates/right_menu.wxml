@@ -1,0 +1,26 @@
+<template name="right_menu">
+    <view class="rightmenu">
+        <view bindtap="onDefRedirect" class="m-item2" data-type="navtab">
+            <view class="icon2">
+                <image src="/wdl_weihouse/static/images/shouqi.png" wx:if="{{showRightMenuOk}}"></image>
+                <image src="/wdl_weihouse/static/images/shouqi2.png" wx:else></image>
+            </view>
+        </view>
+        <view hidden="{{showRightMenuOk}}">
+            <view class="m-item" wx:for="{{rightmenu}}" wx:key="id">
+                <view class="icon" style="background:{{item.bgcolor}}">
+                    <view bindtap="onDefRedirect" data-appid="{{item.appid}}" data-type="redirect" data-url="{{item.url}}">
+                        <text style="color:{{item.txtcolor}}">{{item.txtname}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="m-item">
+                <view class="icon">
+                    <navigator openType="switchTab" url="/wdl_weihouse/pages/index/welcome">
+                        <text>首页</text>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

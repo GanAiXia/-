@@ -1,0 +1,64 @@
+.section {
+    background-color: #ffffff;
+    padding: 30rpx;
+}
+
+.head {
+    padding: 30rpx;
+    padding-top: 0rpx;
+    padding-left: 0rpx;
+}
+
+.credit {
+    text-align: center;
+    font-size: 40rpx;
+    color: #ff0000;
+}
+
+.dline {
+    display: block;
+    white-space: nowrap;
+    font-size: 28rpx;
+    padding: 10rpx;
+}
+
+.dth {
+    background: #f1f1f1;
+    border-bottom: #eee 1rpx solid;
+}
+
+.dth .w2 {
+    border-left: #ccc 1px solid;
+}
+
+.dth .w3 {
+    border-left: #ccc 1px solid;
+}
+
+.dline .w1 {
+    width: 50%;
+    display: inline-block;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.dline .w2 {
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+}
+
+.dline .w3 {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+}
+
+.bd .ditem:nth-child(2n) {
+    background: #f1f1f1;
+}
+
+.ditem .w3 {
+    color: #999;
+}

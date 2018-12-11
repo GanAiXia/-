@@ -1,0 +1,75 @@
+@import "myneed.wxss";
+
+.swiper-tab {
+    width: 100%;
+    text-align: center;
+    line-height: 60rpx;
+    margin-top: 40rpx;
+    display: block;
+    padding-bottom: 20rpx;
+}
+
+.swiper-tab .swiper-tab-list {
+    font-size: 32rpx;
+    display: inline-block;
+    width: 50%;
+    color: #333;
+}
+
+.swiper-tab .swiper-tab-db {
+    background: #dadada;
+    padding: 5rpx 20rpx;
+    border-top-left-radius: 10rpx;
+    border-bottom-left-radius: 10rpx;
+    margin-left: 30rpx;
+}
+
+.swiper-tab .swiper-tab-db2 {
+    background: #dadada;
+    padding: 5rpx 20rpx;
+    border-top-right-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+    margin-right: 30rpx;
+}
+
+.swiper-tab .on {
+    color: #fff;
+    background: #1BA9BA;
+}
+
+.leixin-tab {
+    width: 100%;
+    text-align: center;
+    line-height: 40rpx;
+    display: block;
+}
+
+.leixin-tab .leixin-tab-list {
+    font-size: 28rpx;
+    display: inline-block;
+    width: 50%;
+    color: #333;
+}
+
+.leixin-tab .leixin-tab-db {
+    background: #dadada;
+    padding: 5rpx 20rpx;
+    border-top-left-radius: 10rpx;
+    border-bottom-left-radius: 10rpx;
+}
+
+.leixin-tab .leixin-tab-db2 {
+    background: #dadada;
+    padding: 5rpx 20rpx;
+    border-top-right-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}
+
+.leixin-tab .on {
+    color: #fff;
+    background: #1BA9BA;
+}
+
+.xxs {
+    color: red;
+}

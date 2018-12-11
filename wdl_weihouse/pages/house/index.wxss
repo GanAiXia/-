@@ -1,0 +1,665 @@
+page {
+    background-color: #fff;
+}
+
+.container {
+    margin-bottom: 90rpx;
+    font-size: 30rpx;
+}
+
+.goodsimgs {
+    height: 540rpx;
+}
+
+.goodsimgs image {
+    width: 100%;
+    height: 540rpx;
+}
+
+.goods-info {
+    width: 100%;
+    background-color: #fff;
+}
+
+.goods-info .c {
+    display: block;
+    width: 718.75rpx;
+    height: 100%;
+    margin-left: 31.25rpx;
+    padding: 38rpx 31.25rpx 38rpx 0;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.goods-info .c text {
+    display: block;
+    width: 687.5rpx;
+    text-align: left;
+}
+
+.goods-info .name {
+    margin-bottom: 5.208rpx;
+    font-size: 42rpx;
+    line-height: 46rpx;
+    text-align: left;
+    color: #333;
+}
+
+.goods-info .desc {
+    height: 43rpx;
+    margin-bottom: 41rpx;
+    font-size: 36rpx;
+    line-height: 36rpx;
+    color: #999;
+}
+
+.goods-info .price {
+    height: 35rpx;
+    font-size: 35rpx;
+    line-height: 35rpx;
+    color: #b4282d;
+}
+
+.goods-info .brand {
+    margin-top: 23rpx;
+    min-height: 40rpx;
+    text-align: center;
+}
+
+.real {
+    position: relative;
+}
+
+.addfav {
+    position: absolute;
+    top: 0;
+    right: 0rpx;
+    padding: 0 10rpx;
+}
+
+.addfav .iconfont {
+    font-size: 45rpx;
+    color: #fff;
+}
+
+.viewpic {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    background: #000;
+    opacity: .5;
+    color: #fff;
+    padding: 0 20rpx;
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+    margin-left: -40rpx;
+}
+
+.sharepaper {
+    position: absolute;
+    bottom: 0;
+    right: 10rpx;
+    background: #000;
+    opacity: .5;
+    color: #fff;
+    padding: 10rpx 20rpx;
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+}
+
+.subtitle {
+    height: 50rpx;
+    border-bottom: 1rpx solid #CCCCCC;
+    line-height: 50rpx;
+    padding-bottom: 10rpx;
+}
+
+.subtitle .t1 {
+    float: left;
+    padding-left: 30rpx;
+    width: 20%;
+}
+
+.subtitle .t2 {
+    float: right;
+    width: 70%;
+}
+
+.share {
+    float: right;
+    display: table-column;
+    text-align: center;
+    margin-top: 0rpx;
+}
+
+.share2 {
+    margin-right: 15rpx;
+    margin-top: 4rpx;
+}
+
+.share button {
+    height: 60rpx;
+}
+
+.share button::after {
+    background: none;
+    border: none;
+}
+
+.share view {
+    height: 35rpx;
+    line-height: 35rpx;
+    color: #999;
+}
+
+.click {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.click text {
+    margin-right: 20rpx;
+}
+
+.dtitle {
+    padding: 38rpx 31.25rpx 10rpx 31rpx;
+}
+
+.dtitle .ptype {
+    background-color: #00C784;
+    color: #fff;
+    margin-left: 10rpx;
+    padding: 0rpx 10rpx;
+}
+
+.dtitle .bd {
+    display: block;
+    padding-bottom: 32rpx;
+}
+
+.baseinfo {
+    padding-top: 10rpx;
+    display: -webkit-box;
+    height: 120rpx;
+    padding: 12rpx 0rpx 10rpx 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.baseinfo .bitem {
+    width: 100%;
+    text-align: center;
+}
+
+.baseinfo .bitem .h4 {
+    text-align: center;
+    display: block;
+    color: #999;
+    font-size: 30rpx;
+}
+
+.baseinfo .bitem .bitemtxt {
+    color: #bf0000;
+    font-size: 35rpx;
+    vertical-align: middle;
+}
+
+.bprice {
+    width: 33%;
+    text-align: center;
+    border-right: 1px solid #CCCCCC;
+}
+
+.broom {
+    width: 33%;
+    text-align: center;
+    border-right: 1px solid #CCCCCC;
+}
+
+.barea {
+    width: 33%;
+    text-align: center;
+}
+
+.secinfo {
+    padding: 30rpx 30rpx;
+}
+
+.pitem {
+    display: -webkit-box;
+    line-height: 60rpx;
+}
+
+.pitem .ptitle {
+    width: 50%;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.pitem .ptitle2 {
+    width: 100%;
+    font-size: 30rpx;
+    color: #333;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.pitem .ptxt {
+    color: #777;
+}
+
+.ptitle .icon2 {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.pitem .fblue {
+    color: #268EFF;
+}
+
+.pitem .fred {
+    color: #bf0000;
+}
+
+.detail {
+    font-size: 30rpx;
+    padding: 32rpx 0rpx;
+    color: #888;
+    line-height: 40rpx;
+}
+
+.detail video {
+    width: 100%;
+    margin-bottom: 10rpx;
+}
+
+.user-menu {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    height: 85rpx;
+}
+
+.user-menu .item {
+    flex-grow: 1;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.user-menu .item text {
+    display: block;
+    line-height: 45rpx;
+}
+
+.user-menu .item .iconfont {
+    font-size: 42rpx;
+}
+
+.user-menu .link {
+    color: #bf0000;
+}
+
+.user-menu .broker-info {
+    flex-grow: 3;
+    text-align: left;
+}
+
+.broker {
+    padding-top: 0rpx;
+}
+
+.broker-name {
+    text-align: left;
+}
+
+.broker-head {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10rpx;
+}
+
+.texto1 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.th3 {
+    border-bottom: 1rpx solid #f1f1f1;
+    padding-bottom: 20rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.th3 .th3-title {
+    float: left;
+}
+
+.th3 .more {
+    float: right;
+    color: #999;
+    font-size: 24rpx;
+    padding-top: 10rpx;
+}
+
+.th3 .more .iconfont {
+    font-size: 24rpx;
+}
+
+.section {
+    padding: 30rpx;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.imagetxt .item:last-child {
+    border-bottom: 0rpx;
+}
+
+.imagetxt .item {
+    width: 100%;
+    display: block;
+    border-bottom: 1rpx solid #f1f1f1;
+    padding-top: 20rpx;
+    padding-bottom: 10rpx;
+    position: relative;
+    min-height: 180rpx;
+}
+
+.imgtag {
+    position: absolute;
+    left: 0rpx;
+    top: 40rpx;
+    background-color: #000;
+    color: #fff;
+    opacity: 0.5;
+    padding: 0 10rpx;
+    font-size: 24rpx;
+}
+
+.imagetxt .item .img {
+    float: left;
+    width: 200rpx;
+    height: 150rpx;
+    margin-top: 10rpx;
+}
+
+.imagetxt .right2 {
+    margin-left: 230rpx;
+    display: block;
+    padding-top: 10rpx;
+}
+
+.newshop .housetitle .name {
+    font-weight: bold;
+}
+
+.imagetxt .housetitle {
+    line-height: 40rpx;
+}
+
+.imagetxt .address {
+    color: #666;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.imagetxt .btags {
+    line-height: 30rpx;
+    height: 40rpx;
+}
+
+.imagetxt .housetitle .ttype {
+    font-size: 26rpx;
+    padding: 0 10rpx;
+    margin-left: 10rpx;
+    border-radius: 5rpx;
+}
+
+.imagetxt .housetitle .onsale {
+    font-size: 26rpx;
+    padding: 0 10rpx;
+    margin-left: 10rpx;
+    border-radius: 5rpx;
+}
+
+.imagetxt .btags {
+    margin-top: 10rpx;
+}
+
+.imagetxt .btags text {
+    padding: 0rpx 5rpx;
+    text-align: center;
+    margin-right: 12rpx;
+    vertical-align: middle;
+    font-size: 24rpx;
+    border-radius: 10rpx;
+}
+
+.imagetxt .btags .keybg1 {
+    background: #D7F2FB;
+    color: #2EA0F1;
+}
+
+.imagetxt .btags .keybg0 {
+    background: #D7F2FB;
+    color: #2EA0F1;
+}
+
+.imagetxt .btags .keybg2 {
+    background: #D7F2FB;
+    color: #2EA0F1;
+}
+
+.imagetxt .btags .keybg3 {
+    background: #D7F2FB;
+    color: #67A4D9;
+}
+
+.imagetxt .pricebd {
+    position: absolute;
+    right: 0rpx;
+    top: 10rpx;
+    text-align: right;
+}
+
+.imagetxt .pricebd text {
+    display: block;
+}
+
+.imagetxt .pricebd .num {
+    color: #bf0000;
+    font-size: 35rpx;
+    font-weight: 400;
+}
+
+.imagetxt .pricebd .per {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.imagetxt .housetitle .ele {
+    border-radius: 100%;
+    font-size: 24rpx;
+    padding: 0 10rpx;
+    color: #fff;
+    margin-left: 10rpx;
+    display: inline-block;
+}
+
+.imagetxt .housetitle .c1 {
+    background-color: #ff0000;
+}
+
+.imagetxt .housetitle .c2 {
+    background-color: #0243AB;
+}
+
+.imagetxt .housetitle .c3 {
+    background-color: #009A44;
+}
+
+.imagetxt .housetitle .c4 {
+    background-color: #F5C707;
+}
+
+.bbmenu {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    border-top: #fff 1px solid;
+    background: #fff;
+    height: 95rpx;
+    vertical-align: middle;
+    display: flex;
+}
+
+.bbmenu .item {
+    flex-grow: 1;
+    height: 95rpx;
+    color: #222;
+}
+
+.bbmenu .item2 {
+    flex-grow: 2;
+    height: 95rpx;
+    background: #1296DB;
+    color: #fff;
+}
+
+.bbmenu .favbtn {
+    color: #fff;
+    text-align: center;
+    height: 100%;
+    font-size: 32rpx;
+    line-height: 95rpx;
+}
+
+.bbmenu .item .iconfont {
+    color: #1296DB;
+}
+
+.bbmenu .bdbtn {
+    text-align: center;
+    line-height: 35rpx;
+    height: 100%;
+    margin-top: 10rpx;
+}
+
+.bbmenu .bdbtn2 {
+    padding-top: 15rpx;
+    height: 95rpx;
+    background: #cc3322;
+    color: #fff;
+    text-align: center;
+    font-size: 32rpx;
+    line-height: 35rpx;
+}
+
+.nocomment {
+    text-align: center;
+    padding: 20rpx;
+}
+
+.comment {
+    font-size: 28rpx;
+}
+
+.comment .bd-txt {
+    display: inline-block;
+    width: 30%;
+}
+
+.comment .star-pos {
+    display: inline-block;
+    width: 69%;
+}
+
+.comment .star-pos .stars {
+    display: inline-block;
+    text-align: center;
+    margin-left: 30rpx;
+}
+
+.comment .star-pos .stars .iconfont {
+    color: #ccc;
+    font-size: 38rpx;
+}
+
+.comment .star-pos .onn .iconfont {
+    color: #FFAA00;
+    font-size: 38rpx;
+}
+
+.comment-txt {
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.comment-txt-bd {
+    width: 79%;
+    display: inline-block;
+}
+
+.comment-txt-button {
+    width: 18.9%;
+    display: inline-block;
+}
+
+.comment-txt-button button {
+    height: 80rpx;
+    border-radius: 0px;
+    vertical-align: middle;
+    line-height: 80rpx;
+    padding-left: 0rpx;
+    padding-right: 0rpx;
+    font-size: 28rpx;
+    margin: 0px;
+}
+
+.comment-txt-bd textarea {
+    border-radius: 0rpx;
+    background-color: #f1f1f1;
+    width: 95%;
+    height: 60rpx;
+    padding: 10rpx;
+    padding-left: 10rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.commentlist .citem {
+    display: block;
+    position: relative;
+    min-height: 80rpx;
+    margin-top: 20rpx;
+    margin-left: 30rpx;
+}
+
+.commentlist .avatar {
+    position: absolute;
+    left: 0rpx;
+    top: 0rpx;
+}
+
+.commentlist .citem-txt {
+    margin-left: 70rpx;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #999;
+}
+
+.commentlist .avatar image {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 100%;
+}
+
+.commentlist .red {
+    color: #FFAA00;
+    font-size: 24rpx;
+}

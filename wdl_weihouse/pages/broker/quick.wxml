@@ -1,0 +1,39 @@
+<view class="container">
+    <view class="member-photo">
+        <view class="member-photo-title">
+            <text class="ft40">经纪人管理助手</text>
+        </view>
+    </view>
+    <view class="bd">
+        <view class="ulselect">
+            <navigator url="../broker/manage">
+                <text class="iconfont icon-shezhi"></text>
+                <text class="txt"> 我的会员管理 </text>
+                <view class="more">
+                    <text></text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </view>
+            </navigator>
+        </view>
+        <view class="ulselect">
+            <navigator url="../broker/myfeed">
+                <text class="iconfont icon-xitongcaidan"></text>
+                <text class="txt"> 收到的预约信息 </text>
+                <view class="more">
+                    <text></text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </view>
+            </navigator>
+        </view>
+        <view class="ulselect">
+            <navigator url="../user/brokeragent">
+                <text class="iconfont icon-naozhong"></text>
+                <text class="txt"> 修改经纪人资料 </text>
+                <view class="more">
+                    <text></text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

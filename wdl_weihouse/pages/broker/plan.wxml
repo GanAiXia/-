@@ -1,0 +1,93 @@
+<view class="container">
+    <view class="section">
+        <view class="head">
+            <text class="ft34">{{house.title}}</text>
+        </view>
+        <view class="planbox">
+            <view class="plan-title">
+                <text class="more iconfont icon-shezhi"></text>
+                <text>刷新房源</text>
+            </view>
+            <view class="bd">
+                <view class="plan-desc">
+                    <view class="dline tips">
+                        <text class="ft28">提示：刷新房源是把房源的更新时间设置为当前，是可以提升房源在列表中排列顺序的操作。{{settingdata.credit.refresh}}元余额可以刷新一次。</text>
+                    </view>
+                    <view class="dline">
+                        <text class="ft28">最后刷新时间：</text>
+                        <text class="ft28 num"> {{house.refresh_time}}</text>
+                    </view>
+                    <view class="dline">
+                        <text class="ft28">已刷新次数：</text>
+                        <text class="ft28 num">{{house.refresh_total}}次</text>
+                        <text class="ft28"> 还可刷新：</text>
+                        <text class="ft28 num">{{house.end_total}}次</text>
+                    </view>
+                    <view class="dline" wx:if="{{refresh_need_credit}}">
+                        <text class="ft28"></text>
+                        <text class="ft28 num">{{refresh_txt}}</text>
+                        <text class="ft28"></text>
+                    </view>
+                </view>
+                <view class="plan-btn">
+                    <view bindtap="manage" class="btn btn-default2" data-infoid="{{house.id}}" data-ispay="0" data-op="refresh" data-type="{{house.rent_type}}" wx:if="{{house.end_total>0}}">
+                        <text>马上刷新</text>
+                    </view>
+                    <view bindtap="manage" class="btn btn-default2" data-infoid="{{house.id}}" data-ispay="1" data-op="refresh" data-type="{{house.rent_type}}" wx:if="{{house.end_total==0&&refresh_pay}}">
+                        <text>付费刷新</text>
+                    </view>
+                    <view class="btn btn-default" wx:if="{{house.end_total==0&&refresh_pay==0}}">
+                        <text>余额不足</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="planbox">
+            <view class="plan-title">
+                <text class="more iconfont icon-shezhi"></text>
+                <text>置顶房源</text>
+            </view>
+            <view class="bd">
+                <view class="plan-desc">
+                    <view class="dline tips">
+                        <text class="ft28">提示： 设置房源置顶后，房源在搜索结果列表页的第一页最先展示位置。{{settingdata.credit.istop}}元余额可以置顶一条。</text>
+                    </view>
+                    <view class="dline">
+                        <text class="ft28">当前状态：</text>
+                        <text class="ft28 num" wx:if="{{house.istop==1}}">置顶</text>
+                        <text class="ft28 num" wx:else>未置顶</text>
+                    </view>
+                    <view class="dline">
+                        <text class="ft28">已置顶房源：</text>
+                        <text class="ft28 num">{{house.istop_total}}条</text>
+                        <text class="ft28"> 还可置顶：</text>
+                        <text class="ft28 num">{{house.istop_end_total}}条</text>
+                    </view>
+                    <view class="dline">
+                        <text class="ft28">置顶天数：</text>
+                        <view class="dinput ft26">
+                            <radio-group bindchange="radioChange" class="radio-group">
+                                <label class="radio" wx:for="{{topdays}}" wx:key="id">
+                                    <radio checked="{{item.checked}}" value="{{item.value}}"></radio>{{item.name}}
+  </label>
+                            </radio-group>
+                        </view>
+                    </view>
+                    <view class="dline" wx:if="{{istop_need_credit}}">
+                        <text class="ft28"></text>
+                        <text class="ft28 num">{{istop_txt}}</text>
+                        <text class="ft28"></text>
+                    </view>
+                </view>
+                <view class="plan-btn">
+                    <view bindtap="manage" class="btn btn-default" data-infoid="{{house.id}}" data-op="settop" data-value="{{house.istop}}" wx:if="{{house.istop==1}}">
+                        <text>取消置顶</text>
+                    </view>
+                    <view bindtap="manage" class="btn btn-default2" data-infoid="{{house.id}}" data-op="settop" data-value="{{house.istop}}" wx:if="{{house.istop==0}}">
+                        <text>置顶</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

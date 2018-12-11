@@ -1,0 +1,26 @@
+page {
+    background-color: #ffffff;
+}
+
+.container {
+    padding: 30rpx;
+}
+
+.showtitle {
+    border-bottom: #f1f1f1 1rpx solid;
+    padding-bottom: 20rpx;
+}
+
+.showtitle .title {
+    line-height: 60rpx;
+    padding-bottom: 20rpx;
+}
+
+.subtitle text {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.htmltext {
+    font-size: 32rpx;
+}

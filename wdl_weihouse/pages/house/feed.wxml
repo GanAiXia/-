@@ -1,0 +1,49 @@
+<scroll-view class="container" scrollY="true">
+    <form bindreset="formReset" bindsubmit="formSubmit" reportSubmit="true">
+        <view class="weui-cells__title">提交看房意向后，我们将第一时间与您取得联系！</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="title" placeholder="请输入文本" type="text" value="{{house.title}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">姓名：</view>
+        <view class="weui-cells weui-cells_after-title">
+            <label class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="truename" placeholder="请输入姓名" type="text" value=""></input>
+                </view>
+            </label>
+        </view>
+        <view class="weui-cells__title">手机：</view>
+        <view class="weui-cells weui-cells_after-title">
+            <label class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="mobile" placeholder="请输入手机号码" type="text" value=""></input>
+                </view>
+            </label>
+        </view>
+        <view class="weui-cells__title">看房时间：</view>
+        <view class="weui-cells weui-cells_after-title">
+            <label class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd feedtime">
+                    <picker bindchange="bindDateChange" class="fdate" end="{{edate}}" mode="date" name="date" start="{{sdate}}" value="{{date}}">
+                        <view class="picker1">
+        日期: {{date}}
+      </view>
+                    </picker>
+                    <picker bindchange="bindTimeChange" class="ftime" end="23:01" mode="time" name="time" start="07:01" value="{{time}}">
+                        <view class="picker2">
+        时间: {{time}}
+      </view>
+                    </picker>
+                </view>
+            </label>
+        </view>
+        <view class="weui-cells__title">预约：</view>
+        <view class="weui-cell__bd btn">
+            <button class="weui-btn weui-btn_primary" formType="submit" hoverClass="other-button-hover" type="default"> 提交预约 </button>
+        </view>
+    </form>
+</scroll-view>

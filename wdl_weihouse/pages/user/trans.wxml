@@ -1,0 +1,40 @@
+<view class="container">
+    <form bindreset="formReset" bindsubmit="formSubmit">
+        <view class="section mb10">
+            <view class="head">
+                <text class="ft34">积分兑换成余额:</text>
+            </view>
+            <view class="planbox">
+                <view class="plan-title">
+                    <view class="label">
+                        <text>积分数：</text>
+                    </view>
+                    <view class="inputbox">
+                        <input bindinput="inputvalue" class="oneinput" cursor="0" maxlength="5" name="money" placeholder="请输入兑换积分数" type="number" value="{{money}}"></input>
+                    </view>
+                </view>
+                <view class="bd">
+                    <view class="credit">
+                        <text class="ft28 red num">我可以兑换的积分：{{broker.member.credit1}}分</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="section">
+            <view class="resultbox" wx:if="{{money}}">
+                <view class="head">
+                    <text class="ft34">兑换成余额：</text>
+                </view>
+                <view class="result">
+                    <text>兑换</text>
+                    <text>{{money}}</text>
+                    <text>分 </text>
+                    <text>={{credit}} 元余额</text>
+                </view>
+            </view>
+            <view class="btn-area">
+                <button class="button" formType="submit" type="primary">确定兑换</button>
+            </view>
+        </view>
+    </form>
+</view>

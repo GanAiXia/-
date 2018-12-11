@@ -1,0 +1,135 @@
+.container {
+    padding-bottom: 100rpx;
+}
+
+.section {
+    padding-left: 50rpx;
+    padding-right: 30rpx;
+    background-color: #fff;
+}
+
+.feedtitle {
+    height: 100rpx;
+}
+
+.feedtitle .h1 {
+    font-size: 45rpx;
+    font-weight: bold;
+}
+
+.feedtitle .more {
+    float: right;
+    margin-top: 10rpx;
+}
+
+.feedtitle .more text {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.h1desc {
+    line-height: 40rpx;
+    padding-bottom: 30rpx;
+}
+
+.h1desc .ft34 {
+    color: #777;
+    font-size: 30rpx;
+}
+
+.formbox .fline {
+    border-bottom: 1rpx #e1e1e1 solid;
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+}
+
+.formbox .fline .oneinput {
+    font-size: 30rpx;
+}
+
+.formbox .agree {
+    padding-top: 30rpx;
+    padding-bottom: 15rpx;
+}
+
+.formbox .h2 {
+    padding: 30rpx 0;
+}
+
+.formbox .h2 text {
+    font-weight: bold;
+}
+
+.formbox .fck {
+    display: block;
+    margin-bottom: 20rpx;
+}
+
+.formbox .textarea {
+    height: 120rpx;
+    font-size: 30rpx;
+}
+
+.spacedesc {
+    margin-top: 20rpx;
+}
+
+.spacedesc .item {
+    border-left: #f1f1f1 1px solid;
+    position: relative;
+    padding-left: 35rpx;
+    margin-left: 10rpx;
+}
+
+.spacedesc .item:last-child {
+    border-left: 0px;
+}
+
+.spacedesc .dot {
+    width: 25rpx;
+    height: 25rpx;
+    border-radius: 50%;
+    background: #dadada;
+    vertical-align: middle;
+    text-align: center;
+    border: 5rpx solid #fff;
+    position: absolute;
+    left: -15rpx;
+    top: -2rpx;
+}
+
+.spacedesc .item .desc .v1 {
+    line-height: 26rpx;
+}
+
+.spacedesc .item .desc .ft26 {
+    color: #999;
+}
+
+.spacedesc .item {
+    padding-bottom: 60rpx;
+}
+
+.formbtn {
+    height: 100rpx;
+    background-color: #11A782;
+    position: fixed;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.formbtn .btn {
+    line-height: 100rpx;
+    text-align: center;
+}
+
+.formbtn .btn text {
+    color: #fff;
+}
+
+.formbtn button[type=default] {
+    color: #fff;
+    background-color: #11A782;
+}

@@ -1,0 +1,59 @@
+<view class="container">
+    <view class="thumbs">
+        <image mode="aspectFill" src="{{result.thumbs[0]}}" style="width:100%; "></image>
+    </view>
+    <view class="section">
+        <view class="h1desc">
+            <text class="ft30">
+        如果您举报的会员信息，经核实真实，我们将对该会员资料进行封号处理，并通知发布人，我们对您的信息保密。       
+        </text>
+        </view>
+        <form bindreset="formReset" bindsubmit="formSubmit">
+            <view class="formbox">
+                <view class="h2">
+                    <text class="ft30">请选择举报原因</text>
+                </view>
+                <checkbox-group bindchange="checkbox_item">
+                    <view class="fck">
+                        <lable class="checkbox">
+                            <checkbox checked="" value="1、会员年龄及收入与实际不符"></checkbox>
+                            <text class="ft30">1、会员年龄及收入与实际不符</text>
+                        </lable>
+                    </view>
+                    <view class="fck">
+                        <lable class="checkbox">
+                            <checkbox checked="" value="2、会员头像与本人不符"></checkbox>
+                            <text class="ft30">2、会员头像与本人不符</text>
+                        </lable>
+                    </view>
+                    <view class="fck">
+                        <lable class="checkbox">
+                            <checkbox checked="" value="3、会员存在诈骗行为"></checkbox>
+                            <text class="ft30">3、会员存在诈骗行为</text>
+                        </lable>
+                    </view>
+                    <view class="fck">
+                        <lable class="checkbox">
+                            <checkbox checked="" value="4、该会员消极预约，缺乏相亲诚意。"></checkbox>
+                            <text class="ft30">4、该会员消极预约，缺乏相亲诚意。</text>
+                        </lable>
+                    </view>
+                     <view class="fck">
+                        <lable class="checkbox">
+                            <checkbox checked="" value="5、其他原因"></checkbox>
+                            <text class="ft30">5、其他原因</text>
+                        </lable>
+                    </view>
+                </checkbox-group>
+                <view class="fline">
+                    <textarea bindblur="bindTextAreaBlur" class="textarea" name="extinfo" placeholder="其他原因请填写"></textarea>
+                </view>
+                <view class="formbtn">
+                    <view class="btn">
+                        <button class="btn ft35" formType="submit" hoverClass="other-button-hover" type="default"> 提交举报 </button>
+                    </view>
+                </view>
+            </view>
+        </form>
+    </view>
+</view>

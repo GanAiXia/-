@@ -1,0 +1,218 @@
+<view class="container">
+    <view class="member-photo">
+        <view class="member-photo-left bb2">
+            <text class="iconfont icon-shoucang"></text>
+            <text> {{broker.fav}}</text>
+            <text>收藏</text>
+        </view>
+        <view class="member-photo-img">
+            <view>
+                <image class="active" src="{{broker.thumb}}" wx:if="{{broker.thumb}}"></image>
+                <image class="active" src="{{avatar}}" wx:else></image>
+            </view>
+            <text class="member-photo-name">{{username}}</text>
+        </view>
+        <view class="member-photo-right bb2">
+            <text class="iconfont icon-xiaoxi"></text>
+            <text> {{broker.view}}</text>
+            <text>浏览</text>
+        </view>
+    </view>
+    <view class="section">
+        <view class="user-panel">
+            <view class="plo">
+                <navigator class="a" url="../user/moneycenter">
+                    <view class="d1">
+                        <text class="num red">{{broker.member.credit2}}</text>
+                        <text>元</text>
+                    </view>
+                    <view class="d2">
+                        <text class="iconfont icon-qian1 blue"></text>
+                        <text>我的余额</text>
+                    </view>
+                </navigator>
+            </view>
+            <view class="plo">
+                <navigator class="a" url="../user/moneycenter?type=2">
+                    <view class="d1">
+                        <text class="num red">{{broker.member.credit1}}</text>
+                        <text>分</text>
+                    </view>
+                    <view class="d2">
+                        <text class="iconfont icon-jifen1 red"></text>
+                        <text>我的积分</text>
+                    </view>
+                </navigator>
+            </view>
+            <view class="plo">
+                <navigator class="a" url="../caculte/toos">
+                    <view class="d1">
+                        <text class="iconfont icon-ziyouanpai jsq"></text>
+                    </view>
+                    <view class="d2">
+                        <text class="iconfont"></text>
+                        <text>贷款计算</text>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="section">
+        <view class="bartitle nobtb">
+            <view class="ttt">
+                <text class="iconfont icon-geren"></text>
+                <text class="txt"> 会员类型: </text>
+                <text class="ft28 bage-red" wx:if="{{broker.groupid==2}}">VIP经纪人</text>
+                <text class="ft28 bage-red" wx:elif="{{broker.groupid==1}}">经纪人</text>
+                <text class="ft28 bage-red" wx:else>个人</text>
+            </view>
+            <view class="more">
+                <navigator class="a" url="../user/prive">
+                    <text class="quanyi">我的权益</text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="section mt20 ">
+        <view class="bindmobile">
+            <navigator url="../user/bind">
+                <view class="bd1">
+                    <view class="mobile-icon">
+                        <text class="iconfont icon-shouji-copy"></text>
+                    </view>
+                </view>
+                <view class="mobile-number">
+                    <view class="bd2" wx:if="{{broker.id}}">
+                        <view>
+                            <text class="red num">{{broker.mobile}}</text>
+                        </view>
+                        <view>
+                            <text class="ft28">手机号绑定成功</text>
+                        </view>
+                    </view>
+                    <view class="bd2" wx:else>
+                        <view>
+                            <text class="red num"> 绑定手机号 </text>
+                        </view>
+                        <view>
+                            <text class="ft28">请绑定手机号</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="more">
+                    <view class="a">
+                        <text class="iconfont icon-xiangyoujiantou"></text>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+        <view class="push-rule">
+            <navigator class="a" url="../user/ruleinfo?type=1">
+                <view>
+                    <text class="iconfont icon-config-rule ft40"></text>
+                </view>
+                <view>
+                    <text class="txt ft28">发布规则</text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view class="section mt20 ">
+        <view class="bartitle">
+            <view class="ttt">
+                <text class="iconfont icon-jingjiren blue"></text>
+                <text class="txt"> 红娘信息管理 </text>
+            </view>
+            <view class="more">
+                <navigator class="a" url="../user/brokeragent">
+                    <text wx:if="{{broker.id}}"> 修改 </text>
+                    <text wx:else> 申请 </text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="user-menu">
+        <view class="item">
+            <navigator class="a" url="../user/sendinfo?rent=2&zhutype=0">
+                <view class="item-img">
+                    <image mode="widthFix" src="/wdl_weihouse/static/images/index-m-4.jpg"></image>
+                </view>
+                <text class="txt">发女征婚</text>
+            </navigator>
+        </view>
+        <view class="item">
+            <navigator class="a" url="../user/sendinfo?rent=0&zhutype=0">
+                <view class="item-img">
+                    <image mode="widthFix" src="/wdl_weihouse/static/images/index-m-3.jpg"></image>
+                </view>
+                <text class="txt">发男征婚</text>
+            </navigator>
+        </view>
+       
+    </view>
+    <view class="bd mt20">
+        <view class="ulselect" wx:if="{{broker.id}}">
+            <navigator url="../broker/quick">
+                <text class="iconfont icon-xitongcaidan blue"></text>
+                <text class="txt"> 红娘管理助手 </text>
+                <view class="more">
+                    <text></text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </view>
+            </navigator>
+        </view>
+        <view class="ulselect">
+            <navigator url="../broker/manage">
+                <text class="iconfont icon-xitongcaidan blue"></text>
+                <text class="txt"> 我的会员 </text>
+                <view class="more">
+                    <text></text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </view>
+            </navigator>
+        </view>
+        <view class="ulselect">
+            <navigator url="../broker/mysend">
+                <text class="iconfont icon-fenxiang1 blue"></text>
+                <text class="txt"> 我发布的需求 </text>
+                <view class="more">
+                    <text></text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </view>
+            </navigator>
+        </view>
+        <view class="ulselect">
+            <navigator url="../share/index">
+                <text class="iconfont icon-fenxiang1 blue"></text>
+                <text class="txt"> 我的推广中心 </text>
+                <view class="more">
+                    <text></text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </view>
+            </navigator>
+        </view>
+        <view class="ulselect">
+            <navigator url="../house/favorite?ftype=fav">
+                <text class="iconfont icon-shezhi blue"></text>
+                <text class="txt"> 我的会员收藏夹 </text>
+                <view class="more">
+                    <text></text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </view>
+            </navigator>
+        </view>
+        <view class="ulselect">
+            <text class="iconfont icon-service red"></text>
+            <text class="txt"> 联系在线客服 </text>
+            <view class="more" style="width:200rpx; ">
+                <text></text>
+                <button class="btnxia" openType="contact" style="text-align:right; padding-right:20rpx;">
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                    <text></text>
+                </button>
+            </view>
+        </view>
+    </view>
+</view>

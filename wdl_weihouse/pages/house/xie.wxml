@@ -1,0 +1,42 @@
+<import src="/wdl_weihouse/pages/templates/dialog.wxml"></import>
+<import src="/wdl_weihouse/pages/templates/search_bar.wxml"></import>
+<import src="/wdl_weihouse/pages/templates/house_item.wxml"></import>
+<view class="container" style="height: 100%;{{flage?'padding-top:70rpx':'padding-top:130rpx'}}">
+    <view class="searchbarbox">
+        <view class="search-header" style="{{keyboard==1?'height:80rpx; ':'height:0rpx; '}}">
+            <view bindtap="trigger_dialog" class="bar_title" data-name="shownav">{{pagetitle}}<text class="iconfont icon-xiala"></text>
+            </view>
+            <view class="filter">
+                <view class="icon">
+                    <text class="iconfont icon-sousuo"></text>
+                </view>
+                <input bindinput="search_keyword" class="keywrod" data-index="keyword" placeholder="请输入搜索内容" value="{{keyword}}"></input>
+                <button bindtap="search_nav" class="search-btn" formType="submit" type="default">搜索</button>
+            </view>
+        </view>
+        <template is="dialog_index_menu" data="{{hiddendialog:hiddendialog,positon:positon,dialog:dialog}}"></template>
+        <template is="search_bar" data="{{flextab:flextab,sboxli:sboxli,sboxmore:sboxmore,currentIndex:currentIndex}}"></template>
+    </view>
+    <view class="section">
+        <view class="imagetxt">
+            <view class="item" wx:for="{{tophouse}}" wx:key="index">
+                <template is="house-item" data="{{item:item}}"></template>
+            </view>
+            <view class="item" wx:for="{{houselist}}" wx:key="index">
+                <template is="house-item" data="{{item:item}}"></template>
+            </view>
+        </view>
+    </view>
+    <view class="loadmore" wx:if="{{istotal}}">
+        <view class="h">
+            <view style="text-align:center; width:100%;">
+                <text class="txt">没有更多数据了 </text>
+            </view>
+        </view>
+    </view>
+</view>
+<code class="adunit" wx:if="{{adinfo.adunitid.place.isshow==1}}">
+    <ad unitId="{{adinfo.adunitid.content[1].unitid}}"></ad>
+</code>
+<import src="/wdl_weihouse/pages/templates/right_menu.wxml"></import>
+<template is="right_menu" data="{{showRightMenuOk:showRightMenuOk,rightmenu:adinfo.barlinkad.content}}"></template>

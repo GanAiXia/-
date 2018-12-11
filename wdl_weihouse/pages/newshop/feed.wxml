@@ -1,0 +1,144 @@
+<view class="container">
+    <view class="section">
+        <view class="feedtitle">
+            <view class="more">
+                <text>优惠详情</text>
+            </view>
+            <view class="h1">
+                <text>优惠咨询</text>
+            </view>
+        </view>
+        <view class="h1desc">
+            <text class="ft30">
+        请正确填写您的信息，新房顾问会及时与您联系，确保您成功领取并使用优惠
+        </text>
+        </view>
+        <form bindreset="formReset" bindsubmit="formSubmit">
+            <view class="formbox">
+                <view class="fline">
+                    <input class="oneinput" name="username" placeholder="请输入您的姓名"></input>
+                </view>
+                <view class="fline">
+                    <input class="oneinput" name="mobile" placeholder="请输入您的手机号码"></input>
+                </view>
+                <view class="fline">
+                    <input class="oneinput" name="yusuan" placeholder="请输入购房预算"></input>
+                </view>
+                <view class="agree">
+                    <checkbox-group bindchange="checkbox_agree">
+                        <lable class="checkbox">
+                            <checkbox checked="true" name="" value="1"></checkbox>
+                            <text class="ft30">我同意《用户协议》</text>
+                        </lable>
+                    </checkbox-group>
+                </view>
+                <view class="h2">
+                    <text class="ft30">选择您向新房顾问咨询确认优惠</text>
+                </view>
+                <checkbox-group bindchange="checkbox_item">
+                    <view class="fck">
+                        <lable class="checkbox">
+                            <checkbox checked="" value="全款折扣（一般99或者98折）"></checkbox>
+                            <text class="ft30">全款折扣（一般99或者98折）</text>
+                        </lable>
+                    </view>
+                    <view class="fck">
+                        <lable class="checkbox">
+                            <checkbox checked="" value="贷款折扣（一般99或者98折）"></checkbox>
+                            <text class="ft30">贷款折扣（一般99或者98折）</text>
+                        </lable>
+                    </view>
+                    <view class="fck">
+                        <lable class="checkbox">
+                            <checkbox checked="" value="特价房源（最高立减多少）"></checkbox>
+                            <text class="ft30">特价房源（最高立减多少）</text>
+                        </lable>
+                    </view>
+                    <view class="fck">
+                        <lable class="checkbox">
+                            <checkbox checked="" value="是否赠送车位"></checkbox>
+                            <text class="ft30">是否赠送车位 </text>
+                        </lable>
+                    </view>
+                    <view class="fck">
+                        <lable class="checkbox">
+                            <checkbox checked="" value="是否赠送家电家装基金"></checkbox>
+                            <text class="ft30">是否赠送家电家装基金</text>
+                        </lable>
+                    </view>
+                    <view class="fck">
+                        <lable class="checkbox">
+                            <checkbox checked="" value="赠送额外身高"></checkbox>
+                            <text class="ft30">赠送额外身高</text>
+                        </lable>
+                    </view>
+                    <view class="fck">
+                        <lable class="checkbox">
+                            <checkbox checked="" value="灵活付款方式"></checkbox>
+                            <text class="ft30">灵活付款方式</text>
+                        </lable>
+                    </view>
+                    <view class="fck">
+                        <lable class="checkbox">
+                            <checkbox checked="" value="认购减免物业费"></checkbox>
+                            <text class="ft30">认购减免物业费</text>
+                        </lable>
+                    </view>
+                </checkbox-group>
+                <view class="fline">
+                    <textarea bindblur="bindTextAreaBlur" class="textarea" name="extinfo" placeholder="请输入您想要咨询的其他问题"></textarea>
+                </view>
+                <view class="h2">
+                    <text class="ft30">咨询优惠流程</text>
+                </view>
+                <view class="spacedesc">
+                    <view class="item">
+                        <view class="dot">
+                            <text class="dot0"></text>
+                        </view>
+                        <view class="desc">
+                            <view class="v1">
+                                <text class="ft30">了解优惠详情（是否有优惠）</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="item">
+                        <view class="dot">
+                            <text class="dot0"></text>
+                        </view>
+                        <view class="desc">
+                            <view class="v1">
+                                <text class="ft30">新房顾问带看楼盘</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="item">
+                        <view class="dot">
+                            <text class="dot0"></text>
+                        </view>
+                        <view class="desc">
+                            <view class="v1">
+                                <text class="ft30">售楼部签约成交</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="item">
+                        <view class="dot">
+                            <text class="dot0"></text>
+                        </view>
+                        <view class="desc">
+                            <view class="v1">
+                                <text class="ft30">获取购房优惠（如果楼盘有优惠）</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="formbtn">
+                    <view class="btn">
+                        <button class="btn ft35" formType="submit" hoverClass="other-button-hover" type="default"> 咨询优惠 </button>
+                    </view>
+                </view>
+            </view>
+        </form>
+    </view>
+</view>

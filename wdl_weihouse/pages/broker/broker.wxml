@@ -1,0 +1,82 @@
+<import src="/wdl_weihouse/pages/templates/house_zhu.wxml"></import>
+<import src="/wdl_weihouse/pages/templates/house_real.wxml"></import>
+<import src="/wdl_weihouse/pages/templates/house_sp.wxml"></import>
+<import src="/wdl_weihouse/pages/templates/house_xie.wxml"></import>
+<import src="/wdl_weihouse/pages/templates/house_syi.wxml"></import>
+<import src="/wdl_weihouse/pages/templates/right_menu.wxml"></import>
+<view class="container">
+    <view class="search-house">
+        <view class="search">
+            <view class="filter">
+                <view class="keyword">
+                    <text class="icon iconfont icon-sousuo"></text>
+                    <input bindblur="search_goto" bindinput="search_keyword" data-index="keyword" placeholder="请输入关键词" value="{{keyword}}"></input>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="broker-box">
+        <view class="broker-head">
+            <image src="{{broker.thumb}}"></image>
+        </view>
+        <view class="broker-name">
+            <view class="dt">
+                <text class="ft30">  {{broker.company}} {{broker.nickname}} </text>
+            </view>
+            <view class="dd">
+                <text class="ft28 mobile">手机号：{{broker.mobile}}  </text>
+                <text class="ft28 tags" wx:if="{{broker.vtags}}"> 职位：{{broker.vtags}}  </text>
+            </view>
+            <view class="dd">
+                <text class="ft26 desc" wx:if="{{broker.desc}}">介 绍：{{broker.desc}}  </text>
+            </view>
+        </view>
+    </view>
+    <view class="th3">
+        <view class="bd">
+            <view class="th3-title ft35">
+                <view class="bar">
+                    <text class="iconfont icon-geren"></text>
+                    <text>TA的房源</text>
+                </view>
+                <view class="share">
+                    <button class="share" openType="share">
+                        <view>
+                            <text class="ft26"> 推荐给朋友</text>
+                            <text class="iconfont icon-fenxiang1 ft40"></text>
+                        </view>
+                    </button>
+                </view>
+            </view>
+            <view class="more">
+                <navigator openType="redirect" url="../broker/blist">
+                    <text class="ft26">其他经纪人 </text>
+                    <text class="iconfont icon-xiayibu"></text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="swiper-tab">
+        <view bindtap="swichNav" class="swiper-tab-list {{currentTab==0?'on':''}}" data-current="0">出售房源</view>
+        <view bindtap="swichNav" class="swiper-tab-list {{currentTab==2?'on':''}}" data-current="2">出女士征婚源</view>
+    </view>
+    <view class="imagetxt">
+        <view class="item" wx:for="{{result}}" wx:key="index">
+            <template is="house_xie" data="{{item:item}}" wx:if="{{item.rent_type==0&&item.zhutype==1}}"></template>
+            <template is="house_xie" data="{{item:item}}" wx:elif="{{item.rent_type==2&&item.zhutype==1}}"></template>
+            <template is="house_sec" data="{{item:item}}" wx:elif="{{item.rent_type==0&&item.zhutype==0}}"></template>
+            <template is="house_zhu" data="{{item:item}}" wx:elif="{{item.rent_type==2&&item.zhutype==0}}"></template>
+            <template is="house_sp" data="{{item:item}}" wx:elif="{{item.rent_type==0&&item.zhutype==2}}"></template>
+            <template is="house_sp" data="{{item:item}}" wx:elif="{{item.rent_type==2&&item.zhutype==2}}"></template>
+            <template is="house_syi" data="{{item:item}}" wx:elif="{{item.rent_type==0&&item.zhutype==3}}"></template>
+        </view>
+    </view>
+    <view bindtap="load_salelist" class="loadmore">
+        <view class="h">
+            <view style="text-align:center; width:100%;">
+                <text class="txt">{{loadmore}} </text>
+            </view>
+        </view>
+    </view>
+    <template is="right_menu" data="{{showRightMenuOk:showRightMenuOk,rightmenu:adinfo.barlinkad.content}}"></template>
+</view>

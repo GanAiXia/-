@@ -1,0 +1,30 @@
+<template name="index-menu-font">
+    <view class="item">
+        <navigator url="../house/search">
+            <view class="item-icon">
+                <view class="dao bg1">
+                    <text class="iconfont icon-shouye"></text>
+                </view>
+            </view>
+            <view class="dao-txt">男士征婚</view>
+        </navigator>
+    </view>
+</template>
+<template name="index-menu-image">
+    <view class="item" wx:for="{{menu}}" wx:key="i">
+        <navigator url="{{item.url}}">
+            <view class="item-image">
+                <image mode="aspectFit" src="{{item.image}}"></image>
+            </view>
+            <view class="dao-txt">{{item.name}}</view>
+        </navigator>
+    </view>
+    <view class="item">
+        <view bindtap="trigger_dialog" data-name="shownav">
+            <view class="item-image">
+                <image mode="aspectFit" src="/wdl_weihouse/static/images/index-m-3.jpg"></image>
+            </view>
+            <view class="dao-txt">商业房</view>
+        </view>
+    </view>
+</template>

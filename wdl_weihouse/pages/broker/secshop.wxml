@@ -1,0 +1,42 @@
+<view class="container">
+    <view class="search-header">
+        <view class="filter">
+            <view class="icon">
+                <text class="iconfont icon-sousuo"></text>
+            </view>
+            <input bindblur="search_keyword" class="keywrod" placeholder="请输入关键词" value="{{keyword}}"></input>
+            <button bindtap="search_goto" class="search-btn" formType="submit" type="default">搜索</button>
+        </view>
+    </view>
+    <view class="secshop">
+        <view class="section ">
+            <view class="imagetxt">
+                <view class="item" wx:for="{{result}}" wx:key="index">
+                    <navigator url="../broker/shopdetail?id={{item.id}}">
+                        <image backgroundSize="cover" class="img" src="{{item.thumb}}"></image>
+                        <view class="right2">
+                            <view class="housetitle">
+                                <text class="name ft30">{{item.shopname}}</text>
+                            </view>
+                            <view class="address">
+                                <text class="ft26" wx:if="{{item.secnum}}">男士征婚({{item.secnum}})位 </text>
+                                <text class="ft26" wx:if="{{item.zhunum}}">女士征婚({{item.zhunum}})位 </text>
+                                <view class="pricebd">
+                                    <text class="num">
+                                        <text class="iconfont icon-xiayibu"></text>
+                                    </text>
+                                </view>
+                            </view>
+                            <view class="btags">
+                                <text class="keybg ft26">地址：{{item.address}}</text>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="load_salelist" class="loading">
+        <text class="msg ft30">{{loadmore}}</text>
+    </view>
+</view>

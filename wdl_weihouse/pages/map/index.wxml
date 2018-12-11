@@ -1,0 +1,18 @@
+<import src="/wdl_weihouse/pages/templates/house_real.wxml"></import>
+<view class="container">
+    <map showLocation bindcontroltap="controltap" bindmarkertap="onMarkerclick" bindregionchange="regionchange" bindtap="maptap" controls="{{controls}}" id="map" includePoints="{{points}}" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" polyline="{{polyline}}" scale="15" style="{{mapstyle}}"></map>
+    <view class="search-con">
+        <scroll-view class="search-scroll" scrollX="true">
+            <view class="menuitem " wx:for="{{category}}" wx:key="index">
+                <text bindtap="change_category" class="ft30 {{tags==item.tags?'active':''}}" data-index="{{item.tags}}">{{item.name}} </text>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="houseinfo">
+        <view class="imagetxt" wx:if="{{house}}">
+            <view class="item">
+                <template is="house_sec" data="{{item:house}}"></template>
+            </view>
+        </view>
+    </view>
+</view>

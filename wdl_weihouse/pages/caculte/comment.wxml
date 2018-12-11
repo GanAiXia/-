@@ -1,0 +1,117 @@
+<view class="imagetxt">
+    <view class="item">
+        <view class="item-bd">
+            <text class="imgtag" wx:if="{{item.rent_type==0}}"> 出售 </text>
+            <text class="imgtag" wx:if="{{item.rent_type==2}}"> 出租 </text>
+            <image backgroundSize="cover" class="img" src="{{item.thumb}}"></image>
+            <view class="right2">
+                <view class="housetitle">
+                    <navigator url="../house/index?id={{item.id}}">
+                        <text class="name ft32"> {{item.title}}</text>
+                    </navigator>
+                </view>
+                <view class="address">
+                    <view wx:if="{{item.zhutype==0}}">
+                        <text class="ft26" wx:if="{{item.room}}"> {{item.room}}房{{item.hall}}厅</text>
+                        <text class="ft26" wx:if="{{item.superficie}}"> / {{item.superficie}}㎡</text>
+                    </view>
+                    <view wx:elif="{{item.zhutype==1}}">
+                        <text class="ft26" wx:if="{{item.room}}"> {{item.village_name}}</text>
+                        <text class="ft26" wx:if="{{item.superficie}}"> | {{item.superficie}}㎡</text>
+                    </view>
+                    <view wx:elif="{{item.zhutype==2}}">
+                        <text class="ft26" wx:if="{{item.superficie}}">   {{item.superficie}}㎡ |</text>
+                        <text class="ft26" wx:if="{{item.house_type}}"> {{item.house_type}}</text>
+                    </view>
+                    <view wx:elif="{{item.zhutype==3}}">
+                        <text class="ft26" wx:if="{{item.superficie}}">   {{item.superficie}}㎡ |</text>
+                        <text class="ft26" wx:if="{{item.house_type}}"> {{item.house_type}}</text>
+                    </view>
+                    <view class="pricebd">
+                        <text class="num"> {{item.loyer}}   {{item.prix_unitaire}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<form bindreset="formReset" bindsubmit="formSubmit" reportSubmit="true">
+    <view class="section">
+        <view class="comment">
+            <view class="bd-txt">描述相符</view>
+            <view class="star-pos">
+                <view bindtap="changeColor1" class="stars  {{flag0>=1?'onn':''}}" data-index="1">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+                <view bindtap="changeColor1" class="stars  {{flag0>=2?'onn':''}}" data-index="2">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+                <view bindtap="changeColor1" class="stars  {{flag0>=3?'onn':''}}" data-index="3">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+                <view bindtap="changeColor1" class="stars  {{flag0>=4?'onn':''}}" data-index="4">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+                <view bindtap="changeColor1" class="stars  {{flag0>=5?'onn':''}}" data-index="5">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+            </view>
+        </view>
+        <view class="comment-txt">
+            <view class="comment-txt-bd">
+                <textarea name="smalltext" placeholder="宝宝信息真实，很喜欢"></textarea>
+            </view>
+            <view class="comment-txt-button">
+                <button class="send-btn" formType="submit"> 发 布</button>
+            </view>
+        </view>
+        <view class="subt">
+            <view>
+                <text>给经纪人评分</text>
+            </view>
+        </view>
+        <view class="comment">
+            <view class="bd-txt">带客速度</view>
+            <view class="star-pos">
+                <view bindtap="changeColor2" class="stars  {{flag1>=1?'onn':''}}" data-index="1">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+                <view bindtap="changeColor2" class="stars  {{flag1>=2?'onn':''}}" data-index="2">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+                <view bindtap="changeColor2" class="stars  {{flag1>=3?'onn':''}}" data-index="3">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+                <view bindtap="changeColor2" class="stars  {{flag1>=4?'onn':''}}" data-index="4">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+                <view bindtap="changeColor2" class="stars  {{flag1>=5?'onn':''}}" data-index="5">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+            </view>
+        </view>
+        <view class="comment">
+            <view class="bd-txt">服务态度</view>
+            <view class="star-pos">
+                <view bindtap="changeColor3" class="stars  {{flag2>=1?'onn':''}}" data-index="1">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+                <view bindtap="changeColor3" class="stars  {{flag2>=2?'onn':''}}" data-index="2">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+                <view bindtap="changeColor3" class="stars  {{flag2>=3?'onn':''}}" data-index="3">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+                <view bindtap="changeColor3" class="stars  {{flag2>=4?'onn':''}}" data-index="4">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+                <view bindtap="changeColor3" class="stars  {{flag2>=5?'onn':''}}" data-index="5">
+                    <text class="iconfont icon-pingfen"></text>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cell__bd btn">
+            <button class="weui-btn weui-btn_primary" formType="submit" hoverClass="other-button-hover" type="default"> 发表评价 </button>
+        </view>
+    </view>
+</form>

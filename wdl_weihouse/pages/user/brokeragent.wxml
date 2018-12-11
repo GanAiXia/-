@@ -1,0 +1,62 @@
+<view class="container">
+    <view class="page-body clearfix">
+        <form bindreset="formReset" bindsubmit="formSubmit">
+            <view class="ptitle">
+                <view>
+                    <text>上传头像</text>
+                    <text class="ft22">请上传一张工作照</text>
+                </view>
+            </view>
+            <scroll-view class="weiui-uploader upfile" scrollX="true">
+                <view class="scroll-view-item weui-uploader__file" wx:for="{{tempFilePaths}}" wx:key="id">
+                    <image class="imgview" src="{{item}}"></image>
+                </view>
+                <view bindtap="uploadImages" class="scroll-view-item weui-uploader__input-box"></view>
+            </scroll-view>
+            <progress showInfo percent="{{progress_per}}" wx:if="{{show_progress}}"></progress>
+            <view class="pline">
+                <view class="pline-label pull-left w20">
+              姓 名:
+              </view>
+                <view class="pline-input pull-left w80">
+                    <input class="oneinput" maxlength="80" name="nickname" placeholder="请填写您的姓名" type="text" value="{{broker.nickname}}"></input>
+                </view>
+            </view>
+            <view class="pline">
+                <view class="pline-label pull-left w20">
+              公司名称:
+              </view>
+                <view class="pline-input pull-left w80">
+                    <input class="oneinput" maxlength="80" name="company" placeholder="请填写公司名称" type="text" value="{{broker.company}}"></input>
+                </view>
+            </view>
+            <view class="pline">
+                <view class="pline-label pull-left w20">
+              手机号码:
+              </view>
+                <view class="pline-input pull-left w80">
+                    <input class="oneinput" maxlength="80" name="mobile" placeholder="请填写手机号码" type="text" value="{{broker.mobile}}"></input>
+                </view>
+            </view>
+            <view class="pline">
+                <view class="pline-label pull-left w20">
+              头衔:
+              </view>
+                <view class="pline-input pull-left w80">
+                    <input class="oneinput" maxlength="80" name="vtags" placeholder="职务名称" type="text" value="{{broker.vtags}}"></input>
+                </view>
+            </view>
+            <view class="pline">
+                <view class="pline-label">
+              业务介绍:
+              </view>
+                <view class="textarea-wrp">
+                    <textarea class="textarea" maxlength="250" name="desc" placeholder="请输入您的业务说明" value="{{broker.desc}}"></textarea>
+                </view>
+            </view>
+            <view class="btn-area">
+                <button class="button" formType="submit" type="primary">提交保存</button>
+            </view>
+        </form>
+    </view>
+</view>

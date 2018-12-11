@@ -1,0 +1,106 @@
+<view class="container">
+    <view class="shophead">
+        <image class="banner" mode="scaleToFill" src="{{shopinfo.thumb}}"></image>
+        <view class="shopname">
+            <view class="t1">
+                <text class="ft32">{{shopinfo.shopname}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="shopnum">
+        <view class="t1">
+            <text>男士征婚<text> ({{shopinfo.secnum}})</text>
+            </text>
+        </view>
+        <view class="t1">
+            <text>女士征婚<text> ({{shopinfo.zhunum}})</text>
+            </text>
+        </view>
+        <view class="t1">
+            <text>预约<text> ({{shopinfo.secnum}})</text>
+            </text>
+        </view>
+        <view class="t1">
+            <text>浏览<text> ({{shopinfo.click}})</text>
+            </text>
+        </view>
+    </view>
+    <view class="section">
+        <view class="tmenu">
+            <view bindtap="navtab" class="m1 {{tabcurr1}}" data-index="mendian">
+                <text class="ft30">办事处资料</text>
+            </view>
+            <view bindtap="navtab" class="m1  {{tabcurr2}}" data-index="ren">
+                <text bindtap="navtab" class="ft30" data-index="ren">办事处红娘</text>
+            </view>
+        </view>
+        <view class="tabbox">
+            <view animation="{{animationData1}}" class="intro1 {{tabcurr1}}">
+                <view class="title">
+                    <text class="iconfont icon-xiala1"></text>
+                    <text class="txt">业务介绍</text>
+                </view>
+                <view class="bd">
+                    <text class="ft28"> {{shopinfo.newstext}}</text>
+                </view>
+                <view class="title">
+                    <text class="iconfont icon-xiala1"></text>
+                    <text class="txt">客户点评</text>
+                </view>
+                <view class="bd">
+                    <view class="line">
+                        <text>{{shopinfo.vtags}}</text>
+                    </view>
+                </view>
+                <view class="title">
+                    <text class="iconfont icon-xiala1"></text>
+                    <text class="txt">联系方式</text>
+                </view>
+                <view class="bd">
+                    <view class="line">
+                        <text>工作电话：</text>
+                        <text>{{shopinfo.telphone}}</text>
+                    </view>
+                    <view class="line">
+                        <text>门店地址：</text>
+                        <text>{{shopinfo.address}}</text>
+                    </view>
+                </view>
+            </view>
+            <view animation="animationData2" class="intro1 {{tabcurr2}}">
+                <view class="broker" wx:for="{{result}}" wx:key="index">
+                    <view class="bd">
+                        <image class="broker-head" src="{{item.avatar}}"></image>
+                        <view class="name">
+                            <view class="txt">
+                                <text class="ft30"> {{item.nickname}} </text>
+                                <text class="ft30">出售( {{item.secnum}}) 出租({{item.ernum}})</text>
+                            </view>
+                            <view class="link">
+                                <text class="ft30" style="color:#888; text-align:right;">{{item.mobile}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="indexbar-bottom" style="background-color:#f1f1f1;border-color:#fff">
+        <view class="indexbar-bottomitem ">
+            <navigator bindtap="showMapLocation" hoverClass="active">
+                <view class="item-icon">
+                    <text class="iconfont icon-dangdi " style="color:#00C683"></text>
+                </view>
+                <view class="item-text" style="color:#00C683 ;">位置导航</view>
+            </navigator>
+        </view>
+        <view class="indexbar-bottomitem ">
+            <navigator bindtap="callphone" hoverClass="active">
+                <view class="item-icon">
+                    <text class="iconfont icon-dianhua " style="color:#bf0000"></text>
+                </view>
+                <view class="item-text" style="color:#bf0000 ;">拨打电话</view>
+            </navigator>
+        </view>
+    </view>
+</view>

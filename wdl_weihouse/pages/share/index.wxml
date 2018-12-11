@@ -1,0 +1,49 @@
+<view class="container">
+    <view class="member-photo">
+        <view class="member-photo-title">
+            <text class="ft40">我的推广中心</text>
+        </view>
+    </view>
+    <view class="bd">
+        <view class="ulselect">
+            <navigator url="../share/agent">
+                <text class="iconfont icon-shezhi"></text>
+                <text class="txt"> 我的推广信息 </text>
+                <view class="more">
+                    <text></text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </view>
+            </navigator>
+        </view>
+        <view class="ulselect">
+            <navigator url="../share/paper?cate=paper">
+                <text class="iconfont icon-xitongcaidan"></text>
+                <text class="txt"> 下载推广海报 </text>
+                <view class="more">
+                    <text></text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </view>
+            </navigator>
+        </view>
+        <view class="ulselect">
+            <navigator url="../share/tree">
+                <text class="iconfont icon-naozhong"></text>
+                <text class="txt"> 我的客户 </text>
+                <view class="more">
+                    <text></text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </view>
+            </navigator>
+        </view>
+        <view class="ulselect">
+            <navigator url="../share/myshare">
+                <text class="iconfont icon-shezhi"></text>
+                <text class="txt"> 我推广过的房源</text>
+                <view class="more">
+                    <text></text>
+                    <text class="iconfont icon-xiangyoujiantou"></text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

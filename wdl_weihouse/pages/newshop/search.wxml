@@ -1,0 +1,186 @@
+<view class="container" style="height: 100%;{{flage?'padding-top:70rpx':'padding-top:150rpx'}}">
+    <view class="select_mask" wx:if="{{currentIndex>0}}"></view>
+    <view class="section">
+        <view class="search-house">
+            <view class="search-header" style="{{keyboard==1?'height:80rpx; ':'height:0rpx;padding:0'}}">
+                <view class="bar_title">楼盘 <text class="iconfont icon-xiala"></text>
+                </view>
+                <view class="filter">
+                    <text class="icon iconfont icon-sousuo"></text>
+                    <input bindblur="search_house" bindinput="search_keyword" class="keywrod" data-index="keyword" placeholder="请输入楼盘名或区域" value="{{keyword}}"></input>
+                    <button bindtap="search_nav" class="search-btn" formType="submit" type="default">搜索</button>
+                </view>
+            </view>
+            <view class="search-con">
+                <view class="flex-item w2">
+                    <view bindtap="chagetab" class="flex-tab" data-index="1">
+                        <text>{{areas_label}}</text>
+                        <text class="iconfont" wx:if="{{currentIndex==1}}">▲</text>
+                        <text class="iconfont icon-xiala" wx:else></text>
+                    </view>
+                </view>
+                <view class="flex-item w2">
+                    <view bindtap="chagetab" class="flex-tab" data-index="2">
+                        <text>{{price_label}}</text>
+                        <text class="iconfont" wx:if="{{currentIndex==2}}">▲</text>
+                        <text class="iconfont icon-xiala" wx:else></text>
+                    </view>
+                </view>
+                <view class="flex-item w2">
+                    <view bindtap="chagetab" class="flex-tab" data-index="3">
+                        <text>{{room_label}}</text>
+                        <text class="iconfont" wx:if="{{currentIndex==3}}">▲</text>
+                        <text class="iconfont icon-xiala" wx:else></text>
+                    </view>
+                </view>
+                <view class="flex-item w2">
+                    <view bindtap="chagetab" class="flex-tab" data-index="4">
+                        <text>{{moretype_label}}</text>
+                        <text class="iconfont" wx:if="{{currentIndex==4}}">▲</text>
+                        <text class="iconfont icon-xiala" wx:else></text>
+                    </view>
+                </view>
+                <view class="flex-item w1">
+                    <view bindtap="chagetab" class="flex-tab" data-index="5">
+                        <text class="iconfont icon-sort_icon" wx:if="{{currentIndex==5}}"></text>
+                        <text class="iconfont icon-sort_icon" wx:else></text>
+                    </view>
+                </view>
+                <view class="flex-con ">
+                    <view class="sbox" wx:if="{{currentIndex==1}}">
+                        <view class="sbox-title">
+                            <view>
+                                <text>城区</text>
+                            </view>
+                            <view style="margin-top:20rpx; color:#ff0000;">
+                                <navigator url="../map/newsmap">
+                                    <text>新房地图</text>
+                                </navigator>
+                            </view>
+                        </view>
+                        <view class="sbox-con">
+                            <view bindtap="search_nav" class="flexli" data-index="areas" data-label="不限制" data-txt="" data-type="0">不限制</view>
+                            <view bindtap="search_nav" class="flexli" data-index="areas" data-label="{{index}}" data-txt="{{item}}" data-type="0" wx:for="{{search_areas}}" wx:key="index">{{index}}</view>
+                        </view>
+                    </view>
+                    <view class="sbox" wx:if="{{currentIndex==2}}">
+                        <view class="sbox-title">
+                            <text>均价</text>
+                        </view>
+                        <view class="sbox-con">
+                            <view bindtap="search_nav" class="flexli" data-index="price" data-label="不限制" data-txt="0-0" data-type="1">不限制</view>
+                            <view bindtap="search_nav" class="flexli" data-index="price" data-label="{{index}}" data-txt="{{item}}" data-type="1" wx:for="{{search_price}}" wx:key="index">{{index}}</view>
+                        </view>
+                    </view>
+                    <view class="sbox" wx:if="{{currentIndex==3}}">
+                        <view class="sbox-title">
+                            <text>房型</text>
+                        </view>
+                        <view class="sbox-con">
+                            <view bindtap="search_nav" class="flexli" data-index="room" data-label="不限制" data-txt="0" data-type="0">不限制</view>
+                            <view bindtap="search_nav" class="flexli" data-index="room" data-label="{{index}}" data-txt="{{item}}" data-type="0" wx:for="{{search_room}}" wx:key="index">{{index}}</view>
+                        </view>
+                    </view>
+                    <view class="sbox-more" wx:if="{{currentIndex==4}}">
+                        <view class="sbox-db">
+                            <view class="sbox-title-more">
+                                <text> 类型</text>
+                            </view>
+                            <view class="sbox-con-item">
+                                <view bindtap="changeBtnStatus" class="flexli-btn" data-index="house_nature" data-label="{{index}}" data-txt="{{item}}" data-type="0" wx:for="{{search_projectTypes}}" wx:key="index">
+                                    <text class="{{house_nature==index?'active':''}}">{{item}}</text>
+                                </view>
+                            </view>
+                            <view class="sbox-title-more">
+                                <text>售卖状态</text>
+                            </view>
+                            <view class="sbox-con-item">
+                                <view bindtap="changeBtnStatus" class="flexli-btn" data-index="onsale" data-label="在售" data-txt="1" data-type="0">
+                                    <text class="{{onsale=='1'?'active':''}}">在售</text>
+                                </view>
+                                <view bindtap="changeBtnStatus" class="flexli-btn" data-index="onsale" data-label="预约" data-txt="2" data-type="0">
+                                    <text class="{{onsale=='2'?'active':''}}">预约</text>
+                                </view>
+                                <view bindtap="changeBtnStatus" class="flexli-btn" data-index="onsale" data-label="待售" data-txt="3" data-type="0">
+                                    <text class="{{onsale=='3'?'active':''}}">待售</text>
+                                </view>
+                                <view bindtap="changeBtnStatus" class="flexli-btn" data-index="onsale" data-label="售罄" data-txt="4" data-type="0">
+                                    <text class="{{onsale=='4'?'active':''}}">售罄</text>
+                                </view>
+                            </view>
+                            <view class="sbox-title-more">
+                                <text> 特色</text>
+                            </view>
+                            <view class="sbox-con-item">
+                                <view bindtap="changeBtnStatus" class="flexli-btn" data-index="house_type" data-label="{{index}}" data-txt="{{item}}" data-type="0" style="{{house_type.indexOf(item)?'background:#ff0000':''}}" wx:for="{{search_housetags}}" wx:key="index">
+                                    <text class="{{house_type==index?'active':''}}">{{index}}</text>
+                                </view>
+                            </view>
+                            <view class="sbox-title-more">
+                                <text> 开盘时间</text>
+                            </view>
+                            <view class="sbox-con-item">
+                                <view bindtap="changeBtnStatus" class="flexli-btn" data-index="opentime" data-label="{{index}}" data-txt="{{index}}" data-type="0" wx:for="{{search_opentime}}" wx:key="index">
+                                    <text class="{{opentime==index?'active':''}}">{{item}}</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="sbox-btn-bd">
+                            <view bindtap="search_nav_rest" class="w5 sbox-btn-bd-reset">
+                                <text class="btn ">清空</text>
+                            </view>
+                            <view bindtap="search_nav" class="w5 sbox-btn-bd-submit">
+                                <text class="btn ">确定</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="sbox" wx:if="{{currentIndex==5}}">
+                        <view class="sbox-title">
+                            <text>排序方式</text>
+                        </view>
+                        <view class="sbox-con">
+                            <view bindtap="search_nav" class="flexli" data-index="order" data-label="{{index}}" data-txt="{{item}}" data-type="0" wx:for="{{search_order}}" wx:key="index">{{index}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="newshop" wx:if="{{houselist.length>0}}">
+        <view class="b">
+            <view class="item" wx:for="{{houselist}}" wx:key="{{item.id}}">
+                <navigator url="../newshop/index?id={{item.hid}}">
+                    <image class="img" mode="aspectFill" src="{{item.house_face}}"></image>
+                    <view class="right2">
+                        <view class="housetitle">
+                            <text class="name">{{item.house_title}}</text>
+                            <text class="ttype bage-blue{{item.house_nature_key}}" wx:if="{{item.house_nature_key}}">{{item.house_nature[0]}}</text>
+                            <text class="onsale bage-green{{item.house_sale}}" wx:if="{{item.house_sale}}">{{item.house_sale_tag}}</text>
+                        </view>
+                        <view class="housebb">
+                            <text class="village">{{item.house_region}} </text>
+                            <text class="tag1">-{{item.house_address}} </text>
+                        </view>
+                        <view class="housemark">
+                            <text class="mark" wx:for="{{item.house_prowedt}}" wx:for-item="dot" wx:key="id">{{dot}}</text>
+                        </view>
+                        <view class="housearea">
+                            <text class="price">{{item.price_label}}{{item.price}}</text>
+                            <text class="sufix" wx:if="{{item.house_main}}"> 建面{{item.house_main}}</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="loadmore" wx:if="{{istotal}}">
+        <view class="h">
+            <text class="txt">没有更多数据了 </text>
+        </view>
+    </view>
+</view>
+<code class="adunit" wx:if="{{adinfo.adunitid.place.isshow==1}}">
+    <ad unitId="{{adinfo.adunitid.content[1].unitid}}"></ad>
+</code>
+<import src="/wdl_weihouse/pages/templates/right_menu.wxml"></import>
+<template is="right_menu" data="{{showRightMenuOk:showRightMenuOk,rightmenu:adinfo.barlinkad.content}}"></template>

@@ -1,0 +1,141 @@
+@import "../house/search.wxss";
+
+.search-house {
+    position: relative;
+    width: 100%;
+}
+
+.search-header {
+    background-color: #03A9F7;
+}
+
+.bar_title {
+    color: #fff;
+}
+
+.broker-box {
+    padding-top: 30rpx;
+    min-height: 200rpx;
+}
+
+.broker-box .broker-head {
+    float: left;
+    width: 200rpx;
+    text-align: center;
+}
+
+.broker-box .broker-name {
+    margin-left: 200rpx;
+    margin-right: 10rpx;
+}
+
+.broker-box .broker-name .dt {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.broker-box .broker-name text {
+    text-align: left;
+}
+
+.broker-box .broker-head image {
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.broker-box .mobile {
+    margin-right: 15rpx;
+}
+
+.broker-name .dd {
+    line-height: 40rpx;
+}
+
+.broker-box .desc {
+    color: #999;
+    line-height: 30rpx;
+}
+
+.th3 {
+    margin: 0rpx 30rpx;
+    padding-bottom: 20rpx;
+    height: 60rpx;
+    border-bottom: 0;
+}
+
+.th3 .th3-title {
+    float: left;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.th3 .bar {
+    color: #04C584;
+    display: inline-block;
+}
+
+.th3 .more {
+    float: right;
+    color: #999;
+    font-size: 26rpx;
+    padding-top: 10rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.th3 .more .iconfont {
+    font-size: 26rpx;
+}
+
+.share {
+    display: inline-block;
+    padding-top: 10rpx;
+}
+
+.share button {
+    font-size: 30rpx;
+}
+
+.share button::after {
+    background: none;
+    border: none;
+}
+
+.share view {
+    height: 35rpx;
+    line-height: 35rpx;
+    color: #999;
+}
+
+.swiper-tab {
+    width: 100%;
+    text-align: center;
+    line-height: 80rpx;
+    padding-top: 10rpx;
+}
+
+.swiper-tab-list {
+    font-size: 32rpx;
+    display: inline-block;
+    width: 50%;
+    color: #333;
+    border-bottom: 5rpx solid #e1e1e1;
+}
+
+.on {
+    color: #04C584;
+    border-bottom: 5rpx solid #04C584;
+}
+
+.imagetxt {
+    padding-left: 30rpx;
+    padding-right: 10rpx;
+    margin-top: 20rpx;
+}
+
+.loadmore {
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}

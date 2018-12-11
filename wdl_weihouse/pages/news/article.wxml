@@ -1,0 +1,55 @@
+<view class="container">
+    <view class="search-house">
+        <view class="search">
+            <view class="filter">
+                <view class="keyword">
+                    <text class="icon iconfont icon-sousuo"></text>
+                    <input bindblur="search_goto" bindinput="search_keyword" data-index="keyword" placeholder="请输入关键词" value="{{keyword}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="banner">
+            <swiper autoplay="true" class="bgbanner" duration="1000" indicatorDots="true" interval="3000">
+                <swiper-item wx:for="{{banner}}" wx:key="i">
+                    <image mode="widthFix" src="{{item.url}}" style="width:100%; "></image>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="search-con">
+            <scroll-view class="search-scroll" scrollX="true">
+                <view class="menuitem " wx:for="{{category}}" wx:key="index">
+                    <text bindtap="change_category" class="ft30 {{tags==item.tags?'active':''}}" data-index="{{item.tags}}">{{item.name}} </text>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="section">
+        <view class="saleinfo">
+            <view class="item" wx:for="{{salelist}}" wx:key="index">
+                <navigator url="../news/show?id={{item.id}}">
+                    <image backgroundSize="cover" class="img" src="{{item.thumb}}"></image>
+                </navigator>
+                <view class="right2">
+                    <view class="housetitle">
+                        <navigator url="../news/show?id={{item.id}}">
+                            <text class="name ft30">{{item.title}}</text>
+                        </navigator>
+                    </view>
+                    <view class="address">
+                        <text class="mark ft26">{{item.fname}}</text>
+                    </view>
+                    <view class="address">
+                        <text class="ft26" wx:if="{{item.showtime}}">{{item.showtime}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="load_salelist" class="loadmore">
+        <view class="h">
+            <view style="text-align:center; width:100%;">
+                <text class="txt">{{loadmore}} </text>
+            </view>
+        </view>
+    </view>
+</view>

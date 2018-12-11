@@ -1,0 +1,9 @@
+@import "search.wxss";
+
+.search-header {
+    background-color: #03A9F7;
+}
+
+.bar_title {
+    color: #fff;
+}

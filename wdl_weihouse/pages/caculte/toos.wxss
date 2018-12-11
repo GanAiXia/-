@@ -1,0 +1,160 @@
+.section {
+    background: #fff;
+}
+
+.caculate {
+    margin: 10rpx 30rpx;
+}
+
+.caculate .dput {
+    display: block;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: #f1f1f1 1rpx solid;
+}
+
+.dput .label {
+    width: 40%;
+    float: left;
+}
+
+.dput .dele {
+    width: 60%;
+    float: right;
+}
+
+.dput .dele .oneinput {
+    font-size: 32rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: right;
+    margin-top: 10rpx;
+    padding-right: 20rpx;
+    display: inline-block;
+    float: right;
+    max-width: 70%;
+}
+
+.dput .dele .tips {
+    float: right;
+    color: #999;
+    display: inline-block;
+}
+
+.btnbd {
+    padding: 30rpx;
+}
+
+.cktype {
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+}
+
+.cktype .bd {
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+    display: flex;
+}
+
+.cktype .bditem {
+    flex-grow: 1;
+    width: 50%;
+    text-align: center;
+    background-color: #dadada;
+    font-size: 38rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    color: #999;
+}
+
+.cktype .active {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.cktype .left {
+    border-top-left-radius: 20rpx;
+    border-bottom-left-radius: 20rpx;
+}
+
+.cktype .right {
+    border-top-right-radius: 20rpx;
+    border-bottom-right-radius: 20rpx;
+}
+
+.result {
+    margin-top: 15rpx;
+    padding-bottom: 100rpx;
+}
+
+.result .restab {
+    margin-bottom: 30rpx;
+}
+
+.result .tabitem {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.result .tabitem text {
+    font-size: 40rpx;
+    padding-bottom: 20rpx;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+
+.result .active text.tabtxt {
+    color: #ff0000;
+    border-bottom: 1rpx solid #ff0000;
+}
+
+.result .total {
+    text-align: center;
+}
+
+.result .total .num {
+    color: #ff0000;
+    font-size: 40rpx;
+}
+
+.result .per {
+    margin-top: 30rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.per .peritem {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.btitle {
+    border-bottom: #dadada 1rpx solid;
+    padding: 30rpx;
+    margin: 30rpx 0rpx;
+}
+
+.monthlist .item {
+    display: flex;
+    flex-direction: row;
+    font-size: 30rpx;
+}
+
+.monthlist .item view {
+    flex-grow: 1;
+    text-align: left;
+    width: 33.3%;
+}
+
+.monthlist .bhead {
+    font-size: 30rpx;
+    padding-bottom: 20rpx;
+}
+
+.monthlist .item view:first-child {
+    text-align: left;
+    padding-left: 30rpx;
+}

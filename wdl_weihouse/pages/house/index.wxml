@@ -1,0 +1,263 @@
+<import src="/wdl_weihouse/pages/templates/right_menu.wxml"></import>
+<view class="container" scrollY="true">
+    <view class="real" wx:if="{{house.thumbs}}">
+        <swiper autoplay="true" class="goodsimgs" duration="1000" indicatorDots="true" interval="3000">
+            <swiper-item wx:for="{{house.thumbs}}" wx:key="i">
+                <image bindtap="onPreviewImage" data-view="{{item}}" mode="aspectFill" src="{{item}}" style="width:100%; "></image>
+            </swiper-item>
+        </swiper>
+        <view bindtap="addfavorite" class="addfav" data-houseid="{{house.id}}">
+            <text class="iconfont icon-shoucang1"></text>
+        </view>
+        <view bindtap="onPreviewVrurl" class="viewpic" data-vrurl="{{house.vrurl}}" wx:if="{{house.vrurl}}">
+            <text class="iconfont icon-yanjing ft30"></text>
+            <text class="ft30"> VR</text>
+        </view>
+        <view class="sharepaper">
+            <navigator url="../share/paper?cate=sec&id={{house.id}}">
+                <text class="iconfont icon-fenxiang ft30"></text>
+                <text class="ft30"> 分享海报</text>
+            </navigator>
+        </view>
+    </view>
+    <view class="imagePathBox" hidden="{{maskHidden==false}}">
+        <image class="shengcheng" src="{{imagePath}}"></image>
+        <button bindtap="baocun" class="baocun">保存相册，分享到朋友圈</button>
+    </view>
+    <view class="mask" hidden="{{maskHidden==false}}"></view>
+    <view class="canvas-box" hidden="{{maskHidden==false}}">
+        <canvas canvasId="mycanvas" style="width: 375px;height: 667px;position:fixed;top:9999px"></canvas>
+    </view>
+    <block wx:if="{{house.id>0}}">
+        <import src="/wdl_weihouse/pages/templates/house_detail.wxml"></import>
+        <view class="goods-info">
+            <view class="dtitle">
+                <view class="bd">
+                    <text class="name">{{house.title}}</text>
+                    <text class="ptype" wx:if="{{house.ptype==1}}">个人</text>
+                </view>
+            </view>
+            <view class="subtitle">
+                <view class="t1">会员资料</view>
+                <view class="t2">
+                    <view class="share">
+                        <button class="share" openType="share">
+                            <view>
+                                <text class="iconfont icon-fenxiang1 ft40"></text>
+                                <text class="ft26"> 转发</text>
+                            </view>
+                        </button>
+                    </view>
+                    <view class="share">
+                        <view class="share2">
+                            <navigator url="../index/report?infoid={{house.id}}">
+                                <view>
+                                    <text class="iconfont icon-jubao ft30"></text>
+                                    <text class="ft26"> 举报  </text>
+                                </view>
+                            </navigator>
+                        </view>
+                    </view>
+                    <view class="share">
+                        <view class="share2">
+                            <view>
+                                <text class=" ft30"></text>
+                                <text class="ft26"> {{house.onclick}}浏览   </text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <template is="xie" data="{{house:house,groupid:groupid}}" wx:if="{{house.rent_type==0&&house.zhutype==1}}"></template>
+            <template is="xie" data="{{house:house,groupid:groupid}}" wx:elif="{{house.rent_type==2&&house.zhutype==1}}"></template>
+            <template is="sec" data="{{house:house,groupid:groupid}}" wx:elif="{{house.rent_type==0&&house.zhutype==0}}"></template>
+            <template is="zhu" data="{{house:house,groupid:groupid}}" wx:elif="{{house.rent_type==2&&house.zhutype==0}}"></template>
+            <template is="sp" data="{{house:house,groupid:groupid}}" wx:elif="{{house.rent_type==0&&house.zhutype==2}}"></template>
+            <template is="sp" data="{{house:house,groupid:groupid}}" wx:elif="{{house.rent_type==2&&house.zhutype==2}}"></template>
+            <template is="syi" data="{{house:house,groupid:groupid}}" wx:elif="{{house.rent_type==0&&house.zhutype==3}}"></template>
+        </view>
+    </block>
+    <view class="section broker" wx:if="{{house.broker}}">
+        <view class="user-menu">
+            <view class="item broker-info">
+                <navigator url="../broker/broker?id={{house.broker.id}}">
+                    <image class="broker-head" src="{{house.broker.avatar}}"></image>
+                    <view class="broker-name">
+                        <view class="texto1" wx:if="{{house.broker.company}}">
+                            <text class="ft26" style="color:#999">{{house.broker.company}}</text>
+                        </view>
+                        <view wx:else>
+                            <text class="ft26" style="color:#999">个人</text>
+                        </view>
+                        <view>
+                            <text class="ft30">{{house.broker.nickname}}</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+            <view class="item">
+                <view bindtap="callbroker" class="link" data-phone="{{house.broker.mobile}}">
+                    <text class="ft40 iconfont icon-dianhua"></text>
+                    <text>打电话</text>
+                </view>
+            </view>
+            <view class="item no-border">
+                <view class="link">
+                    <navigator url="feed?houseid={{house.id}}">
+                        <text class="ft40 iconfont icon-shijian"></text>
+                        <text>预约相亲</text>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="section">
+        <view class="th3">
+            <view class="bd">
+                <view class="th3-title ft35">会员个人独白</view>
+                <view bindtap="addfavorite" class="more" data-houseid="{{house.id}}">
+                    <text class="iconfont icon-shoucang1" style="font-size:40rpx;"></text>
+                    <text class="ft26">收藏房源 </text>
+                </view>
+            </view>
+        </view>
+        <view class="goods-info">
+            <view class="detail">
+                <video controls="true" danmuBtn="ture" enableDanmu="true" poster="{{house.thumb}}" src="{{house.videoinfo}}" wx:if="{{house.videoinfo}}"></video>
+                <video controls="true" danmuBtn="ture" enableDanmu="true" poster="{{house.thumb}}" src="{{house.video}}" wx:if="{{house.video}}"></video>
+                <rich-text nodes="{{house.description}}"></rich-text>
+            </view>
+        </view>
+    </view>
+    <view class="section">
+        <view class="th3">
+            <view class="bd">
+                <view class="th3-title ft35">看看大家怎么说</view>
+                <view class="more">
+                    <text class="ft26"></text>
+                </view>
+            </view>
+        </view>
+        <view class="nocomment" wx:if="{{comment_total==0}}">
+            <view>
+                <text>~暂无会员留言~</text>
+            </view>
+        </view>
+        <view class="commentlist" wx:else>
+            <view class="citem" wx:for="{{comments}}">
+                <view class="avatar">
+                    <image src="{{item.avater}}"></image>
+                </view>
+                <view class="citem-txt">
+                    <text>{{item.content}}</text>
+                    <text class="red">{{item.score}}</text>
+                </view>
+            </view>
+        </view>
+        <form bindreset="formReset" bindsubmit="formSubmit" reportSubmit="true">
+            <view class="comment">
+                <view class="bd-txt">描述信息真实</view>
+                <view class="star-pos">
+                    <view bindtap="changeColor1" class="stars  {{flag0>=1?'onn':''}}" data-index="1">
+                        <text class="iconfont icon-pingfen"></text>
+                    </view>
+                    <view bindtap="changeColor1" class="stars  {{flag0>=2?'onn':''}}" data-index="2">
+                        <text class="iconfont icon-pingfen"></text>
+                    </view>
+                    <view bindtap="changeColor1" class="stars  {{flag0>=3?'onn':''}}" data-index="3">
+                        <text class="iconfont icon-pingfen"></text>
+                    </view>
+                    <view bindtap="changeColor1" class="stars  {{flag0>=4?'onn':''}}" data-index="4">
+                        <text class="iconfont icon-pingfen"></text>
+                    </view>
+                    <view bindtap="changeColor1" class="stars  {{flag0>=5?'onn':''}}" data-index="5">
+                        <text class="iconfont icon-pingfen"></text>
+                    </view>
+                </view>
+            </view>
+            <view class="comment-txt">
+                <view class="comment-txt-bd">
+                    <textarea name="smalltext" placeholder="我有话要说，很喜欢" value="{{comment_smalltext}}"></textarea>
+                </view>
+                <view class="comment-txt-button">
+                    <button class="send-btn" disabled="{{issubmit==0?false:true}}" formType="submit"> 留 言</button>
+                </view>
+            </view>
+        </form>
+    </view>
+    <block wx:if="{{relation.length>0}}">
+        <import src="/wdl_weihouse/pages/templates/house_item.wxml"></import>
+        <view class="section">
+            <view class="th3">
+                <view class="bd">
+                    <view class="th3-title ft35">您可能喜欢这些房源</view>
+                    <view class="more">
+                        <navigator url="../house/search?type=2">
+                            <text class="ft26">查看更多 </text>
+                            <text class="iconfont icon-xiayibu"></text>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+            <view class="imagetxt">
+                <view class="item" wx:for="{{relation}}" wx:key="index">
+                    <template is="house-item" data="{{item:item}}"></template>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class="bbmenu">
+        <view class="item">
+            <view bindtap="addfavorite" class="bdbtn" data-houseid="{{house.id}}">
+                <view class="ft26">
+                    <view>
+                        <text class="iconfont icon-shoucang2 ft40"></text>
+                    </view>
+                    <view>
+                        <text class="ft26">收藏</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="bdbtn">
+                <view bindtap="maptodaohang" class="ft26">
+                    <view>
+                        <text class="iconfont icon-zuobiao ft40"></text>
+                    </view>
+                    <view>
+                        <text class="ft26">导航</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="bdbtn">
+                <navigator url="feed?houseid={{house.id}}">
+                    <view class="ft26">
+                        <view>
+                            <text class="iconfont icon-xiaoxizhongxin ft40"></text>
+                        </view>
+                        <view>
+                            <text class="ft26">相亲预约</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="item2">
+            <view bindtap="callbroker" class="bdbtn" data-phone="{{house.broker.mobile}}">
+                <view>
+                    <text class="iconfont icon-dianhua1"></text>
+                </view>
+                <view>
+                    <text> 电话咨询</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <template is="right_menu" data="{{showRightMenuOk:showRightMenuOk,rightmenu:adinfo.barlinkad.content}}"></template>
+</view>
+<code class="adunit" wx:if="{{adinfo.adunitid.place.isshow==1}}">
+    <ad unitId="{{adinfo.adunitid.content[2].unitid}}"></ad>
+</code>

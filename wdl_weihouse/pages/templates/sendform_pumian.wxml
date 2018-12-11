@@ -1,0 +1,146 @@
+<template name="sale_pumian">
+    <view class="pline">
+        <view class="pline-label">
+            <text class="red">生意转让标题 ：</text>
+        </view>
+        <view class="pline-input">
+            <input bindinput="bindKeyInput" class="oneinput" data-name="title" maxlength="80" name="title" placeholder="请填写发布信息展示标题" type="text" value="{{info.title}}"></input>
+            <input hidden="true" name="zhutype" value="3"></input>
+        </view>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text>所在区域：</text>
+        </view>
+        <view class="pull-left pickerbd w30 rel">
+            <picker bindchange="bindPicker_areas" range="{{search_areas}}" value="{{areas_index}}">
+                <view class="picker oneinput" id="areas">
+       {{search_areas[areas_index]}}
+      </view>
+            </picker>
+            <text class="iconfont icon-xiala xiala"></text>
+        </view>
+        <view class="pull-left w50" wx:if="{{search_quan.length>0}}">
+            <view class="pline-label tright pull-left w30">
+                <text> 街道 ： </text>
+            </view>
+            <view class="pull-left pickerbd w70 rel">
+                <picker bindchange="bindPicker_quan" range="{{search_quan[areas_index]}}" value="{{quan_index}}">
+                    <view class="picker oneinput" id="quan">
+       {{search_quan[areas_index][quan_index]}}
+      </view>
+                </picker>
+                <text class="iconfont icon-xiala xiala"></text>
+            </view>
+        </view>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text>地  址 ： </text>
+        </view>
+        <view class="pline-input pull-left w80">
+            <input bindinput="bindKeyInput" class="oneinput" data-name="village_name" maxlength="80" name="village_name" placeholder="请填写商铺地址" type="text" value="{{info.village_name}}"></input>
+        </view>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text>  转让类型：</text>
+        </view>
+        <view class="pull-left w50 rel">
+            <picker bindchange="bindPicker_sptype" data-name="sptype" range="{{search_sptype}}" value="{{sptype_index}}">
+                <view class="picker oneinput">
+         {{search_sptype[sptype_index]}}
+      </view>
+            </picker>
+            <text class="iconfont icon-xiala xiala"></text>
+        </view>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text>行业分类：</text>
+        </view>
+        <view class="pull-left pickerbd w30 rel">
+            <picker bindchange="bindPicker_hangye" range="{{search_hangye}}" value="{{hangye_index}}">
+                <view class="picker oneinput" id="hangye">
+       {{search_hangye[hangye_index]}}
+      </view>
+            </picker>
+            <text class="iconfont icon-xiala xiala"></text>
+        </view>
+        <view class="pull-left w50" wx:if="{{search_jingyin.length>0}}">
+            <view class="pull-left pickerbd w70 rel">
+                <picker bindchange="bindPicker_jingyin" range="{{search_jingyin[hangye_index]}}" value="{{jingyin_index}}">
+                    <view class="picker oneinput" id="jingyin">
+       {{search_jingyin[hangye_index][jingyin_index]}}
+      </view>
+                </picker>
+                <text class="iconfont icon-xiala xiala"></text>
+            </view>
+        </view>
+        <input hidden="true" name="disposition" value="{{info.disposition}}"></input>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text> 楼 层 ：</text>
+        </view>
+        <view class="pull-left tips-left">在</view>
+        <view class="pline-input pull-left w15">
+            <input bindinput="bindKeyInput" class="oneinput" data-name="storey" name="storey" placeholder="几" type="number" value="{{info.storey}}"></input>
+        </view>
+        <view class="pull-left tips">层 / 共</view>
+        <view class="pline-input pull-left w15">
+            <input bindinput="bindKeyInput" class="oneinput" data-name="total_storey" name="total_storey" placeholder="几" type="number" value="{{info.total_storey}}"></input>
+        </view>
+        <view class="pull-left tips">层</view>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text> 面  积 ： </text>
+        </view>
+        <view class="pline-input pull-left w20">
+            <input bindinput="bindKeyInput" class="oneinput" data-name="superficie" name="superficie" placeholder="" type="number" value="{{info.superficie}}"></input>
+        </view>
+        <view class="pull-left tips">平方米</view>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text>  租  金 ：</text>
+        </view>
+        <view class="pline-input pull-left w20">
+            <input bindinput="bindKeyInput" class="oneinput" data-name="loyer" name="loyer" placeholder="" type="digit" value="{{info.loyer}}"></input>
+            <input hidden="true" name="prix_unitaire" value="{{prix_unitaire_value}}"></input>
+        </view>
+        <view bindtap="sdropshow" class="pull-left tips rel">
+            <text>{{prix_unitaire_value}}</text>
+            <text class="iconfont icon-xiala"></text>
+            <view class="sdrop" hidden="{{sdropshow}}">
+                <view bindtap="sdropitem" class="sdrop-item" data-title="元/月">
+                    <text>元/月</text>
+                </view>
+                <view bindtap="sdropitem" class="sdrop-item" data-title="元/㎡/月">
+                    <text>元/㎡/月</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text>  装让费：</text>
+        </view>
+        <view class="pline-input pull-left w20">
+            <input bindinput="bindKeyInput" class="oneinput" data-name="dong" name="dong" placeholder="" type="digit" value="{{info.dong}}"></input>
+        </view>
+        <view class="pull-left tips">万元</view>
+    </view>
+    <view class="ptitle">
+        <view> 详细信息</view>
+    </view>
+    <view class="pline">
+        <view class="pline-label">
+            <text>  房源描述 ：</text>
+        </view>
+        <view class="textarea-wrp">
+            <textarea bindinput="bindKeyInput" class="textarea" data-name="description" maxlength="250" name="description" placeholder="请输入房源描述" value="{{info.description}}"></textarea>
+        </view>
+    </view>
+</template>

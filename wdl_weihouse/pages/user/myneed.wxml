@@ -1,0 +1,48 @@
+<import src="/wdl_weihouse/pages/templates/sendform_qiugou.wxml"></import>
+<import src="/wdl_weihouse/pages/templates/sendform_qiuzu.wxml"></import>
+<view class="container">
+    <view class="page-body clearfix">
+        <form bindreset="formReset" bindsubmit="formSubmit">
+            <view class="ptitle">
+                <view>
+                    <text>发布需求</text>
+                    <navigator class="more" openType="switchTab" url="../index/user">
+                        <text class="ft28"> 返回用户中心 </text>
+                    </navigator>
+                </view>
+            </view>
+            <template is="sendrom_need0" data="{{search_areas:search_areas,areas_index:areas_index,search_quan:search_quan,quan_index:quan_index,info:info,search_housetype:search_housetype,housetype_index:housetype_index,chaoxiang_index:chaoxiang_index,search_chaoxiang:search_chaoxiang,zhuang_index:zhuang_index,search_price:search_price,price_index:price_index,search_sufix:search_sufix,sufix_index:sufix_index,search_zhaungxiu:search_zhaungxiu,search_years:search_years,years_index:years_index,sdropshow:sdropshow,prix_unitaire_value:prix_unitaire_value}}" wx:if="{{rent_type==0&&zhutype==4}}"></template>
+            <template is="sendrom_need2" data="{{search_areas:search_areas,areas_index:areas_index,search_quan:search_quan,quan_index:quan_index,info:info,search_housetype:search_housetype,housetype_index:housetype_index,chaoxiang_index:chaoxiang_index,search_chaoxiang:search_chaoxiang,zhuang_index:zhuang_index,search_price:search_price,price_index:price_index,search_sufix:search_sufix,sufix_index:sufix_index,search_zhaungxiu:search_zhaungxiu,search_years:search_years,years_index:years_index,sdropshow:sdropshow,prix_unitaire_value:prix_unitaire_value}}" wx:if="{{rent_type==2&&zhutype==4}}"></template>
+            <view class="ptitle">
+                <view> 联系信息</view>
+            </view>
+            <view class="pline">
+                <view class="pline-label tright pull-left w20">
+                    <text>  联系人 ：</text>
+                </view>
+                <view class="pline-input pull-left w80">
+                    <input bindinput="bindKeyInput" class="oneinput" data-name="publish_name" name="publish_name" placeholder="房源联系人姓名" type="text" value="{{info.publish_name}}"></input>
+                </view>
+            </view>
+            <view class="pline">
+                <view class="pline-label tright pull-left w20">
+                    <text> 手机号 ：</text>
+                </view>
+                <view class="pline-input pull-left w80">
+                    <input disabled bindinput="bindKeyInput" class="oneinput" data-name="linkphone" name="linkphone" placeholder="请输入联系人手机号" type="text" value="{{info.linkphone}}"></input>
+                </view>
+            </view>
+            <view class="pline" wx:if="{{prive.needpay&&prive.credit_send_ok}}">
+                <view class="pline-label tright pull-left w20">
+                    <text>费用：</text>
+                </view>
+                <view class="pline-input pull-left w80">
+                    <text class="ft30" style="color:#ff0000">支付 {{prive.need_pay_credit}} 元 发布房源</text>
+                </view>
+            </view>
+            <view class="btn-area">
+                <button class="button" formType="submit" type="primary">发布需求</button>
+            </view>
+        </form>
+    </view>
+</view>

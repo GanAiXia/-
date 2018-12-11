@@ -1,0 +1,566 @@
+@import "../../../__wuBaseWxss__/6.wxss";
+
+page {
+    min-height: 100%;
+    background-color: #fff;
+}
+
+.container {
+    min-height: 100%;
+    background-color: #fff;
+}
+
+.searchbarbox {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+}
+
+.search-header {
+    width: 100%;
+    height: 75rpx;
+    display: flex;
+    padding: 0 10rpx;
+    font-size: 28rpx;
+    color: #333;
+    background-color: #f1f1f1;
+    z-index: 8;
+}
+
+.search-header .filter {
+    position: relative;
+    margin: 10rpx auto;
+    background-color: #ffffff;
+    border-radius: 5rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 28rpx;
+    display: -webkit-box;
+    -webkit-box-flex: 1;
+    width: 70%;
+}
+
+.search-header .search-btn {
+    position: absolute;
+    right: 5rpx;
+    top: 5rpx;
+    width: 80rpx;
+    background: #f1f1f1;
+    height: 50rpx;
+    line-height: 50rpx;
+    padding: 0;
+    margin: 0;
+    border-radius: 5rpx;
+    border-width: 0;
+    text-align: center;
+    color: #999;
+    font-size: 28rpx;
+}
+
+.search-header .icon {
+    position: absolute;
+    top: 1rpx;
+    left: 20rpx;
+    width: 40rpx;
+    height: 41rpx;
+    font-size: 32rpx;
+}
+
+.search-header .del {
+    position: absolute;
+    top: 3rpx;
+    right: 10rpx;
+    width: 53rpx;
+    height: 53rpx;
+    z-index: 10;
+}
+
+.bar_title {
+    font-size: 28rpx;
+    font-weight: bold;
+    margin-top: 10rpx;
+}
+
+.search-header {
+    background-color: #03A9F7;
+}
+
+.bar_title {
+    color: #fff;
+    text-align: right;
+}
+
+.search-header .keywrod {
+    position: absolute;
+    top: 0rpx;
+    left: 40rpx;
+    width: 376rpx;
+    height: 60rpx;
+    padding-left: 30rpx;
+}
+
+.search-house {
+    z-index: 1;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    position: relative;
+    height: 90rpx;
+}
+
+.search-con {
+    width: 100%;
+    background: #fff;
+    display: -webkit-box;
+    padding: 12rpx 0 0 0;
+    z-index: 9;
+}
+
+.search-con .flex-item {
+    width: 25%;
+    display: -webkit-box;
+    text-align: center;
+    height: 70rpx;
+    overflow: hidden;
+}
+
+.search-con .flex-item .flex-tab {
+    width: 100%;
+    text-align: center;
+    color: #1BA9BA;
+    font-size: 35rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+}
+
+.flex-con {
+    position: absolute;
+    left: 0;
+    top: 70rpx;
+    width: 100%;
+    background: #fff;
+    padding: 0rpx 0rpx;
+    z-index: 999;
+}
+
+.flex-con .flexli {
+    border-bottom: 1px solid #dadada;
+    padding: 20rpx 0;
+    font-size: 28rpx;
+    color: #777;
+}
+
+.serach-keywords .item.active {
+    color: #b4282d;
+    border: 1px solid #b4282d;
+}
+
+.search {
+    background-color: #f1f1f1;
+    transition: height 0.05s;
+    overflow: hidden;
+    padding: 15rpx 0;
+}
+
+.search .filter {
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    background-color: #ffffff;
+    border-radius: 10rpx;
+}
+
+.search .filter .icon {
+    display: inline-block;
+    margin-right: 15rpx;
+    font-size: 35rpx;
+    position: absolute;
+    left: 30rpx;
+    top: 12rpx;
+}
+
+.search .filter .keyword {
+    display: block;
+    position: relative;
+    height: 65rpx;
+    padding-top: 10rpx;
+    width: 90%;
+    overflow: hidden;
+}
+
+.search .filter input {
+    padding-left: 70rpx;
+    font-size: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    width: 100%;
+}
+
+.select_mask {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.search-house {
+    position: fixed;
+    top: 0rpx;
+    z-index: 1;
+    width: 100%;
+}
+
+.search-con {
+    width: 100%;
+    background: #fff;
+    display: -webkit-box;
+    padding: 0rpx 0rpx;
+    position: relative;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.search-con .w2 {
+    width: 22.25%;
+}
+
+.search-con .w1 {
+    width: 9%;
+}
+
+.search-con .flex-item {
+    display: -webkit-box;
+    text-align: center;
+    height: 70rpx;
+    overflow: hidden;
+}
+
+.search-con .flex-item .flex-tab {
+    width: 100%;
+    text-align: left;
+    color: #1BA9BA;
+    line-height: 70rpx;
+}
+
+.search-con .flex-item .flex-tab text {
+    font-size: 30rpx;
+    color: #1BA9BA;
+    margin-left: 30rpx;
+}
+
+.flex-tab text:last-child {
+    color: #ddd;
+    font-size: 24rpx;
+}
+
+.flex-con {
+    position: absolute;
+    left: 0;
+    top: 70rpx;
+    width: 100%;
+    background: #fff;
+    z-index: 999;
+}
+
+.flex-con .flexli {
+    border-bottom: 1px solid #dadada;
+    padding: 10rpx 0;
+    font-size: 28rpx;
+    padding-left: 10rpx;
+    color: #666;
+    display: inline-block;
+    width: 47.5%;
+    overflow: hidden;
+}
+
+.flex-con .flexli:last-child {
+    border-bottom: 1px solid #dadada;
+}
+
+.flex-con .sbox {
+    display: flex;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 0rpx;
+}
+
+.flex-con .sbox-more .sbox-db {
+    max-height: 600rpx;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.flex-con .sbox .sbox-title {
+    display: inline-block;
+    width: 30%;
+    font-size: 35rpx;
+    padding-top: 20rpx;
+}
+
+.flex-con .sbox .sbox-title text {
+    margin-left: 30rpx;
+}
+
+.flex-con .sbox-more {
+    display: block;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 20rpx;
+}
+
+.flex-con .sbox .sbox-con {
+    background-color: #efefef;
+    width: 70%;
+    padding-left: 10rpx;
+    padding-top: 20rpx;
+}
+
+.flex-con .sbox-title-more {
+    display: block;
+    font-size: 30rpx;
+    padding: 10rpx 0rpx 10rpx 30rpx;
+    padding-bottom: 20rpx;
+}
+
+.flex-con .sbox-con-item {
+    display: block;
+    padding-left: 20rpx;
+    padding-bottom: 30rpx;
+}
+
+.flex-con .flexli-btn {
+    display: inline-block;
+    margin: 0rpx 10rpx;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.flex-con .flexli-btn text {
+    background-color: #fff;
+    font-size: 26rpx;
+    padding: 5rpx 30rpx;
+    color: #777;
+    border: 1rpx solid #e1e1e1;
+    border-radius: 5rpx;
+}
+
+.flex-con .flexli-btn .active {
+    background-color: #1BA9BA;
+    color: #fff;
+    border: 1rpx solid #1BA9BA;
+    border-radius: 5rpx;
+}
+
+.flex-con .sbox-btn-bd {
+    display: block;
+    height: 80rpx;
+    border-top: 1px solid #e1e1e1;
+    padding: 20rpx 30rpx;
+    padding-bottom: 0rpx;
+}
+
+.flex-con .sbox-btn-bd .w5 {
+    width: 40%;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 5rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.sbox-btn-bd-reset {
+    border: #e1e1e1 1px solid;
+    font-size: 35rpx;
+    text-align: center;
+    float: left;
+}
+
+.sbox-btn-bd-submit {
+    border: #1BA9BA 1px solid;
+    font-size: 35rpx;
+    text-align: center;
+    float: right;
+    background-color: #1BA9BA;
+    color: #fff;
+}
+
+.sbox-title .active {
+    color: #1BA9BA;
+}
+
+.sbox-cate {
+    font-size: 30rpx;
+    line-height: 60rpx;
+}
+
+.section {
+    margin: 30rpx;
+    margin-left: 30rpx;
+}
+
+.imagetxt .item:last-child {
+    border-bottom: 0rpx;
+}
+
+.imagetxt .item {
+    width: 100%;
+    display: block;
+    border-bottom: 1rpx solid #f1f1f1;
+    padding-top: 20rpx;
+    padding-bottom: 30rpx;
+    position: relative;
+    min-height: 180rpx;
+}
+
+.imgtag {
+    position: absolute;
+    left: 0rpx;
+    top: 40rpx;
+    background-color: #000;
+    color: #fff;
+    opacity: 0.5;
+    padding: 0 10rpx;
+    font-size: 24rpx;
+}
+
+.imagetxt .item .img {
+    float: left;
+    width: 210rpx;
+    height: 160rpx;
+    margin-top: 10rpx;
+}
+
+.imagetxt .right2 {
+    margin-left: 240rpx;
+    display: block;
+}
+
+.newshop .housetitle .name {
+    font-weight: bold;
+    color: #000;
+}
+
+.imagetxt .housetitle {
+    line-height: 40rpx;
+    color: #212121;
+}
+
+.imagetxt .address {
+    color: #666;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    line-height: 40rpx;
+}
+
+.imagetxt .lin2 {
+    line-height: 40rpx;
+}
+
+.imagetxt .lin3 {
+    line-height: 40rpx;
+    overflow: hidden;
+}
+
+.imagetxt .xie text {
+    color: #000;
+}
+
+.imagetxt .red {
+    color: #ff0000;
+}
+
+.imagetxt .housetitle .ttype {
+    font-size: 26rpx;
+    padding: 0 10rpx;
+    margin-left: 10rpx;
+    border-radius: 5rpx;
+}
+
+.imagetxt .housetitle .onsale {
+    font-size: 26rpx;
+    padding: 0 10rpx;
+    margin-left: 10rpx;
+    border-radius: 5rpx;
+}
+
+.imagetxt .btags {
+    margin-top: 0rpx;
+    line-height: 40rpx;
+    height: 40rpx;
+}
+
+.imagetxt .btags text {
+    padding: 0rpx 5rpx;
+    text-align: center;
+    margin-right: 12rpx;
+    vertical-align: middle;
+    font-size: 24rpx;
+    border-radius: 10rpx;
+}
+
+.imagetxt .btags .keybg1 {
+    background: #D7F2FB;
+    color: #2EA0F1;
+}
+
+.imagetxt .btags .keybg0 {
+    background: #D7F2FB;
+    color: #2EA0F1;
+}
+
+.imagetxt .btags .keybg2 {
+    background: #D7F2FB;
+    color: #2EA0F1;
+}
+
+.imagetxt .btags .keybg3 {
+    background: #D7F2FB;
+    color: #67A4D9;
+}
+
+.imagetxt .pricebd {
+    position: absolute;
+    right: 0rpx;
+    top: 10rpx;
+    text-align: right;
+}
+
+.imagetxt .pricebd text {
+    display: block;
+}
+
+.imagetxt .pricebd .num {
+    color: #ff0000;
+    font-size: 30rpx;
+    font-weight: 400;
+}
+
+.imagetxt .pricebd .per {
+    font-size: 24rpx;
+    color: #666;
+}
+
+.th3 {
+    border-bottom: #dadada 1px solid;
+    padding-bottom: 20rpx;
+    height: 60rpx;
+}
+
+.th3 .th3-title {
+    float: left;
+}
+
+.th3 .more {
+    float: right;
+    color: #999;
+    font-size: 24rpx;
+    padding-top: 10rpx;
+}
+
+.th3 .more .iconfont {
+    font-size: 24rpx;
+}

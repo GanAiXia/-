@@ -1,0 +1,53 @@
+<view class="container">
+    <view class="search-header">
+        <view class="filter">
+            <view class="icon">
+                <text class="iconfont icon-sousuo"></text>
+            </view>
+            <input bindblur="search_keyword" class="keywrod" placeholder="请输入关键词" value="{{keyword}}"></input>
+            <button bindtap="search_goto" class="search-btn" formType="submit" type="default">搜索</button>
+        </view>
+    </view>
+    <view class="section">
+        <view class="broker" wx:for="{{result}}" wx:key="index">
+            <view class="bd">
+                <image class="broker-head" src="{{item.avatar}}"></image>
+                <view class="name">
+                    <navigator url="../broker/broker?id={{item.id}}">
+                        <view class="txt">
+                            <view class="text ">
+                                <text class="ft30">{{item.nickname}}</text>
+                                <text class="ele c1" wx:if="{{item.istop==1}}">顶</text>
+                                <text class="ele c2" wx:if="{{item.isyou==1}}">优</text>
+                                <text class="ele c3" wx:if="{{item.ischeng==1}}">诚</text>
+                            </view>
+                            <view class="text2">
+                                <text class="ft26">{{item.company}} </text>
+                            </view>
+                            <view class="renzheng" wx:if="{{item.groupid==2}}">
+                                <text class="ft32 iconfont icon-iconfont5"></text>
+                                <text class="ft28"> 已认证</text>
+                            </view>
+                        </view>
+                        <view class="labelbd">
+                            <view class="link">
+                                <text class="ft24"> {{item.secnum}}</text>
+                                <text class="ft24"> 套</text>
+                            </view>
+                            <view class="link">
+                                <text class="ft24 gray">房源</text>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="load_salelist" class="loadmore">
+    <view class="h">
+        <view style="text-align:center; width:100%;">
+            <text class="txt">{{loadmore}} </text>
+        </view>
+    </view>
+</view>

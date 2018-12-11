@@ -1,0 +1,290 @@
+<view class="container">
+    <view class="real" wx:if="{{house.house_face}}">
+        <swiper autoplay="true" class="faceimg" duration="1000" indicatorDots="true" interval="3000">
+            <swiper-item>
+                <image bindtap="onPreviewImageFace" mode="aspectFill" src="{{house.house_face}}" style="width:100%; "></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="section" style="padding-bottom:10rpx;" wx:if="{{house.newshouse_id}}">
+        <view class="th1 pdleft">
+            <view class="newshop">
+                <text class="lptitle ft45">{{house.house_title}} </text>
+                <text class="badge bage-blue1 ft24">{{house.house_nature[0]}}</text>
+                <text class="badge bage-green{{house.house_sale}} ft24">{{house.house_sale_tag}}</text>
+            </view>
+            <view class="alex-name">
+                <text class="t ft26">别名：{{house.house_old}}</text>
+            </view>
+            <view class="alex-label">
+                <text class="bd" wx:for="{{house.house_prowedt_all}}" wx:key="id">{{item}}</text>
+            </view>
+            <view class="lpaddress">
+                <view class="lpitem">
+                    <text class="txt">{{house.price_label}}：</text>
+                    <text class="num">{{house.price}}</text>
+                    <text class="ft24 time">{{house.tprice}}</text>
+                </view>
+                <view bindtap="showMapLocation" class="lpitem" data-point="{{shop.map_x}},{{shop.map_y}}">
+                    <text class="more iconfont icon-xiayibu"></text>
+                    <text class="txt">地址：</text>
+                    <text class="link">{{house.house_region}}-{{house.house_address}}</text>
+                </view>
+                <view class="lpitem">
+                    <text class="txt">开盘：</text>
+                    <text class="link" wx:if="{{house.house_startselldate}}">{{house.house_startselldate}}</text>
+                    <text class="link" wx:else> --</text>
+                </view>
+                <view class="lpitem" style="color:#ff0000" wx:if="{{groupid>0}}">
+                    <text class="txt"> 佣金：</text>
+                    <text class="num" wx:if="{{shop.shop_management}}"> {{shop.shop_management}} 元</text>
+                    <text class="link" wx:else> --</text>
+                </view>
+            </view>
+            <view class="youhui" wx:if="{{house.house_poster}}">
+                <view class="title">
+                    <text class="iconfont icon-wodehongbao"></text>
+                    <text class="ft28">{{house.house_poster}}</text>
+                </view>
+                <view class="more">
+                    <navigator url="../newshop/feed?hid={{house.newshouse_id}}&title={{house.house_title}}">
+                        <view class="btn">
+                            <text class="ft26">领优惠</text>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+            <view class="youhui" wx:else>
+                <view class="title">
+                    <text class="iconfont icon-wodehongbao"></text>
+                    <text class="ft28">暂无优惠信息</text>
+                </view>
+                <view class="more">
+                    <navigator url="../newshop/feed?hid={{house.newshouse_id}}&title={{house.house_title}}">
+                        <view class="btn">
+                            <text class="ft26">咨询</text>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{house.newshouse_id}}">
+        <view class="bar-more">
+            <text class="bar ft40">楼盘信息</text>
+            <view class="more ft28">
+                <navigator url="../newshop/detail?hid={{house.newshouse_id}}">查看全部 <text class="ft30 iconfont icon-xiayibu"></text>
+                </navigator>
+            </view>
+        </view>
+        <view class="baseinfo pdleft">
+            <view class="bline">
+                <text class="lbtxt ft28">开发商：</text>
+                <text class="ft28">{{house.house_developer}}</text>
+            </view>
+            <view class="bline">
+                <text class="lbtxt ft28">售楼地址：</text>
+                <text class="ft28">{{house.house_saleaddress}}</text>
+            </view>
+            <view class="bline">
+                <text class="lbtxt ft28">交房时间：</text>
+                <text class="ft28">{{house.house_xtel}} </text>
+            </view>
+            <view class="bline">
+                <text class="lbtxt ft28">产权年限：</text>
+                <text class="ft28">{{house.house_usetime}}</text>
+            </view>
+            <view class="bline">
+                <text class="lbtxt ft28"> 项目规划：</text>
+                <text class="ft28">{{house.house_roomcount}} ，容积率{{house.house_capacity}}，绿化率{{house.house_green}}%</text>
+            </view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{housepic.length>0}}">
+        <view class="bar-more">
+            <view class="more ft28">   
+       查看全部<text class="ft26 iconfont icon-xiayibu"></text>
+            </view>
+            <text class="bar ft40">楼盘相册</text>
+        </view>
+        <view style="width:100%; overflow:hidden;">
+            <scroll-view class="housepicbd pdleft" scrollX="true" style="width:710rpx; overflow:hidden;">
+                <view class="housepic-item" wx:for="{{housepic}}" wx:key="index">
+                    <image bindtap="onPreviewImage" class="housepic-image" data-type="xc" data-view="{{item.img_url}}" src="{{item.img_url}}"></image>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{ybf.length>0}}">
+        <view class="bar-more">
+            <navigator class="more " url="../newshop/hxlist?hid={{house.newshouse_id}}">
+                <view class="  ft28">   
+       查看是否有房<text class="ft26 iconfont icon-xiayibu"></text>
+                </view>
+            </navigator>
+            <text class="bar ft40">楼盘是否有房图</text>
+        </view>
+        <view style="width:100%; overflow:hidden;">
+            <scroll-view class="hxtu pdleft" scrollX="true" style="width:710rpx; overflow:hidden;">
+                <view class="housepic-item" wx:for="{{ybf}}" wx:key="index">
+                    <image bindtap="onPreviewImage" class="housepic-image" data-type="hxt" data-view="{{item.img_url}}" src="{{item.img_url}}"></image>
+                    <view class="housepic-name">
+                        <text class="ft28">{{item.name}}</text>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="section roombd" wx:if="{{roomlist.length>0}}">
+        <view class="bar-more">
+            <navigator class="more " url="../newshop/hxlist?hid={{house.newshouse_id}}">
+                <text class="ft28"> 查看全部<text class="ft26 iconfont icon-xiayibu"></text>
+                </text>
+            </navigator>
+            <text class="bar ft40">楼盘精选是否有房</text>
+        </view>
+        <scroll-view class="room pdleft" scrollX="true" style="width:710rpx; overflow:hidden;">
+            <view class="roomimg" wx:for="{{roomlist}}" wx:key="index">
+                <navigator url="../newshop/hxdetail?hid={{newhouse_id}}&id={{item.id}}">
+                    <view class="title">
+                        <text class="ft30">{{item.title}}</text>
+                    </view>
+                    <view class="area">
+                        <text class="ft28">建面{{item.mianji}}</text>
+                        <text class="ft28">{{item.chaoxiang}}</text>
+                    </view>
+                    <view class="price">
+                        <text class="ft28 fbr">{{item.totalprice}} </text>
+                        <text class="ft28">{{item.saleprice}} </text>
+                    </view>
+                    <view class="alex-label">
+                        <text class="bd" wx:for="{{item.tags_simple}}" wx:for-item="tag" wx:key="id">{{tag}}</text>
+                    </view>
+                </navigator>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="section" wx:if="{{house.saleinfo_total>0}}">
+        <view class="bar-more">
+            <navigator class="more " url="../newshop/saleinfo?hid={{house.newshouse_id}}">
+                <text class="ft28"> 查看全部<text class="ft26 iconfont icon-xiayibu"></text>
+                </text>
+            </navigator>
+            <text class="bar ft40">楼盘动态({{house.saleinfo_total}})</text>
+        </view>
+        <view class="pdleft">
+            <view class="timeline" wx:if="{{salelist.length>0}}">
+                <view class="line" wx:for="{{salelist}}" wx:key="index">
+                    <view class="time">
+                        <text class="dot"></text>
+                        <text class="txt ft30">{{item.addtime}}</text>
+                    </view>
+                    <view class="tags">
+                        <text class="ft26">{{item.tags_label}}</text>
+                    </view>
+                    <view class="line-title twoline">
+                        <text class="ft30"> {{item.title}}</text>
+                    </view>
+                    <view class="line-detail  twoline">
+                        <text class="ft28">{{item.newstext}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="section" style="margin-left:0;padding-left:0" wx:if="{{shop.map_x>0}}">
+        <view class="bar-more">
+            <text class="bar ft40">楼盘地图位置</text>
+            <view bindtap="showMapLocation" class="more ft28" data-point="{{shop.map_x}},{{shop.map_y}}">
+                <text>去导航</text>
+                <text class="ft30 iconfont icon-xiayibu"></text>
+            </view>
+        </view>
+        <map showLocation bindcontroltap="controltap" bindmarkertap="markertap" bindregionchange="regionchange" controls="{{controls}}" id="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" polyline="{{polyline}}" scale="16" style="width: 100%; height: 350rpx;"></map>
+    </view>
+    <view class="section mb0" wx:if="{{house.newshouse_id}}">
+        <view class="bar-more">
+            <text class="bar ft40">关注此楼盘的人还关注</text>
+        </view>
+    </view>
+    <scroll-view class="realhouse" scrollX="true" style="width:750rpx; overflow:hidden;">
+        <view class="fiximg" wx:for="{{relation}}" wx:key="index">
+            <navigator url="../newshop/index?id={{item.hid}}">
+                <image mode="aspectFill" src="{{item.house_face}}"></image>
+            </navigator>
+            <view class="title">
+                <text class="ft30">{{item.house_title}}</text>
+            </view>
+            <view class="area">
+                <text class="ft28">{{item.house_region}}</text>
+                <text class="ft28">{{item.house_address}}</text>
+            </view>
+            <view class="price">
+                <text class="ft28 fbr">{{item.price_label}}{{item.price}}</text>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="copy" wx:if="{{house.newshouse_id}}">
+        <text class="copyicon iconfont icon-tishi"></text>
+        <view class="info">
+            <text class="ft22"> {{storage.copyinfo}}</text>
+        </view>
+    </view>
+    <view class="bbmenu">
+        <view class="item">
+            <view bindtap="onAddfavorite" class="bdbtn" data-houseid="{{house.id}}">
+                <view class="ft26">
+                    <view>
+                        <text class="iconfont icon-shoucang2 ft40"></text>
+                    </view>
+                    <view>
+                        <text class="ft26">收藏</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="bdbtn">
+                <navigator url="../share/paper?cate=newshop&id={{house.id}}">
+                    <view class="ft26">
+                        <view>
+                            <text class="iconfont icon-fenxiang ft40"></text>
+                        </view>
+                        <view>
+                            <text class="ft26">分享海报</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="item">
+            <view class="bdbtn">
+                <navigator url="../newshop/feed?hid={{house.newshouse_id}}&title={{house.house_title}}">
+                    <view class="ft26">
+                        <view>
+                            <text class="iconfont icon-xiaoxizhongxin ft40"></text>
+                        </view>
+                        <view>
+                            <text class="ft26">看房预约</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="item2">
+            <view bindtap="callbroker" class="bdbtn" data-phone="{{house.house_selltelephone}}">
+                <view>
+                    <text class="iconfont icon-dianhua1 ft40"></text>
+                </view>
+                <view>
+                    <text class="ft26"> 电话咨询</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<code class="adunit" wx:if="{{adinfo.adunitid.place.isshow==1}}">
+    <ad unitId="{{adinfo.adunitid.content[2].unitid}}"></ad>
+</code>
+<import src="/wdl_weihouse/pages/templates/right_menu.wxml"></import>
+<template is="right_menu" data="{{showRightMenuOk:showRightMenuOk,rightmenu:adinfo.barlinkad.content}}"></template>

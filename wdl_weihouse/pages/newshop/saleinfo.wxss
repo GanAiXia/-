@@ -1,0 +1,144 @@
+.container {
+    color: #333;
+    font-family: -apple-system-font,"Helvetica Neue",sans-serif;
+    padding-bottom: 80rpx;
+}
+
+.section {
+    margin-bottom: 20rpx;
+    padding-top: 40rpx;
+    padding-left: 40rpx;
+    background-color: #fff;
+    padding-bottom: 40rpx;
+}
+
+.mt0 {
+    margin-top: 0px;
+    padding-top: 10px;
+}
+
+.cate {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cate .one {
+    display: inline-block;
+    padding-right: 20rpx;
+    height: 80rpx;
+    overflow: hidden;
+}
+
+.cate .one .btn {
+    border: 1px solid #dadada;
+    padding: 5rpx 20rpx;
+    font-size: 30rpx;
+    border-radius: 10rpx;
+    -webkit-boder-radius: 10rpx;
+}
+
+.cate .one .active {
+    border: 1px solid #37AA3A;
+    background-color: #37AA3A;
+    color: #fff;
+}
+
+.bar-tips {
+    padding-bottom: 20rpx;
+}
+
+.bar-tips .blue {
+    color: #67A4D9;
+}
+
+.timeline {
+    border-left: 1px solid #dadada;
+    padding-left: 30rpx;
+    margin-right: 30rpx;
+}
+
+.timeline .line {
+    margin-bottom: 30rpx;
+}
+
+.timeline .line .time {
+    position: relative;
+    line-height: 70rpx;
+    margin-top: 0rpx;
+    vertical-align: top;
+    height: 70rpx;
+}
+
+.timeline .line .time .txt {
+    font-size: 34rpx;
+}
+
+.timeline .tags {
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.timeline .tags text {
+    border: 1px solid #67A4D9;
+    border-radius: 10rpx;
+    background-color: #D7F2FB;
+    padding: 2rpx 10rpx;
+    color: #67A4D9;
+}
+
+.tbage1 {
+    background-color: #E8EEEE;
+    color: #7DA90B;
+    border: 1px solid #7DA90B;
+}
+
+.tbage4 {
+    background-color: #FDEFFE;
+    color: #7DA90B;
+    border: 1px solid #7DA90B;
+}
+
+.timeline .line .dot {
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 50%;
+    background: #999;
+    vertical-align: middle;
+    text-align: center;
+    border: 5rpx solid #fff;
+    display: inline-block;
+    position: absolute;
+    left: -42rpx;
+    top: 20rpx;
+}
+
+.timeline .line-title {
+    line-height: 40rpx;
+}
+
+.timeline .line-detail {
+    line-height: 40rpx;
+    margin-top: 15rpx;
+    color: #666;
+}
+
+.twoline {
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.loading {
+    margin-right: 30rpx;
+    text-align: center;
+    background-color: #f3f3f3;
+    padding: 10rpx;
+}
+
+.loading .msg {
+    font-size: 34rpx;
+    color: #67A4D9;
+}

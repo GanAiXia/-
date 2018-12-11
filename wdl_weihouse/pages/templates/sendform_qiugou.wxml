@@ -1,0 +1,121 @@
+<template name="sendrom_need0">
+    <view class="pline">
+        <view class="pline-label">
+            <text class="red">求购信息标题 ：</text>
+        </view>
+        <view class="pline-input">
+            <input bindinput="bindKeyInput" class="oneinput" data-name="title" maxlength="80" name="title" placeholder="请填写发布信息展示标题" type="text" value="{{info.title}}"></input>
+            <input hidden="true" name="zhutype" value="4"></input>
+        </view>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text>所在区域：</text>
+        </view>
+        <view class="pull-left pickerbd w30 rel">
+            <picker bindchange="bindPicker_areas" range="{{search_areas}}" value="{{areas_index}}">
+                <view class="picker oneinput" id="areas">
+       {{search_areas[areas_index]}}
+      </view>
+            </picker>
+            <text class="iconfont icon-xiala xiala"></text>
+        </view>
+        <view class="pull-left w50" wx:if="{{search_quan.length>0}}">
+            <view class="pline-label tright pull-left w30">
+                <text> 街道 ： </text>
+            </view>
+            <view class="pull-left pickerbd w70 rel">
+                <picker bindchange="bindPicker_quan" range="{{search_quan[areas_index]}}" value="{{quan_index}}">
+                    <view class="picker oneinput" id="quan">
+       {{search_quan[areas_index][quan_index]}}
+      </view>
+                </picker>
+                <text class="iconfont icon-xiala xiala"></text>
+            </view>
+        </view>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text> 意向小区： </text>
+        </view>
+        <view class="pline-input pull-left w80">
+            <input bindinput="bindKeyInput" class="oneinput" data-name="village_name" maxlength="80" name="village_name" placeholder="请填写小区名称" type="text" value="{{info.village_name}}"></input>
+        </view>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text> 户  型 ： </text>
+        </view>
+        <view class="pline-input pull-left w15">
+            <input bindinput="bindKeyInput" class="oneinput" data-name="room" name="room" placeholder="几" type="number" value="{{info.room}}"></input>
+        </view>
+        <view class="pull-left tips">室</view>
+        <view class="pline-input pull-left w15">
+            <input bindinput="bindKeyInput" class="oneinput" data-name="hall" name="hall" placeholder="几" type="number" value="{{info.hall}}"></input>
+        </view>
+        <view class="pull-left tips">厅</view>
+        <view class="pline-input pull-left w15">
+            <input bindinput="bindKeyInput" class="oneinput" data-name="garder" name="garder" placeholder="几" type="number" value="{{info.garder}}"></input>
+        </view>
+        <view class="pull-left tips">卫</view>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text>  类  型：</text>
+        </view>
+        <view class="pull-left w30 rel">
+            <picker bindchange="bindPicker_housetype" data-name="housetype" range="{{search_housetype}}" value="{{housetype_index}}">
+                <view class="picker oneinput">
+         {{search_housetype[housetype_index]}}
+      </view>
+            </picker>
+            <text class="iconfont icon-xiala xiala"></text>
+        </view>
+        <view class="pline-label tright pull-left w20">
+            <text>  朝  向：</text>
+        </view>
+        <view class="pull-left w30 rel">
+            <picker bindchange="bindPicker_chaoxiang" data-name="chaoxiang" range="{{search_chaoxiang}}" value="{{chaoxiang_index}}">
+                <view class="picker oneinput">
+         {{search_chaoxiang[chaoxiang_index]}}方向
+      </view>
+            </picker>
+            <text class="iconfont icon-xiala xiala"></text>
+        </view>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text>身高：</text>
+        </view>
+        <view class="pull-left pickerbd w80 rel">
+            <picker bindchange="bindPicker_sufix" range="{{search_sufix}}" value="{{sufix_index}}">
+                <view class="picker oneinput" id="sufix">
+       {{search_sufix[sufix_index]}}
+      </view>
+            </picker>
+            <text class="iconfont icon-xiala xiala"></text>
+        </view>
+    </view>
+    <view class="pline">
+        <view class="pline-label tright pull-left w20">
+            <text>意向价格：</text>
+        </view>
+        <view class="pull-left pickerbd w80 rel">
+            <picker bindchange="bindPicker_price" range="{{search_price}}" value="{{price_index}}">
+                <view class="picker oneinput" id="price">
+       {{search_price[price_index]}}
+      </view>
+            </picker>
+            <text class="iconfont icon-xiala xiala"></text>
+        </view>
+        <input hidden="true" name="disposition" value="{{info.disposition}}"></input>
+    </view>
+    <view class="pline">
+        <view class="pline-label">
+            <text>  求购需求 ：</text>
+        </view>
+        <view class="textarea-wrp">
+            <textarea bindinput="bindKeyInput" class="textarea" data-name="description" maxlength="250" name="description" placeholder="请填写需求……" value="{{info.description}}"></textarea>
+        </view>
+    </view>
+</template>

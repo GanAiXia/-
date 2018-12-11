@@ -1,0 +1,136 @@
+.container {
+    background-color: #fff;
+    height: auto;
+    padding-bottom: 20rpx;
+    min-height: 1000rpx;
+}
+
+.section {
+    padding-left: 30rpx;
+}
+
+.search {
+    background-color: #f1f1f1;
+    transition: height 0.05s;
+    overflow: hidden;
+    padding: 15rpx 0;
+}
+
+.search .filter {
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    background-color: #ffffff;
+    border-radius: 10rpx;
+}
+
+.search .filter .icon {
+    display: inline-block;
+    margin-right: 15rpx;
+    font-size: 35rpx;
+    position: absolute;
+    left: 30rpx;
+    top: 12rpx;
+}
+
+.search .filter .keyword {
+    display: block;
+    position: relative;
+    height: 65rpx;
+    padding-top: 10rpx;
+    width: 90%;
+    overflow: hidden;
+}
+
+.search .filter input {
+    padding-left: 70rpx;
+    font-size: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    width: 100%;
+}
+
+.search-con {
+    width: 100%;
+    background: #fff;
+    padding: 12rpx 0rpx;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.search-scroll {
+    white-space: nowrap;
+    display: flex;
+}
+
+.menuitem {
+    display: inline-block;
+    margin-left: 25rpx;
+    margin-right: 15rpx;
+}
+
+.search-con .active {
+    color: #0867B3;
+}
+
+.saleinfo {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    min-height: 100rpx;
+}
+
+.saleinfo .item {
+    border-top: 1px solid #f1f1f1;
+    margin: 20rpx 0px;
+    padding-top: 10rpx;
+    padding-bottom: 0rpx;
+    width: 100%;
+    min-height: 180rpx;
+}
+
+.saleinfo .item:first-child {
+    border-top: 0rpx;
+}
+
+.saleinfo .img {
+    margin-top: 10rpx;
+    float: left;
+    width: 220rpx;
+    height: 160rpx;
+}
+
+.saleinfo .right2 {
+    margin-left: 250rpx;
+    width: auto;
+}
+
+.saleinfo .housetitle {
+    line-height: 40rpx;
+    overflow: hidden;
+    margin-right: 20rpx;
+}
+
+.saleinfo .housetitle .name {
+    color: #333;
+}
+
+.saleinfo .address {
+    color: #999;
+}
+
+.loading {
+    margin-right: 30rpx;
+    text-align: center;
+    background-color: #f3f3f3;
+    padding: 10rpx;
+}
+
+.loading .msg {
+    font-size: 34rpx;
+    color: #67A4D9;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}

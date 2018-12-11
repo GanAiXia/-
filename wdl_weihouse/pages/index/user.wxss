@@ -1,0 +1,239 @@
+@import "../user/moneycenter.wxss";
+
+page {
+    height: 100%;
+    width: 100%;
+    background: #f4f4f4;
+}
+
+.section {
+    background: #fff;
+}
+
+.container {
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+}
+
+.user-menu {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+}
+
+.user-menu .item {
+    float: left;
+    width: 50%;
+    height: 147.5rpx;
+    border-right: 1px solid rgba(0,0,0,.15);
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.user-menu .item .a {
+    display: flex;
+    width: 100%;
+    padding-top: 10rpx;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-menu .item .iconfont {
+    font-size: 42rpx;
+}
+
+.user-menu .item.no-border {
+    border-right: 0;
+}
+
+.user-menu .item.item-bottom {
+    border-bottom: none;
+}
+
+.user-menu .txt {
+    display: block;
+    height: 24rpx;
+    width: 100%;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.member-photo {
+    flex-direction: row;
+    background-size: cover;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#0867B3,endColorStr=#42B6C4);
+    background: -moz-linear-gradient(top,#0867B3,#42B6C4);
+    background: -webkit-gradient(linear,0% 0%,0% 100%,from(#0867B3),to(#42B6C4));
+    background-image: -webkit-gradient(linear,left bottom,left top,color-start(0,#0867B3),color-stop(1,#42B6C4));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#0867B3', endColorstr='#42B6C4');
+    width: 100%;
+    height: 320rpx;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 30.25rpx;
+}
+
+.member-photo text {
+    color: #FFFFFF;
+    font-size: 25rpx;
+}
+
+.member-photo-img {
+    padding: 0rpx;
+    text-align: center;
+    width: 30%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.member-photo-img image {
+    width: 160rpx;
+    height: 160rpx;
+    transition: all 1.5s;
+    border-radius: 50%;
+}
+
+.member-photo-img image.active2 {
+    transform: rotateY(180deg);
+}
+
+.member-photo-left,.member-photo-right {
+    margin-top: 1.6em;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.member-photo-left text,.member-photo-right text {
+    font-size: 26rpx;
+    color: #ffffff;
+}
+
+.member-photo-right {
+    margin-right: 52rpx;
+}
+
+.bb2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-photo-name {
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.member-photo-address {
+    position: absolute;
+    right: 0.625rem;
+    bottom: 0.425rem;
+    height: 1.25rem;
+}
+
+.member-photo-address span {
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: #FFFFFF;
+}
+
+.member-photo-address i {
+    line-height: 0.625rem;
+    font-size: 0.625rem;
+    color: #FFFFFF;
+}
+
+.bt1 {
+    border-top: #dadada 1rpx solid;
+}
+
+.mt20 {
+    margin-top: 20rpx;
+}
+
+.bage-red {
+    background: #42B6C4;
+    color: #fff;
+    border-radius: 20rpx;
+    text-align: center;
+    padding: 0 10rpx;
+}
+
+.bartitle {
+    border-bottom: 1px solid #dddddd;
+    padding-left: 20rpx;
+    height: 80rpx;
+    line-height: 70rpx;
+    background: #fff;
+}
+
+.bartitle text.txt {
+    font-size: 28rpx;
+}
+
+.bartitle .ttt {
+    display: inline-block;
+}
+
+.bartitle .more {
+    float: right;
+    margin-right: 20rpx;
+    color: #999;
+}
+
+.bartitle .more text {
+    font-size: 26rpx;
+}
+
+.bd {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid #dadada;
+    padding: 20rpx;
+    min-height: 400rpx;
+    padding-bottom: 100rpx;
+}
+
+.ulselect {
+    border-bottom: 1px solid #dddddd;
+    padding-left: 0rpx;
+    height: 80rpx;
+    line-height: 70rpx;
+}
+
+.ulselect text {
+    font-size: 28rpx;
+}
+
+.ulselect text.iconfont {
+    font-size: 34rpx;
+}
+
+.ulselect .more {
+    float: right;
+    color: #999;
+    margin-right: 50rpx;
+    width: 100rpx;
+    text-align: right;
+}
+
+.btnxia {
+    line-height: 70rpx;
+    padding-right: 0rpx;
+    margin-right: -20rpx;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+.btnxia::after {
+    background: none;
+    border: none;
+}

@@ -1,0 +1,233 @@
+<import src="/wdl_weihouse/pages/templates/right_menu.wxml"></import>
+<view class="container">
+    <view class="search" wx:if="{{index_search}}">
+        <view class="bd">
+            <view class="drop">
+                <text>{{index_searchbar_txt}} </text>
+                <text class="font1"> ▼</text>
+            </view>
+            <view class="cbtn">
+                <navigator url="{{index_searchbar_jump_url}}">
+                    <view class="">
+                        <text class="iconfont icon-sousuo"></text>
+                        <text>{{index_search_place}}</text>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="banner" wx:if="{{index_slide_show}}">
+        <swiper autoplay="true" class="bgbanner" duration="1000" indicatorDots="true" interval="3000">
+            <swiper-item wx:for="{{banner}}" wx:key="i">
+                <image bindtap="onDefRedirect" data-appid="" data-type="redirect" data-url="{{item.link}}" mode="widthFix" src="{{item.url}}" style="width:100%; "></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="tongji" wx:if="{{pagedata.confmenu.totalinfo!=1}}">
+        <view class="bd">
+            <image class="icon" mode="aspectFit" src="/wdl_weihouse/static/images/tongji_icon.png"></image>
+            <view class="tongjitxt">
+                <text class="ft28">访问:<text class="num">{{storage.visited}}</text>次  </text>
+                <text class="ft28">房源:<text class="num">{{storage.totalinfo}}</text>条</text>
+            </view>
+            <view bindtap="bindtap_qiandao" class="qiandao">
+                <text>每日签到</text>
+            </view>
+        </view>
+    </view>
+    <view class="menu">
+        <code wx:for="{{navmenu}}" wx:key="id">
+            <view class="item{{pagedata.confmenu.menu_cols}}">
+                <navigator url="{{item.pathurl}}">
+                    <view class="item-icon">
+                        <view class="dao2" wx:if="{{item.iconpic}}">
+                            <image class="menu-img" mode="widthFix" src="{{item.iconpic}}"></image>
+                        </view>
+                        <view class="dao bg{{index+1}}" wx:else>
+                            <text class="iconfont {{item.icon}}"></text>
+                        </view>
+                    </view>
+                    <view class="dao-txt">{{item.name}}</view>
+                </navigator>
+            </view>
+        </code>
+    </view>
+    <view class="indexlink" wx:if="{{adinfo.indexlink.place.isshow}}">
+        <view class="indexlink_bd">
+            <view class="indexlink_item" wx:for="{{adinfo.indexlink.content}}" wx:key="i">
+                <text bindtap="onDefRedirect" class="link-name" data-appid="{{item.appid}}" data-type="redirect" data-url="{{item.url}}">{{item.txtname}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="section" style="padding-top:10rpx;" wx:if="{{index_tongji}}">
+        <view class="th3">
+            <view class="bd">
+                <view class="th3-title ft35">{{storage.settingdata.cityname}}最新房价</view>
+                <view class="more">
+                    <navigator url="../news/index">
+                        <text class="ft26">查看全部 </text>
+                        <text class="iconfont icon-xiayibu"></text>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+        <view class="th4 flex">
+            <view class="pricebox" style="border-right:1rpx solid #e1e1e1; margin-right:20rpx;">
+                <view class="bd1">
+                    <text class="bdtxt ft28">新房均价</text>
+                    <view class="bdsmall">
+                        <text class=" ft30 ">{{pagedata.indexprice.newhouse.price}}</text>
+                        <text class="wen ft26">元/平米</text>
+                    </view>
+                </view>
+                <view class="bd">
+                    <text class="bdtxt ft28">上周成交</text>
+                    <view class="bdsmall">
+                        <text class="ft30">{{pagedata.indexprice.newhouse.total}}</text>
+                        <text class="wen ft26">套</text>
+                    </view>
+                </view>
+            </view>
+            <view class="pricebox">
+                <view class="bd1">
+                    <text class="bdtxt ft28">男士征婚均价</text>
+                    <view class="bdsmall">
+                        <text class=" ft30 ">{{pagedata.indexprice.sechouse.price}}</text>
+                        <text class="wen ft26">元/平米</text>
+                    </view>
+                </view>
+                <view class="bd">
+                    <text class="bdtxt ft28">上周成交</text>
+                    <view class="bdsmall">
+                        <text class="ft30">{{pagedata.indexprice.sechouse.total}}</text>
+                        <text class="wen ft26">套</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style=" border-top:10rpx solid #f1f1f1;" wx:if="{{adinfo.index0.place.isshow}}">
+        <view class="ad_title" wx:if="{{adinfo.index0.place.barname}}">
+            <text class="th3-title ft35">{{adinfo.index0.place.barname}}</text>
+        </view>
+        <swiper autoplay="true" class="adindex0" duration="1000" indicatorDots="true" interval="3000">
+            <swiper-item wx:for="{{adinfo.index0.content}}" wx:key="i">
+                <image bindtap="onDefRedirect" data-appid="{{item.appid}}" data-type="redirect" data-url="{{item.url}}" mode="scaleToFill" src="{{item.thumb}}" style="width:100%; "></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="section" style=" border-top:10rpx solid #f1f1f1; ">
+        <block wx:if="{{newhouse.length>0}}">
+            <import src="/wdl_weihouse/pages/templates/newshop_item.wxml"></import>
+            <view data-panel="判断新房有就显示">
+                <view class="th3">
+                    <view class="bd">
+                        <view class="th3-title ft35">新楼盘推荐</view>
+                        <view class="more">
+                            <navigator url="../newshop/search">
+                                <text class="ft26">查看全部 </text>
+                                <text class="iconfont icon-xiayibu"></text>
+                            </navigator>
+                        </view>
+                    </view>
+                </view>
+                <view class="imagetxt newshop">
+                    <template is="newshop_item" data="{{newhouse:newhouse}}"></template>
+                </view>
+                <view class="loadmore">
+                    <navigator url="../newshop/search">
+                        <text class="txt">查看更多新房</text>
+                    </navigator>
+                </view>
+            </view>
+        </block>
+        <view data-panel="判断精选男士征婚有就显示" wx:if="{{hotHouse.length>0}}">
+            <view class="th3">
+                <view class="bd">
+                    <view class="th3-title ft35">精品房源推荐</view>
+                    <view class="more">
+                        <navigator url="../house/search">
+                            <text class="ft26">查看全部 </text>
+                            <text class="iconfont icon-xiayibu"></text>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+            <view class="imagetxt">
+                <view class="item" wx:for="{{hotHouse}}" wx:key="index">
+                    <navigator url="../house/index?id={{item.id}}">
+                        <image backgroundSize="cover" class="img" src="{{item.thumb}}"></image>
+                        <view class="right2">
+                            <view class="housetitle">
+                                <text class="name ft30">{{item.title}}</text>
+                            </view>
+                            <view class="address">
+                                <text class="ft26" wx:if="{{item.room}}">{{item.room}}房{{item.hall}}厅</text>
+                                <text class="ft26" wx:if="{{item.superficie}}"> / {{item.superficie}}㎡</text>
+                                <text class="ft26" wx:if="{{item.donner_sur}}"> / {{item.donner_sur}}</text>
+                                <view class="pricebd">
+                                    <text class="num"> {{item.loyer}} {{item.prix_unitaire}}  </text>
+                                    <text class="per" wx:if="{{item.perprice}}">{{item.perprice}}元/㎡</text>
+                                </view>
+                            </view>
+                            <view class="btags">
+                                <text class="keybg{{id}} ft26" wx:for="{{item.tags}}" wx:for-index="id" wx:for-item="tag" wx:key="id">{{tag}} </text>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+            <view class="loadmore">
+                <navigator url="../house/search">
+                    <text class="txt">查看更多男士征婚</text>
+                </navigator>
+            </view>
+        </view>
+        <view data-panel="判断有女士征婚有就显示" wx:if="{{hotzhu.length>0}}">
+            <view class="th3">
+                <view class="bd">
+                    <view class="th3-title ft35">女士征婚房源推荐</view>
+                    <view class="more">
+                        <navigator url="../house/zhu">
+                            <text class="ft26">查看全部 </text>
+                            <text class="iconfont icon-xiayibu"></text>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+            <view class="imagetxt">
+                <view class="item" wx:for="{{hotzhu}}" wx:key="index">
+                    <text class="imgtag">精选</text>
+                    <navigator url="../house/index?id={{item.id}}">
+                        <image backgroundSize="cover" class="img" src="{{item.thumb}}"></image>
+                        <view class="right2">
+                            <view class="housetitle">
+                                <text class="name ft30">{{item.title}}</text>
+                            </view>
+                            <view class="address">
+                                <text class="ft26" wx:if="{{item.village_name}}"> {{item.village_name}}</text>
+                                <text class="ft26" wx:if="{{item.room}}">   {{item.room}}房{{item.hall}}厅</text>
+                                <text class="ft26" wx:if="{{item.superficie}}">   {{item.superficie}}㎡</text>
+                            </view>
+                            <view class="zupirce">
+                                <view class="zupricebd">
+                                    <text class="per">年薪</text>
+                                    <text class="num"> {{item.loyer}} {{item.prix_unitaire}}   </text>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+            <view class="loadmore">
+                <navigator url="../house/zhu">
+                    <text class="txt">查看更多女士征婚</text>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <code class="adunit" wx:if="{{adinfo.adunitid.place.isshow==1}}">
+        <ad unitId="{{adinfo.adunitid.content[0].unitid}}"></ad>
+    </code>
+    <template is="right_menu" data="{{showRightMenuOk:showRightMenuOk,rightmenu:adinfo.barlinkad.content}}"></template>
+</view>

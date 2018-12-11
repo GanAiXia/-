@@ -1,0 +1,71 @@
+<view class="container">
+    <form bindreset="formReset" bindsubmit="formSubmit">
+        <view class="section" wx:if="{{scence}}">
+            <view class="feedtitle">
+                <view class="more">
+                    <text>详情</text>
+                </view>
+                <view class="h1">
+                    <text>预约咨询</text>
+                </view>
+            </view>
+            <view class="h1desc">
+                <text class="ft30">
+        请正确填写您的信息，我们联系您看房!
+        </text>
+            </view>
+        </view>
+        <view class="section" wx:else>
+            <view class="feedtitle">
+                <view class="more">
+                    <text>详情</text>
+                </view>
+                <view class="h1">
+                    <text>推广海报设置</text>
+                </view>
+            </view>
+            <view class="h1desc">
+                <text class="ft30">
+           姓名和手机号码，显示在海报上，方便客户联系您。
+        </text>
+            </view>
+        </view>
+        <view class="bd">
+            <view class="ulselect">
+                <view class="more">
+                    <input class="inputbox" name="username" placeholder="您的姓名" type="text" value="{{shareuser.name}}"></input>
+                </view>
+                <view class="labelt">
+                    <text class="txt"> 姓名 ：</text>
+                </view>
+            </view>
+            <view class="ulselect">
+                <view class="more">
+                    <input class="inputbox" name="mobile" placeholder="您的手机号" type="text" value="{{shareuser.mobile}}"></input>
+                </view>
+                <view class="labelt">
+                    <text class="txt"> 手机号： </text>
+                </view>
+            </view>
+            <view class="ulselect">
+                <view class="more">
+                    <input class="inputbox" name="identify" placeholder="您的证件号（选填）" type="text" value="{{shareuser.identify}}"></input>
+                </view>
+                <view class="labelt">
+                    <text class="txt"> 身份证号： </text>
+                </view>
+            </view>
+            <view class="btnbd">
+                <button class="btn ft30" formType="submit" hoverClass="other-button-hover" type="default"> 保存 </button>
+            </view>
+            <view class="btnbd" wx:if="{{scence}}">
+                <button bindtap="gobackview" class="btn ft30" hoverClass="other-button-hover" type="default">  暂时不需要，继续浏览房源 </button>
+            </view>
+        </view>
+    </form>
+    <view class="section">
+        <view class="h1desc">
+            <text class="ft30"></text>
+        </view>
+    </view>
+</view>

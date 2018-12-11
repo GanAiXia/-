@@ -1,0 +1,163 @@
+<view class="container">
+    <view class="section">
+        <view class="detail">
+            <text class="ft35">{{house.house_title}}</text>
+        </view>
+        <view class="ditem">
+            <view class="intro">
+                <text>{{house.house_introduce}}</text>
+            </view>
+        </view>
+        <view class="ditem">
+            <text class="label">楼盘状态</text>
+            <text class="info">{{house.house_sale_tag}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">参考价格</text>
+            <text class="info">{{house.price_label}}{{house.price}} {{house.tprice}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">最新开盘</text>
+            <text class="info">{{house.house_startselldate}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">交房时间</text>
+            <text class="info">{{house.house_xtel}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">预售许可</text>
+            <text class="info">{{house.house_license}}
+          {{house.house_memo}}</text>
+        </view>
+    </view>
+    <view class="section">
+        <view class="notb ditem">
+            <text class="label">区域位置</text>
+            <text class="info">{{house.house_region}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">楼盘地址</text>
+            <text class="info">{{house.house_address}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">售楼部地址</text>
+            <text class="info">{{house.house_saleaddress}}</text>
+        </view>
+    </view>
+    <view class="section">
+        <view class="notb ditem">
+            <text class="label">接待时间</text>
+            <text class="info">{{house.house_worktime}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">销售热线</text>
+            <text class="info">{{house.house_selltelephone}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">可贷款银行</text>
+            <text class="info">{{house.house_bank}}</text>
+        </view>
+    </view>
+    <view class="section">
+        <view class="notb ditem">
+            <text class="label">建筑类型</text>
+            <text class="info">{{house.house_type}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">产权年限</text>
+            <text class="info">{{house.house_usetime}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">占地身高</text>
+            <text class="info">{{house.house_totalarea}}</text>
+        </view>
+        <view class=" ditem">
+            <text class="label">建筑身高</text>
+            <text class="info">{{house.house_builtuparea}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">容积率</text>
+            <text class="info">{{house.house_capacity}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">绿化率</text>
+            <text class="info">{{house.house_green}}%</text>
+        </view>
+        <view class=" ditem">
+            <text class="label">规划户数</text>
+            <text class="info">{{house.house_roomcount}} </text>
+        </view>
+        <view class="ditem">
+            <text class="label">规划车位</text>
+            <text class="info">{{house.house_parking}}</text>
+        </view>
+    </view>
+    <view class="section">
+        <view class="notb ditem">
+            <text class="label">物业类型</text>
+            <text class="info">{{house.house_nature}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">物业公司</text>
+            <text class="info">{{house.house_property}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">物业费</text>
+            <text class="info">{{house.house_propertyprice}}</text>
+        </view>
+        <view class=" ditem">
+            <text class="label">周边校区</text>
+            <text class="info">{{house.house_zb_xiaoxue}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">周边配套</text>
+            <text class="info">{{house.house_zb_shop}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">幼儿园</text>
+            <text class="info">{{house.house_zb_youeryuan}}</text>
+        </view>
+    </view>
+    <view class="section">
+        <view class="notb ditem">
+            <text class="label">开发商</text>
+            <text class="info"> {{house.house_developer}} </text>
+        </view>
+        <view class=" ditem">
+            <text class="label">开发商介绍</text>
+            <text class="info">{{house.house_devsynopsis}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">投资商</text>
+            <text class="info">{{house.house_touzi}}</text>
+        </view>
+    </view>
+    <view class="section">
+        <view class="notb ditem">
+            <text class="label">建筑商</text>
+            <text class="info">{{house.house_constructor}}</text>
+        </view>
+        <view class=" ditem">
+            <text class="label">建筑商介绍</text>
+            <text class="info">{{house.house_consynopsis}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">设计风格</text>
+            <text class="info">{{house.house_design_type}}</text>
+        </view>
+        <view class="ditem">
+            <text class="label">景观规划</text>
+            <text class="info">{{house.house_design_corp}}</text>
+        </view>
+        <view class=" ditem">
+            <text class="label">设计公司</text>
+            <text class="info">{{house.house_design_company}}</text>
+        </view>
+    </view>
+    <view class="copy">
+        <text class="copyicon iconfont icon-tishi"></text>
+        <view class="info">
+            <text class="ft22"> {{storage.copyinfo}}</text>
+        </view>
+    </view>
+</view>

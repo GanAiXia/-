@@ -1,0 +1,38 @@
+<view class="container">
+    <view class="section">
+        <view class="cate">
+            <view class="one" wx:for="{{category}}" wx:key="index">
+                <text bindtap="change_category" class="btn {{tags==item.tags?'active':''}}" data-index="{{item.tags}}" wx:if="{{item.tags==0||item.total>0}}">{{item.name}}({{item.total}})</text>
+            </view>
+        </view>
+    </view>
+    <view class="section">
+        <view class="bar-tips">
+            <text class="ft26 iconfont icon-tishi"></text>
+            <text class="ft26"> 楼盘资讯</text>
+            <text class="ft26 blue"> 免责申明</text>
+        </view>
+        <view class="timeline">
+            <view class="line" wx:for="{{salelist}}" wx:key="index">
+                <view class="time">
+                    <text class="dot"></text>
+                    <text class="txt ft30">{{item.showtime}}</text>
+                </view>
+                <view class="tags">
+                    <text class="ft26 tbage{{item.tags}}">{{item.category}}</text>
+                </view>
+                <view class="line-title twoline">
+                    <text class="ft30"> {{item.title}}</text>
+                </view>
+                <view class="line-detail ">
+                    <text class="ft28">{{item.newstext}}</text>
+                </view>
+            </view>
+        </view>
+        <view bindtap="load_salelist" class="loading">
+            <text class="msg">{{loadmore}}</text>
+        </view>
+    </view>
+</view>
+<import src="/wdl_weihouse/pages/templates/right_menu.wxml"></import>
+<template is="right_menu" data="{{showRightMenuOk:showRightMenuOk,rightmenu:adinfo.barlinkad.content}}"></template>

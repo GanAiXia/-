@@ -1,0 +1,41 @@
+<import src="/wdl_weihouse/pages/templates/right_menu.wxml"></import>
+<view class="container">
+    <view class="section margin0 borderbg">
+        <view class="cate ">
+            <view class="one" wx:for="{{category}}" wx:key="index">
+                <text bindtap="change_category" class="btn {{tags==item.tags?'active':''}}" data-index="{{item.tags}}" wx:if="{{item.tags==0||item.total>0}}">{{item.name}}({{item.total}})</text>
+            </view>
+        </view>
+    </view>
+    <view class="section mt10">
+        <view class="imagetxt">
+            <view class="item" wx:for="{{salelist}}" wx:key="index">
+                <navigator url="../newshop/hxdetail?id={{item.id}}&hid={{item.newhouse_id}}">
+                    <image backgroundSize="cover" class="img" src="{{item.thumb}}"></image>
+                    <view class="right2">
+                        <view class="housetitle">
+                            <text class="name ft35">{{item.title}} </text>
+                            <text class="bage-blue1 ft24">在售</text>
+                        </view>
+                        <view class="address">
+                            <text class="ft24">{{item.mianji}} </text>
+                            <text class="ft24">/ {{item.chaoxiang}} </text>
+                            <text class="ft24">/{{item.huxingjiegou}}</text>
+                        </view>
+                        <view class="btags">
+                            <text class="wordbox" wx:for="{{item.tags}}" wx:for-item="val">{{val}}</text>
+                        </view>
+                        <view class="pricebd">
+                            <text class="num"> {{item.totalprice}}  </text>
+                            <text class="per">{{item.saleprice}} </text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view bindtap="load_salelist" class="loading">
+            <text class="msg">{{loadmore}}</text>
+        </view>
+    </view>
+    <template is="right_menu" data="{{showRightMenuOk:showRightMenuOk,rightmenu:adinfo.barlinkad.content}}"></template>
+</view>

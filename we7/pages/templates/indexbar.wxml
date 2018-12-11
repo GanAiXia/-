@@ -1,0 +1,22 @@
+<template name="indexBar">
+    <view class="indexbar-bottom" style="background-color:{{backgroundColor}};border-color:{{borderStyle}}" wx:if="{{list}}">
+        <block wx:for="{{list}}" wx:key="{{index}}">
+            <view class="indexbar-bottomitem  {{item.extend}}" hoverClass="active" wx:if="{{item.pageUrl=='/'+thisurl}}">
+                <navigator hoverClass="active" openType="{{item.navigate}}" url="{{item.pagePath}}">
+                    <view class="item-icon">
+                        <text class="{{item.iconselect}}" style="color: {{selectedColor}};"></text>
+                    </view>
+                    <view class="item-text" style="color: {{selectedColor}};">{{item.text}}</view>
+                </navigator>
+            </view>
+            <view class="indexbar-bottomitem  {{item.extend}}" hoverClass="active" wx:else>
+                <navigator hoverClass="active" openType="{{item.navigate}}" url="{{item.pagePath}}">
+                    <view class="item-icon">
+                        <text class="{{item.icon}}"></text>
+                    </view>
+                    <view class="item-text" style="color: {{color}}">{{item.text}}</view>
+                </navigator>
+            </view>
+        </block>
+    </view>
+</template>

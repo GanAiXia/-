@@ -1,0 +1,48 @@
+<template name="houselist">
+    <view class="item-bd">
+        <view class="right3">
+            <view class="housetitle">
+                <text class="name ft32">
+                    <text style="color:red" wx:if="{{item.istop==1}}">顶</text> {{item.title}}</text>
+            </view>
+            <view class="address">
+                <view>
+                    <text class="ft26">需求：</text>
+                    <text class="ft26" wx:if="{{item.disposition}}">{{item.disposition}} </text>
+                </view>
+                <view>
+                    <text class="ft26"> {{item.house_type}}  </text>
+                    <text class="ft26"> / {{item.area}} </text>
+                    <text class="ft26">/ {{item.quan}} </text>
+                    <text class="ft26">/ {{item.village_name}} </text>
+                </view>
+                <view class="pricebd">
+                    <text class="num"> {{item.loyer}}   {{item.prix_unitaire}}</text>
+                </view>
+            </view>
+            <view class="address">
+                <text class="ft26">{{item.add_time}} 发布 </text>
+                <text class="ft26">  浏览{{item.onclick}} 次</text>
+                <text class="keybg2 ft26" wx:if="{{item.isdelete==1}}"> 审核中</text>
+                <text class="keybg2 ft26" wx:elif="{{item.isdelete==2}}"> 审核失败</text>
+                <text class="keybg2 ft26" wx:else> 审核中</text>
+            </view>
+        </view>
+    </view>
+    <view class="btags">
+        <view class="btags-bd">
+            <view bindtap="manage" class=" btn" data-infoid="{{item.id}}" data-key="{{index}}" data-op="delete">
+                <text>删除</text>
+            </view>
+            <view bindtap="manage" class=" btn" data-infoid="{{item.id}}" data-key="{{index}}" data-op="down" data-value="{{item.isonline}}" wx:if="{{item.isonline==1&&item.isdelete==0}}">
+                <text>显示</text>
+            </view>
+            <view bindtap="manage" class="keybg4 btn" data-infoid="{{item.id}}" data-key="{{index}}" data-op="down" data-value="{{item.isonline}}" wx:if="{{item.isonline==0&&item.isdelete==0}}">
+                <text>下架</text>
+            </view>
+            <view bindtap="manage" class=" btn" data-infoid="{{item.id}}" data-key="{{index}}" data-op="edit" data-type="{{item.rent_type}}">
+                <text> 修改</text>
+            </view>
+        </view>
+    </view>
+</template>

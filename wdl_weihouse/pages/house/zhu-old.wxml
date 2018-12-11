@@ -1,0 +1,101 @@
+<scroll-view class="container" style="height: 100%;">
+    <view class="search-header">
+        <text class="bar_title">女士征婚</text>
+        <view class="filter">
+            <view class="icon">
+                <text class="iconfont icon-sousuo"></text>
+            </view>
+            <input bindblur="search_keyword" class="keywrod" placeholder="请输入搜索内容" value="{{keyword}}"></input>
+            <button bindtap="search_nav" class="search-btn" formType="submit" type="default">搜索</button>
+        </view>
+    </view>
+    <view class="search-house">
+        <view class="search-con">
+            <view class="flex-item">
+                <view bindtap="chagetab" class="flex-tab" data-index="1">
+                    <text>{{areas_label}}</text>
+                    <text wx:if="{{currentIndex==1}}">▲</text>
+                    <text wx:else> ▼ </text>
+                </view>
+            </view>
+            <view class="flex-item">
+                <view bindtap="chagetab" class="flex-tab" data-index="2">
+                    <text>{{price_label}}</text>
+                    <text wx:if="{{currentIndex==2}}">▲</text>
+                    <text wx:else> ▼ </text>
+                </view>
+            </view>
+            <view class="flex-item">
+                <view bindtap="chagetab" class="flex-tab" data-index="3">
+                    <text>{{sufix_label}}</text>
+                    <text wx:if="{{currentIndex==3}}">▲</text>
+                    <text wx:else> ▼ </text>
+                </view>
+            </view>
+            <view class="flex-item">
+                <view bindtap="chagetab" class="flex-tab" data-index="4">
+                    <text>{{room_label}}</text>
+                    <text wx:if="{{currentIndex==4}}">▲</text>
+                    <text wx:else> ▼ </text>
+                </view>
+            </view>
+        </view>
+        <view class="select_mask"></view>
+        <view class="flex-con ">
+            <view class="sbox" wx:if="{{currentIndex==1}}">
+                <view bindtap="search_nav" class="flexli" data-index="areas" data-label="不限制" data-txt="" data-type="0">不限制</view>
+                <view bindtap="search_nav" class="flexli" data-index="areas" data-label="{{index}}" data-txt="{{item}}" data-type="0" wx:for="{{search_areas}}" wx:key="index">{{index}}</view>
+            </view>
+            <view class="sbox" wx:if="{{currentIndex==2}}">
+                <view bindtap="search_nav" class="flexli" data-index="price" data-label="不限制" data-txt="0-0" data-type="1">不限制</view>
+                <view bindtap="search_nav" class="flexli" data-index="price" data-label="{{index}}" data-txt="{{item}}" data-type="1" wx:for="{{search_price}}" wx:key="index">{{index}}</view>
+            </view>
+            <view class="sbox" wx:if="{{currentIndex==3}}">
+                <view bindtap="search_nav" class="flexli" data-index="sufix" data-label="不限制" data-txt="0-0" data-type="1">不限制</view>
+                <view bindtap="search_nav" class="flexli" data-index="sufix" data-label="{{index}}" data-txt="{{item}}" data-type="1" wx:for="{{search_sufix}}" wx:key="index">{{index}}</view>
+            </view>
+            <view class="sbox" wx:if="{{currentIndex==4}}">
+                <view bindtap="search_nav" class="flexli" data-index="room" data-label="不限制" data-txt="0" data-type="0">不限制</view>
+                <view bindtap="search_nav" class="flexli" data-index="room" data-label="{{index}}" data-txt="{{item}}" data-type="0" wx:for="{{search_room}}" wx:key="index">{{index}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="a-section zuhouse" wx:if="{{houselist.length>0}}">
+        <view class="b">
+            <view class="item" wx:for="{{houselist}}" wx:key="{{item.id}}">
+                <navigator url="../house/index?id={{item.id}}">
+                    <image backgroundSize="cover" class="img" src="{{item.thumb}}"></image>
+                    <view class="right">
+                        <view class="text">
+                            <view class="name">
+                                <text class="ft32">{{item.title}}</text>
+                            </view>
+                            <view class="desc">
+                                <text class="ft28"> {{item.village_name}} </text>
+                                <text class="ft28"> {{item.room}}房{{item.hall}}厅{{item.garder}}卫 </text>
+                                <text class="ft28">{{item.superficie}}平米</text>
+                            </view>
+                            <view class="price" wx:if="{{item.rent_type==0}}">
+                                <text class="ft30">售价 {{item.loyer}}</text>
+                                <text class="ft30"> {{item.prix_unitaire}}</text>
+                            </view>
+                            <view class="price" wx:if="{{item.rent_type==2}}">
+                                <text class="ft30">年薪 {{item.loyer}}</text>
+                                <text class="ft30"> {{item.prix_unitaire}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="a-section a-popular" wx:if="{{istotal}}">
+        <view class="h">
+            <view style="text-align:center; width:100%;">
+                <text class="txt">没有更多数据了 </text>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<import src="/we7/pages/templates/footer.wxml"></import>
+<template is="footerWx" data="{{...tabBar}}"></template>

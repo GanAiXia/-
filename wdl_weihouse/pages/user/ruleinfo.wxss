@@ -1,0 +1,56 @@
+page {
+    background-color: #ffffff;
+}
+
+.section {
+    background-color: #ffffff;
+    padding: 30rpx;
+}
+
+.head {
+    padding: 30rpx;
+    padding-top: 0rpx;
+    padding-left: 0rpx;
+}
+
+.credit {
+    text-align: center;
+    font-size: 40rpx;
+    color: #ff0000;
+    white-space: nowrap;
+}
+
+.planbox {
+    margin-top: 20rpx;
+}
+
+.plan-title {
+    font-size: 30rpx;
+    border-top: #dadada 1rpx solid;
+    padding-top: 20rpx;
+    padding-left: 0rpx;
+    color: #777;
+}
+
+.plan-title .more {
+    float: right;
+    font-size: 35rpx;
+    margin-top: -10rpx;
+    color: #777;
+}
+
+.planbox .bd {
+    padding: 20rpx 0rpx;
+}
+
+.plan-desc {
+    color: #333;
+    padding-top: 30rpx;
+    font-size: 30rpx;
+    text-indent: -40rpx;
+    margin-left: 40rpx;
+}
+
+.plan-desc .red {
+    color: #ff0000;
+}

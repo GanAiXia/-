@@ -1,0 +1,57 @@
+<view class="container">
+    <view class="section" wx:if="{{type==1}}">
+        <view class="head credit">
+            <text class=" ft45">我的余额 ：{{prive.member.credit2}}  元</text>
+        </view>
+        <view class="head">
+            <text class="ft34">余额变更记录</text>
+        </view>
+        <view class="dline dth">
+            <view class="w1">
+                <text>操作</text>
+            </view>
+            <view class="w2">
+                <text>数量（元）</text>
+            </view>
+            <view class="w3">
+                <text>日期</text>
+            </view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{type==2}}">
+        <view class="head credit">
+            <text class=" ft45">我的积分 ：{{prive.member.credit1}}  分</text>
+        </view>
+        <view class="head">
+            <text class="ft34">积分变更记录</text>
+        </view>
+        <view class="dline dth">
+            <view class="w1">
+                <text>操作</text>
+            </view>
+            <view class="w2">
+                <text>数量(分)</text>
+            </view>
+            <view class="w3">
+                <text>日期</text>
+            </view>
+        </view>
+    </view>
+    <view class="section mt0" style="padding-top:0">
+        <view class="bd">
+            <view class="dline ditem" wx:for="{{result}}" wx:key="index">
+                <view class="w1">
+                    <text>{{item.note}} </text>
+                </view>
+                <view class="w2">
+                    <text wx:if="{{item.isadd==1}}">+</text>
+                    <text wx:else>-</text>
+                    <text>{{item.money}}</text>
+                </view>
+                <view class="w3">
+                    <text>{{item.addtime}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

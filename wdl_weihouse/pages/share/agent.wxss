@@ -1,0 +1,46 @@
+@import "index.wxss";
+
+.section {
+    padding: 30rpx;
+}
+
+.feedtitle {
+    height: 100rpx;
+}
+
+.feedtitle .h1 {
+    font-size: 45rpx;
+    font-weight: bold;
+}
+
+.feedtitle .more {
+    float: right;
+    margin-top: 10rpx;
+}
+
+.feedtitle .more text {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.h1desc {
+    line-height: 40rpx;
+    padding-bottom: 30rpx;
+}
+
+.h1desc .ft34 {
+    color: #777;
+    font-size: 30rpx;
+}
+
+.bd {
+    padding-bottom: 20rpx;
+}
+
+.ulselect .more {
+    float: right;
+    color: #999;
+    margin-right: 50rpx;
+    text-align: right;
+    width: 60%;
+}

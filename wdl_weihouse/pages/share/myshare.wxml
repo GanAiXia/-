@@ -1,0 +1,54 @@
+<view class="container">
+    <view class="bd">
+        <view class="ulselect">
+            <text class="txt"> 房源标题</text>
+            <view class="more">
+                <text>推广时间</text>
+            </view>
+        </view>
+        <view class="comments">
+            <view class="b">
+                <view class="item" wx:for="{{salelist.sec}}" wx:key="id">
+                    <view class="info">
+                        <view class="user">
+                            <navigator url="../house/index?id={{item.id}}">
+                                <view class="title">
+                                    <text class="ft30">{{item.title}}</text>
+                                </view>
+                                <view>
+                                    <text class="ft28">{{item.room}}房{{item.hall}} 厅 {{item.garder}}卫</text>
+                                </view>
+                            </navigator>
+                            <view class="time">  {{item.loyer}}  {{item.prix_unitaire}} </view>
+                            <text class="addtime ft28" wx:if="{{item.rent_type==0}}"> 男士征婚 </text>
+                            <text class="addtime ft28" wx:if="{{item.rent_type==2}}"> 出租 </text>
+                        </view>
+                    </view>
+                </view>
+                <view class="item" wx:for="{{salelist.newshop}}" wx:key="id">
+                    <view class="info">
+                        <view class="user">
+                            <navigator url="../newshop/index?id={{item.newshouse_id}}">
+                                <view class="title">
+                                    <text class="ft30">{{item.house_title}}</text>
+                                </view>
+                                <view>
+                                    <text class="ft28">{{item.house_type}} </text>
+                                </view>
+                            </navigator>
+                            <view class="time"> 均价{{item.average_price}} 元/平米  </view>
+                            <text class="addtime ft28"> 新房 </text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="load_salelist" class="loadmore">
+        <view class="h">
+            <view style="text-align:center; width:100%;">
+                <text class="txt">{{loadmore}} </text>
+            </view>
+        </view>
+    </view>
+</view>

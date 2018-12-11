@@ -1,0 +1,126 @@
+<import src="/wdl_weihouse/pages/templates/sendform_xiezilou.wxml"></import>
+<import src="/wdl_weihouse/pages/templates/sendform_sechouse.wxml"></import>
+<import src="/wdl_weihouse/pages/templates/sendform_sp.wxml"></import>
+<import src="/wdl_weihouse/pages/templates/sendform_pumian.wxml"></import>
+<view class="container" style="{{hiddendialog?'':'position:fixed'}}">
+    <view class="page-body clearfix">
+        <form bindreset="formReset" bindsubmit="formSubmit">
+            <view class="ptitle">
+                <view>
+                    <text>发布类型</text>
+                    <navigator class="more" openType="switchTab" url="../index/user">
+                        <text class="ft28"> 返回用户中心 </text>
+                    </navigator>
+                </view>
+            </view>
+            <view class="pline">
+                <view class="pline-label  pull-left w20">
+                    <text>当前类型：</text>
+                </view>
+                <view bindtap="trigger_dialog" class="pull-left pickerbd w40 rel">
+                    <view class="picker oneinput" id="areas">
+          {{infotype[rent_type][zhutype]}}
+            </view>
+                    <text class="iconfont icon-xiala xiala"></text>
+                </view>
+            </view>
+            <view class="ptitle">
+                <view>
+                    <text>图片信息</text>
+                </view>
+            </view>
+            <scroll-view class="weiui-uploader upfile" scrollX="true">
+                <view class="scroll-view-item weui-uploader__file" wx:for="{{tempFilePaths}}" wx:key="id">
+                    <view class="bdpic" wx:if="{{item}}">
+                        <view bindtap="removepic" class="delete" data-index="{{index}}" wx:if="{{isupend}}">
+                            <text>×</text>
+                        </view>
+                        <image class="imgview" src="{{item}}"></image>
+                    </view>
+                </view>
+                <view bindtap="uploadImages" class="scroll-view-item weui-uploader__input-box"></view>
+            </scroll-view>
+            <progress showInfo percent="{{progress_per}}" wx:if="{{show_progress}}"></progress>
+            <view class="ptitle">
+                <view>
+                    <text>基本信息</text>
+                    <text class="more ft30">左右滚动显示多张图片</text>
+                </view>
+            </view>
+            <template is="sale_xiezilou0" data="{{search_areas:search_areas,areas_index:areas_index,search_quan:search_quan,quan_index:quan_index,info:info,search_housetype:search_housetype,housetype_index:housetype_index,chaoxiang_index:chaoxiang_index,search_chaoxiang:search_chaoxiang,zhuang_index:zhuang_index,search_zhaungxiu:search_zhaungxiu,search_years:search_years,years_index:years_index,sdropshow:sdropshow,prix_unitaire_value:prix_unitaire_value}}" wx:if="{{rent_type==0&&zhutype==1}}"></template>
+            <template is="sale_xiezilou2" data="{{search_areas:search_areas,areas_index:areas_index,search_quan:search_quan,quan_index:quan_index,info:info,search_housetype:search_housetype,housetype_index:housetype_index,chaoxiang_index:chaoxiang_index,search_chaoxiang:search_chaoxiang,zhuang_index:zhuang_index,search_zhaungxiu:search_zhaungxiu,search_years:search_years,years_index:years_index,sdropshow:sdropshow,prix_unitaire_value:prix_unitaire_value}}" wx:elif="{{rent_type==2&&zhutype==1}}"></template>
+            <template is="sale_sechouse0" data="{{search_areas:search_areas,areas_index:areas_index,search_quan:search_quan,quan_index:quan_index,info:info,search_housetype:search_housetype,housetype_index:housetype_index,chaoxiang_index:chaoxiang_index,search_chaoxiang:search_chaoxiang,zhuang_index:zhuang_index,search_zhaungxiu:search_zhaungxiu,search_years:search_years,years_index:years_index,sdropshow:sdropshow,prix_unitaire_value:prix_unitaire_value}}" wx:elif="{{rent_type==0&&zhutype==0}}"></template>
+            <template is="sale_sechouse2" data="{{search_areas:search_areas,areas_index:areas_index,search_quan:search_quan,quan_index:quan_index,info:info,search_housetype:search_housetype,housetype_index:housetype_index,chaoxiang_index:chaoxiang_index,search_chaoxiang:search_chaoxiang,zhuang_index:zhuang_index,search_zhaungxiu:search_zhaungxiu,search_years:search_years,years_index:years_index,sdropshow:sdropshow,prix_unitaire_value:prix_unitaire_value}}" wx:elif="{{rent_type==2&&zhutype==0}}"></template>
+            <template is="sale_sp0" data="{{search_areas:search_areas,areas_index:areas_index,search_quan:search_quan,quan_index:quan_index,info:info,search_housetype:search_housetype,housetype_index:housetype_index,chaoxiang_index:chaoxiang_index,search_chaoxiang:search_chaoxiang,zhuang_index:zhuang_index,search_zhaungxiu:search_zhaungxiu,search_years:search_years,years_index:years_index,sdropshow:sdropshow,prix_unitaire_value:prix_unitaire_value,search_sptype:search_sptype,sptype_index:sptype_index}}" wx:elif="{{rent_type==0&&zhutype==2}}"></template>
+            <template is="sale_sp2" data="{{search_areas:search_areas,areas_index:areas_index,search_quan:search_quan,quan_index:quan_index,info:info,search_housetype:search_housetype,housetype_index:housetype_index,chaoxiang_index:chaoxiang_index,search_chaoxiang:search_chaoxiang,zhuang_index:zhuang_index,search_zhaungxiu:search_zhaungxiu,search_years:search_years,years_index:years_index,sdropshow:sdropshow,prix_unitaire_value:prix_unitaire_value,search_sptype:search_sptype,sptype_index:sptype_index}}" wx:elif="{{rent_type==2&&zhutype==2}}"></template>
+            <template is="sale_pumian" data="{{search_areas:search_areas,areas_index:areas_index,search_quan:search_quan,quan_index:quan_index,info:info,search_housetype:search_housetype,housetype_index:housetype_index,chaoxiang_index:chaoxiang_index,search_chaoxiang:search_chaoxiang,zhuang_index:zhuang_index,search_zhaungxiu:search_zhaungxiu,search_years:search_years,years_index:years_index,sdropshow:sdropshow,prix_unitaire_value:prix_unitaire_value,search_sptype:search_sptype,sptype_index:sptype_index,search_hangye:search_hangye,hangye_index:hangye_index,search_jingyin:search_jingyin,jingyin_index:jingyin_index}}" wx:elif="{{rent_type==0&&zhutype==3}}"></template>
+            <view class="pline">
+                <view class="pline-label tright pull-left w20">
+                    <text>  坐标 ：</text>
+                </view>
+                <view class="pline-input pull-left w80">
+                    <input bindtap="bindMapInput" class="oneinput" data-name="latlon" name="latlon" placeholder="地图位置标注" type="text" value="{{latlon_label}}"></input>
+                    <input hidden="true" name="latlon" value="{{latlon}}"></input>
+                </view>
+            </view>
+            <view class="pline">
+                <view class="pline-label tright pull-left w20">
+                    <text>  VR地址 ：</text>
+                </view>
+                <view class="pline-input pull-left w80">
+                    <input bindinput="bindKeyInput" class="oneinput" data-name="vrurl" name="vrurl" placeholder="请复制您的vr网址" type="text" value="{{info.vrurl}}"></input>
+                </view>
+            </view>
+            <view class="pline">
+                <view class="pline-label tright pull-left w20">
+                    <text>  视频 ：</text>
+                </view>
+                <view class="pline-input pull-left w80">
+                    <view class="videobd" wx:if="{{!show_video_progress}}">
+                        <button bindtap="bindButtonTapVideo" class="videobtn">
+                            <view>
+                                <text class="iconfont icon-xiangji"></text>
+                            </view>
+                        </button>
+                    </view>
+                    <view class="videobd" wx:if="{{video_src}}">
+                        <video class="videobox" src="{{video_src}}"></video>
+                    </view>
+                    <progress showInfo percent="{{progress_video_per}}" wx:if="{{show_video_progress}}"></progress>
+                </view>
+            </view>
+            <view class="ptitle">
+                <view> 联系信息</view>
+            </view>
+            <view class="pline">
+                <view class="pline-label tright pull-left w20">
+                    <text>  联系人 ：</text>
+                </view>
+                <view class="pline-input pull-left w80">
+                    <input bindinput="bindKeyInput" class="oneinput" data-name="publish_name" name="publish_name" placeholder="房源联系人姓名" type="text" value="{{info.publish_name}}"></input>
+                </view>
+            </view>
+            <view class="pline">
+                <view class="pline-label tright pull-left w20">
+                    <text> 手机号 ：</text>
+                </view>
+                <view class="pline-input pull-left w80">
+                    <input disabled bindinput="bindKeyInput" class="oneinput" data-name="linkphone" name="linkphone" placeholder="请输入联系人手机号" type="text" value="{{info.linkphone}}"></input>
+                </view>
+            </view>
+            <view class="pline" wx:if="{{prive.needpay&&prive.credit_send_ok}}">
+                <view class="pline-label tright pull-left w20">
+                    <text>费用：</text>
+                </view>
+                <view class="pline-input pull-left w80">
+                    <text class="ft30" style="color:#ff0000">支付 {{prive.need_pay_credit}} 元 发布房源</text>
+                </view>
+            </view>
+            <view class="btn-area">
+                <button class="button" formType="submit" type="primary">发布房源</button>
+            </view>
+        </form>
+    </view>
+</view>
+<import src="/wdl_weihouse/pages/templates/dialog.wxml"></import>
+<template is="dialog_index_menu" data="{{hiddendialog:hiddendialog,positon:positon,dialog:dialog}}"></template>

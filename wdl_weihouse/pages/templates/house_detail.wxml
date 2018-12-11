@@ -1,0 +1,353 @@
+<template name="syi">
+    <view class="baseinfo" style="height:160rpx;">
+        <view class="bprice">
+            <view class="bitem">
+                <text class="h4">年薪</text>
+                <view class="bitemtxt">
+                    <text>{{house.loyer}} {{house.prix_unitaire}}</text>
+                </view>
+                <view class="bitemtxt">
+                    <text style="color:#222; font-size:28rpx;">{{house.perprice}} {{house.perprice_unit}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="broom">
+            <view class="bitem">
+                <text class="h4">转让费</text>
+                <view class="bitemtxt" style="height:100rpx; line-height:100rpx;">
+                    <text>{{house.dong}} 万</text>
+                </view>
+            </view>
+        </view>
+        <view class="barea">
+            <view class="bitem">
+                <text class="h4">身高</text>
+                <view class="bitemtxt" style="height:100rpx; line-height:100rpx;">
+                    <text>{{house.superficie}} ㎡</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="secinfo">
+        <view class="pitem">
+            <view class="ptitle">类型：<text class="ptxt">{{house.house_type}}</text>
+            </view>
+            <view class="ptitle">楼层：<text class="ptxt">{{house.storey}}楼 共{{house.total_storey}}层</text>
+            </view>
+        </view>
+        <view class="pitem" wx:if="{{house.disposition}}">
+            <view class="ptitle2">经营行业：<text class="ptxt">{{house.disposition}}</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">地址：
+ <text bindtap="maptodaohang" class="ptxt fblue">{{house.area}}{{house.quan}}{{house.village_name}} <text class="ft26 iconfont icon-xiayibu"></text>
+                </text>
+            </view>
+        </view>
+        <view class="pitem" wx:if="{{groupid>0}}">
+            <view class="ptitle">房源编号：
+ <text bindtap="maptodaohang" class="ptxt ">{{house.house_sno}}  </text>
+            </view>
+            <view class="ptitle fred" wx:if="{{house.employee}}">佣金：
+ <text class="ptxt fred">{{house.employee}} 元  </text>
+            </view>
+        </view>
+        <view class="pitem" wx:for="{{house.params}}" wx:key="index">
+            <view class="ptitle2">{{item.title}}：<text class="ptxt">{{item.value}}</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">更新时间：<text class="ptxt fred">{{house.update_time}}</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">
+                <text class="ptxt ft26 fred"> {{house.helpinfo}}</text>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="sp">
+    <view class="baseinfo" style="{{house.rent_type==2?'height:160rpx;':''}}">
+        <view class="bprice" style="width:49%;">
+            <view class="bitem">
+                <text class="h4" wx:if="{{house.rent_type==2}}">年薪</text>
+                <text class="h4" wx:if="{{house.rent_type==0}}">出售</text>
+                <view class="bitemtxt">{{house.loyer}} {{house.prix_unitaire}}</view>
+                <text class="bitemtxt" style="color:#222; font-size:28rpx;" wx:if="{{house.rent_type==2}}">{{house.perprice}} {{house.perprice_unit}}</text>
+            </view>
+        </view>
+        <view class="barea" style="width:49%;">
+            <view class="bitem">
+                <text class="h4">身高</text>
+                <text class="bitemtxt">{{house.superficie}} ㎡</text>
+            </view>
+        </view>
+    </view>
+    <view class="secinfo">
+        <view class="pitem">
+            <view class="ptitle">类型：<text class="ptxt">{{house.house_type}}</text>
+            </view>
+            <view class="ptitle">楼层：<text class="ptxt">{{house.storey}}楼 共{{house.total_storey}}层</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">地址：
+ <text bindtap="maptodaohang" class="ptxt fblue">{{house.area}}{{house.quan}}{{house.village_name}} <text class="ft26 iconfont icon-xiayibu"></text>
+                </text>
+            </view>
+        </view>
+        <view class="pitem" wx:if="{{groupid>0}}">
+            <view class="ptitle">房源编号：
+ <text bindtap="maptodaohang" class="ptxt ">{{house.house_sno}}  </text>
+            </view>
+            <view class="ptitle fred" wx:if="{{house.employee}}">佣金：
+ <text class="ptxt fred">{{house.employee}} 元  </text>
+            </view>
+        </view>
+        <view class="pitem" wx:if="{{house.disposition}}">
+            <view class="ptitle2">特色：<text class="ptxt">{{house.disposition}}</text>
+            </view>
+        </view>
+        <view class="pitem" wx:for="{{house.params}}" wx:key="index">
+            <view class="ptitle2">{{item.title}}：<text class="ptxt">{{item.value}}</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">更新时间：<text class="ptxt fred">{{house.update_time}}</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">
+                <text class="ptxt ft26 fred">{{house.helpinfo}}</text>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="xie">
+    <view class="baseinfo">
+        <view class="bprice" style="width:49%;">
+            <view class="bitem">
+                <text class="h4" wx:if="{{house.rent_type==2}}">年薪</text>
+                <text class="h4" wx:if="{{house.rent_type==0}}">出售</text>
+                <text class="bitemtxt">{{house.loyer}} {{house.prix_unitaire}}</text>
+            </view>
+        </view>
+        <view class="barea" style="width:49%;">
+            <view class="bitem">
+                <text class="h4">身高</text>
+                <text class="bitemtxt">{{house.superficie}} ㎡</text>
+            </view>
+        </view>
+    </view>
+    <view class="secinfo">
+        <view class="pitem">
+            <view class="ptitle">类型：<text class="ptxt"> 写字楼</text>
+            </view>
+            <view class="ptitle">楼层：<text class="ptxt">{{house.storey}}楼 共{{house.total_storey}}层</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">地址：
+ <text bindtap="maptodaohang" class="ptxt fblue">{{house.area}}{{house.quan}}{{house.village_name}} <text class="ft26 iconfont icon-xiayibu"></text>
+                </text>
+            </view>
+        </view>
+        <view class="pitem" wx:if="{{groupid>0}}">
+            <view class="ptitle">房源编号：
+ <text bindtap="maptodaohang" class="ptxt ">{{house.house_sno}}  </text>
+            </view>
+            <view class="ptitle fred" wx:if="{{house.employee}}">佣金：
+ <text class="ptxt fred">{{house.employee}} 元  </text>
+            </view>
+        </view>
+        <view class="pitem" wx:if="{{house.disposition}}">
+            <view class="ptitle2">特色：<text class="ptxt">{{house.disposition}}</text>
+            </view>
+        </view>
+        <view class="pitem" wx:for="{{house.params}}" wx:key="index">
+            <view class="ptitle2">{{item.title}}：<text class="ptxt">{{item.value}}</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">更新时间：<text class="ptxt fred">{{house.update_time}}</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">
+                <text class="ptxt ft26 fred"> {{house.helpinfo}}</text>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="zhu">
+    <view class="baseinfo">
+        <view class="bprice">
+            <view class="bitem">
+                <text class="h4" wx:if="{{house.rent_type==2}}">年薪</text>
+                <text class="h4" wx:if="{{house.rent_type==0}}">出售</text>
+                <text class="bitemtxt">{{house.loyer}} {{house.prix_unitaire}}</text>
+            </view>
+        </view>
+        <view class="broom">
+            <view class="bitem">
+                <text class="h4">是否有房</text>
+                <text class="bitemtxt">{{house.room}}房{{house.hall}}厅</text>
+            </view>
+        </view>
+        <view class="barea">
+            <view class="bitem">
+                <text class="h4">身高</text>
+                <text class="bitemtxt">{{house.superficie}} ㎡</text>
+            </view>
+        </view>
+    </view>
+    <view class="secinfo">
+        <view class="pitem">
+            <view class="ptitle">类型：<text class="ptxt">{{house.house_type}}</text>
+            </view>
+            <view class="ptitle" wx:if="{{house.rent_type==0}}">首付：
+            <text class="ptxt">{{house.loyer*40/100}} </text>万（40%）</view>
+            <view class="ptitle" wx:if="{{house.rent_type==2}}">年薪：
+            <text class="ptxt"> {{house.loyer}} {{house.prix_unitaire}} </text>
+            </view>
+        </view>
+        <view class="pitem" wx:if="{{house.rent_type==0}}">
+            <view class="ptitle">单价：<text class="ptxt">{{house.danjia}}</text> 元/㎡</view>
+            <view class="ptitle">
+                <navigator url="../caculte/toos">月供： <text class="ptxt"> 房贷计算 </text>
+                    <text class="iconfont icon-icon-- icon2"></text>
+                </navigator>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle">楼层：<text class="ptxt">{{house.storey}}楼 共{{house.total_storey}}层</text>
+            </view>
+            <view class="ptitle">朝向：<text class="ptxt">{{house.donner_sur}}方向</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle">装修：<text class="ptxt">{{house.traveaux_finition}}</text>
+            </view>
+            <view class="ptitle">年代：<text class="ptxt">{{house.build_age}} 年</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">地址：
+ <text bindtap="maptodaohang" class="ptxt fblue">{{house.area}}{{house.quan}}{{house.village_name}} <text class="ft26 iconfont icon-xiayibu"></text>
+                </text>
+            </view>
+        </view>
+        <view class="pitem" wx:if="{{groupid>0}}">
+            <view class="ptitle">房源编号：
+ <text bindtap="maptodaohang" class="ptxt ">{{house.house_sno}}  </text>
+            </view>
+            <view class="ptitle fred" wx:if="{{house.employee}}">佣金：
+ <text class="ptxt fred">{{house.employee}} 元  </text>
+            </view>
+        </view>
+        <view class="pitem" wx:if="{{house.disposition}}">
+            <view class="ptitle2">特色：<text class="ptxt">{{house.disposition}}</text>
+            </view>
+        </view>
+        <view class="pitem" wx:for="{{house.params}}" wx:key="index">
+            <view class="ptitle2">{{item.title}}：<text class="ptxt">{{item.value}}</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">更新时间：<text class="ptxt fred">{{house.update_time}}</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">
+                <text class="ptxt ft26 fred"> {{house.helpinfo}}</text>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="sec">
+    <view class="baseinfo">
+        <view class="bprice">
+            <view class="bitem">
+                <text class="h4" wx:if="{{house.rent_type==2}}">年薪</text>
+                <text class="h4" wx:if="{{house.rent_type==0}}">出售</text>
+                <text class="bitemtxt">{{house.loyer}} {{house.prix_unitaire}}</text>
+            </view>
+        </view>
+        <view class="broom">
+            <view class="bitem">
+                <text class="h4">是否有房</text>
+                <text class="bitemtxt">{{house.room}}房{{house.hall}}厅</text>
+            </view>
+        </view>
+        <view class="barea">
+            <view class="bitem">
+                <text class="h4">身高</text>
+                <text class="bitemtxt">{{house.superficie}} ㎡</text>
+            </view>
+        </view>
+    </view>
+    <view class="secinfo">
+        <view class="pitem">
+            <view class="ptitle">类型：<text class="ptxt">{{house.house_type}}</text>
+            </view>
+            <view class="ptitle" wx:if="{{house.rent_type==0}}">首付：
+            <text class="ptxt">{{house.firstpay}} </text>万（{{house.bill}}%）</view>
+            <view class="ptitle" wx:if="{{house.rent_type==2}}">年薪：
+            <text class="ptxt"> {{house.loyer}} {{house.prix_unitaire}} </text>
+            </view>
+        </view>
+        <view class="pitem" wx:if="{{house.rent_type==0}}">
+            <view class="ptitle">单价：<text class="ptxt">{{house.perprice}}</text> 元/㎡</view>
+            <view class="ptitle">
+                <navigator url="../caculte/toos">月供： <text class="ptxt"> 房贷计算 </text>
+                    <text class="iconfont icon-icon-- icon2"></text>
+                </navigator>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle">楼层：<text class="ptxt">{{house.storey}}楼 共{{house.total_storey}}层</text>
+            </view>
+            <view class="ptitle">朝向：<text class="ptxt">{{house.donner_sur}}方向</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle">装修：<text class="ptxt">{{house.traveaux_finition}}</text>
+            </view>
+            <view class="ptitle">年代：<text class="ptxt">{{house.build_age}} 年</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">地址：
+ <text bindtap="maptodaohang" class="ptxt fred">{{house.area}}{{house.quan}}{{house.village_name}} <text class="ft26 iconfont icon-xiayibu"></text>
+                </text>
+            </view>
+        </view>
+        <view class="pitem" wx:if="{{groupid>0}}">
+            <view class="ptitle">房源编号：
+ <text bindtap="maptodaohang" class="ptxt ">{{house.house_sno}}  </text>
+            </view>
+            <view class="ptitle fred" wx:if="{{house.employee}}">佣金：
+ <text class="ptxt fred">{{house.employee}} 元  </text>
+            </view>
+        </view>
+        <view class="pitem" wx:if="{{house.disposition}}">
+            <view class="ptitle2">特色：<text class="ptxt">{{house.disposition}}</text>
+            </view>
+        </view>
+        <view class="pitem" wx:for="{{house.params}}" wx:key="index">
+            <view class="ptitle2">{{item.title}}：<text class="ptxt">{{item.value}}</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">更新时间：<text class="ptxt fred">{{house.update_time}}</text>
+            </view>
+        </view>
+        <view class="pitem">
+            <view class="ptitle2">
+                <text class="ptxt ft26 fred">{{house.helpinfo}}</text>
+            </view>
+        </view>
+    </view>
+</template>

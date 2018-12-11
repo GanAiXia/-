@@ -1,0 +1,137 @@
+<view class="container">
+    <view class="section bord1">
+        <view wx:if="{{room.roominfo.thumb}}">
+            <swiper autoplay="true" class="faceimg" duration="1000" indicatorDots="true" interval="3000">
+                <swiper-item>
+                    <image bindtap="onPreviewImage" data-type="thumbs" data-view="{{room.roominfo.thumb}}" mode="aspectFill" src="{{room.roominfo.thumb}}" style="width:100%; "></image>
+                </swiper-item>
+                <swiper-item wx:for="{{room.thumbs}}" wx:key="index">
+                    <image bindtap="onPreviewImage" data-type="thumbs" data-view="{{item}}" mode="aspectFill" src="{{item}}" style="width:100%; "></image>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="th1 mlt30">
+            <view class="bd">
+                <view class="newshop">
+                    <text class="lptitle ft45">{{room.roominfo.title}} </text>
+                    <text class="bage-blue ft28">在售 </text>
+                </view>
+                <view class="hxprice">
+                    <text class="num">参考总价{{room.roominfo.totalprice}}</text>
+                    <text class="ft24 time">单价：{{room.roominfo.saleprice}}</text>
+                </view>
+            </view>
+            <view class="hxparam">
+                <view class="hxd1">
+                    <view>
+                        <text class="ft30 fcgray">身高：</text>
+                        <text class="ft30">建面 {{room.roominfo.mianji}}</text>
+                    </view>
+                </view>
+                <view class="hxd1">
+                    <view style="width:45%;">
+                        <text class="ft30 fcgray">是否有房结构：</text>
+                        <text class="ft30"> {{room.roominfo.huxingjiegou}} </text>
+                    </view>
+                    <view style="width:45%;">
+                        <text class="ft30 fcgray">朝向：</text>
+                        <text class="ft30">{{room.roominfo.chaoxiang}}</text>
+                    </view>
+                </view>
+                <view class="lpitem">
+                    <text class="more iconfont icon-xiayibu"></text>
+                    <text class="txt fcgray">所在楼盘：</text>
+                    <navigator url="../newshop/index?id={{newhouse_id}}">
+                        <text class="link"> {{room.house_name}} </text>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="section yangbanjian bord1" wx:if="{{room.yangban}}">
+        <view class="barh3">
+            <text class="title">样板间相册</text>
+        </view>
+        <scroll-view class="real" scrollX="true" style="width:720rpx; overflow:hidden;">
+            <view class="fiximg" wx:for="{{room.yangban}}" wx:key="index">
+                <image bindtap="onPreviewImage" data-type="yangban" data-view="{{item}}" mode="aspectFill" src="{{item}}"></image>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="section bord1 loudong">
+        <view class="barh3">
+            <text class="title">所在楼栋</text>
+        </view>
+        <view class="txt">
+            <text>{{room.roominfo.loudong}}</text>
+        </view>
+    </view>
+    <view class="section bord1 space">
+        <view class="spacetab">
+            <view class="wordbox">
+                <text>{{room.roominfo.chaoxiang}}朝向</text>
+            </view>
+            <view class="wordbox" wx:for="{{room.roominfo.tags}}" wx:key="id">
+                <text>{{item}}</text>
+            </view>
+        </view>
+        <view class="linebar">
+            <text class="ft35">空间信息</text>
+        </view>
+        <view class="spacedesc">
+            <view class="item">
+                <view class="dot">
+                    <text class="dot0"></text>
+                </view>
+                <view class="desc">
+                    <view class="v1">
+                        <text class="ft30"></text>
+                    </view>
+                    <view class="v2">
+                        <text class="ft28">  {{room.roominfo.kongjian}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="linebar blue">
+            <text class="iconfont icon-qian ft35"></text>
+            <text class="ft35"> 优势</text>
+        </view>
+        <view class="spacehtml">
+            <text class="ft30"> {{room.roominfo.youshi}}</text>
+        </view>
+        <view class="linebar blue">
+            <text class="iconfont icon-xinxi ft35"></text>
+            <text class="ft35"> 劣势</text>
+        </view>
+        <view class="spacehtml">
+            <text class="ft30"> {{room.roominfo.lieshi}}</text>
+        </view>
+    </view>
+    <view class="copy">
+        <text class="copyicon iconfont icon-tishi"></text>
+        <view class="info">
+            <text class="ft22">{{storage.copyinfo}}</text>
+        </view>
+    </view>
+    <view class="bbmenu">
+        <view class="bd">
+            <view class="bdbtn">
+                <navigator url="../newshop/feed?hid={{newshouse_id}}&title={{room.house_name}}">
+                    <text class="ft26">
+                        <text class="iconfont icon-wodeyouhuiquan"></text>
+           
+          领优惠</text>
+                </navigator>
+            </view>
+            <view bindtap="callbroker" class="bdbtn2" data-phone="{{room.house_selltelephone}}">
+                <text>免费咨询</text>
+            </view>
+        </view>
+    </view>
+</view>
+<code class="adunit" wx:if="{{adinfo.adunitid.place.isshow==1}}">
+    <ad unitId="{{adinfo.adunitid.content[1].unitid}}"></ad>
+</code>
+<import src="/wdl_weihouse/pages/templates/right_menu.wxml"></import>
+<template is="right_menu" data="{{showRightMenuOk:showRightMenuOk,rightmenu:adinfo.barlinkad.content}}"></template>

@@ -1,0 +1,69 @@
+<view class="container">
+    <swiper autoplay="true" class="banner" duration="1000" indicatorDots="true" interval="3000" wx:if="{{banner.length>0}}">
+        <swiper-item wx:for="{{banner}}" wx:key="index">
+            <navigator url="{{item.link}}">
+                <image mode="aspectFill" src="{{item.url}}"></image>
+            </navigator>
+        </swiper-item>
+    </swiper>
+    <view class="m-menu" wx:if="{{siteroot}}">
+        <navigator class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="index">
+            <image backgroundSize="cover" src="{{siteroot}}{{item.icon_url}}"></image>
+            <text>{{item.name}}</text>
+        </navigator>
+    </view>
+    <view class="a-section a-popular" wx:if="{{hotHouse.length>0}}">
+        <view class="h">
+            <view>
+                <navigator url="../house/search?type=2">
+                    <text class="txt">精选男士征婚源推荐</text>
+                </navigator>
+            </view>
+        </view>
+        <view class="b">
+            <view class="item" wx:for="{{hotHouse}}" wx:key="index">
+                <navigator url="../house/index?id={{item.id}}">
+                    <image backgroundSize="cover" class="img" src="{{item.thumb}}"></image>
+                    <view class="right2">
+                        <view class="housetitle">
+                            <text class="name">{{item.title}}</text>
+                        </view>
+                        <view class="housearea">
+                            <text class="desc gg1">{{item.superficie}}㎡  </text>
+                            <text class="desc gg1">  {{item.room}}房{{item.hall}}厅  </text>
+                            <text class="price gg2">  {{item.loyer}}   {{item.prix_unitaire}}  </text>
+                        </view>
+                        <view class="housebb">
+                            <text class="desc">  {{item.village_name}} </text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="a-section a-popular" wx:if="{{hotzhu.length>0}}">
+        <view class="h">
+            <view>
+                <navigator url="../house/zhu">
+                    <text class="txt">精选出女士征婚推荐</text>
+                </navigator>
+            </view>
+        </view>
+        <view class="b">
+            <view class="item" wx:for="{{hotzhu}}" wx:key="index">
+                <navigator url="../house/index?id={{item.id}}">
+                    <image backgroundSize="cover" class="img" src="{{item.thumb}}"></image>
+                    <view class="right">
+                        <view class="text">
+                            <text class="name">{{item.title}}</text>
+                            <text class="desc"> {{item.village_name}} {{item.room}}房{{item.hall}}厅{{item.garder}}卫 {{item.superficie}}平米</text>
+                            <text class="price">年薪 {{item.loyer}} {{item.prix_unitaire}}</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>
+<import src="/we7/pages/templates/footer.wxml"></import>
+<template is="footerWx" data="{{...tabBar}}"></template>

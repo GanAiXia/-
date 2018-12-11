@@ -1,0 +1,80 @@
+@import "../broker/manage.wxss";
+
+.section {
+    padding: 30rpx;
+    font-size: 28rpx;
+}
+
+.comment .bd-txt {
+    display: inline-block;
+    width: 30%;
+}
+
+.comment .star-pos {
+    display: inline-block;
+    width: 69%;
+}
+
+.comment .star-pos .stars {
+    display: inline-block;
+    text-align: center;
+    margin-left: 30rpx;
+}
+
+.comment .star-pos .stars .iconfont {
+    color: #ccc;
+    font-size: 38rpx;
+}
+
+.comment .star-pos .onn .iconfont {
+    color: #FFAA00;
+    font-size: 38rpx;
+}
+
+.comment-txt {
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.comment-txt-bd {
+    width: 79%;
+    display: inline-block;
+}
+
+.comment-txt-button {
+    width: 18.9%;
+    display: inline-block;
+}
+
+.comment-txt-button button {
+    height: 80rpx;
+    border-radius: 0px;
+    vertical-align: middle;
+    line-height: 80rpx;
+    padding-left: 0rpx;
+    padding-right: 0rpx;
+    font-size: 28rpx;
+    margin: 0px;
+}
+
+.comment-txt-bd textarea {
+    border-radius: 0rpx;
+    background-color: #f1f1f1;
+    width: 95%;
+    height: 60rpx;
+    padding: 10rpx;
+    padding-left: 10rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.subt {
+    border-top: #dadada 1px solid;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin: 30rpx 0;
+}
+
+.btn {
+    margin-top: 50rpx;
+}

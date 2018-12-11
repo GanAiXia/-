@@ -1,0 +1,64 @@
+<template name="dialog_index_menu">
+    <view class="mask-bg" hidden="{{hiddendialog}}"></view>
+    <view class="dialog-box" hidden="{{hiddendialog}}" style="{{positon}}">
+        <view class="dialog-title">
+            <text bindtap="trigger_dialog" class="close">关闭</text>
+            <text>{{dialog.title}}</text>
+        </view>
+        <view class="dialog-bd">
+            <view class="dialog-item" wx:for="{{dialog.items}}" wx:key="index">
+                <navigator openType="{{item.opentype}}" url="{{item.url}}">
+                    <view class="item-bd c{{index+1}}">
+                        <text>{{item.name}}</text>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="dialog_sendselect">
+    <view class="mask-bg" hidden="{{hiddendialog}}"></view>
+    <view class="dialog-box" hidden="{{hiddendialog}}" style="{{positon}}">
+        <view class="dialog-title">
+            <text bindtap="trigger_dialog" class="close">关闭</text>
+            <text>选择所要发布的商业类型</text>
+        </view>
+        <view class="dialog-bd">
+            <view class="dialog-item">
+                <navigator url="../user/sendinfo?rent=2&zhutype=1">
+                    <view class="item-bd c1">
+                        <text>写字楼出租</text>
+                    </view>
+                </navigator>
+            </view>
+            <view class="dialog-item">
+                <navigator url="../user/sendinfo?rent=0&zhutype=1">
+                    <view class="item-bd c2">
+                        <text>写字楼出售</text>
+                    </view>
+                </navigator>
+            </view>
+            <view class="dialog-item">
+                <navigator url="../user/sendinfo?rent=2&zhutype=2">
+                    <view class="item-bd c3">
+                        <text>商铺出租</text>
+                    </view>
+                </navigator>
+            </view>
+            <view class="dialog-item">
+                <navigator url="../user/sendinfo?rent=0&zhutype=2">
+                    <view class="item-bd c4">
+                        <text>商铺出售</text>
+                    </view>
+                </navigator>
+            </view>
+            <view class="dialog-item">
+                <navigator url="../user/sendinfo?rent=0&zhutype=3">
+                    <view class="item-bd c5">
+                        <text>生意转让</text>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,497 @@
+.container {
+    color: #333;
+    font-family: -apple-system-font,"Helvetica Neue",sans-serif;
+    background-color: #fff;
+    padding-bottom: 0rpx;
+}
+
+.banner {
+    height: 370rpx;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+}
+
+.bgbanner {
+    width: 100%;
+    height: 360rpx;
+}
+
+.indexlink {
+    border-top: 10rpx solid #f1f1f1;
+    border-bottom: 10rpx solid #f1f1f1;
+    width: 100%;
+}
+
+.indexlink_item {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    line-height: 60rpx;
+    height: 70rpx;
+    border-right: 1rpx solid #dadada;
+    border-bottom: 1rpx solid #dadada;
+    border-collapse: collapse;
+    margin-left: -1rpx;
+}
+
+.indexlink_item .link-name {
+    font-size: 28rpx;
+    color: #ff0000;
+}
+
+.indexlink_item:nth-child(4) {
+    border-right: 0;
+}
+
+.indexlink_item:nth-child(8) {
+    border-right: 0;
+}
+
+.ad_title {
+    padding: 10rpx 30rpx;
+}
+
+.adindex0 {
+    width: 100%;
+    height: 180rpx;
+}
+
+.adindex0 image {
+    height: 180rpx;
+    width: 100%;
+}
+
+.search {
+    width: 100%;
+    border-bottom: 5rpx solid #f1f1f1;
+    border-left: 0;
+    border-right: 0;
+}
+
+.font1 {
+    color: #999;
+    font-size: 20rpx;
+}
+
+.search .bd {
+    background: #fff;
+    font-size: 26rpx;
+    padding: 20rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.search .bd .drop {
+    float: left;
+    width: 20%;
+}
+
+.search .cbtn {
+    border-left: 1px solid #d1d1d1;
+    float: left;
+    width: 70%;
+    padding-left: 40rpx;
+}
+
+.search .cbtn .iconfont {
+    font-size: 30rpx;
+    margin-right: 20rpx;
+}
+
+.tongji .bd {
+    line-height: 40rpx;
+    vertical-align: middle;
+    margin: 0 20rpx;
+    height: 70rpx;
+}
+
+.tongji .tongjitxt {
+    display: inline-block;
+    height: 63rpx;
+    line-height: 60rpx;
+}
+
+.tongji .icon {
+    width: 63rpx;
+    height: 63rpx;
+    margin-right: 10rpx;
+    float: left;
+}
+
+.tongji .qiandao {
+    float: right;
+    background: #F87271;
+    color: #fff;
+    border-radius: 5rpx;
+    font-size: 28rpx;
+    padding: 0 20rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    margin-top: 10rpx;
+}
+
+.tongji .num {
+    color: #F87271;
+}
+
+.menu {
+    padding: 20rpx 0rpx 0rpx 0rpx;
+}
+
+.menu .item:first-child {
+}
+
+.menu .item {
+    width: 25%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    height: 160rpx;
+    box-sizing: border-box;
+}
+
+.menu .item1 {
+    width: 25%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    height: 160rpx;
+    box-sizing: border-box;
+}
+
+.menu .item2 {
+    width: 20%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    height: 160rpx;
+    box-sizing: border-box;
+}
+
+.menu .item-icon {
+    display: flex;
+    justify-content: center;
+}
+
+.dao {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    line-height: 80rpx;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.dao2 {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+
+.dao2 .menu-img {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.dao-txt {
+    font-size: 28rpx;
+    margin-top: 10rpx;
+    color: #666;
+}
+
+.menu .bg1 {
+    background: #00C683;
+}
+
+.menu .bg2 {
+    background: #21D3B5;
+}
+
+.menu .bg3 {
+    background: #52AEED;
+}
+
+.menu .bg4 {
+    background: #8294E8;
+}
+
+.menu .bg5 {
+    background: #F879A4;
+}
+
+.menu .bg6 {
+    background: #FEB355;
+}
+
+.menu .bg7 {
+    background: #F87271;
+}
+
+.menu .bg8 {
+    background: #25D1B7;
+}
+
+.menu .bg9 {
+    background: #00C683;
+}
+
+.menu .bg10 {
+    background: #21D3B5;
+}
+
+.menu .bg11 {
+    background: #52AEED;
+}
+
+.menu .bg12 {
+    background: #8294E8;
+}
+
+.menu .bg13 {
+    background: #F879A4;
+}
+
+.dao .iconfont {
+    color: #fff;
+    font-weight: normal;
+    font-size: 45rpx;
+    margin-top: 5rpx;
+}
+
+.notice {
+    padding: 10rpx 30rpx;
+    border-top: 10rpx solid #f1f1f1;
+    border-bottom: 10rpx solid #f1f1f1;
+    height: 70rpx;
+}
+
+.notice image {
+    width: 70rpx;
+    height: 70rpx;
+    float: left;
+    margin-right: 20rpx;
+}
+
+.notice .txt {
+    margin-left: 100rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.section {
+    padding: 30rpx;
+}
+
+.th3 {
+    border-bottom: #dadada 1px solid;
+    padding-bottom: 10rpx;
+    height: 60rpx;
+}
+
+.th3 .th3-title {
+    float: left;
+}
+
+.th3 .more {
+    float: right;
+    color: #999;
+    font-size: 24rpx;
+    padding-top: 10rpx;
+}
+
+.th3 .more .iconfont {
+    font-size: 24rpx;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: left;
+}
+
+.th4 {
+    margin-top: 30rpx;
+}
+
+.th4 .pricebox {
+    flex-grow: 1;
+}
+
+.th4 .bdtxt {
+    color: #999;
+}
+
+.th4 .pricebox .bd1 {
+    width: 60%;
+    display: inline-block;
+}
+
+.th4 .pricebox .bd {
+    width: 40%;
+    display: inline-block;
+    text-align: left;
+}
+
+.th4 .bdsmall .wen {
+    margin-left: 10rpx;
+    color: #333;
+}
+
+.th5 {
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: #dadada 1px solid;
+}
+
+.imagetxt .item:first-child {
+    border-top: 0rpx;
+}
+
+.imagetxt .item:last-child {
+    border-bottom: 0rpx;
+}
+
+.imagetxt .item {
+    width: 100%;
+    display: block;
+    border-bottom: 1rpx solid #f1f1f1;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    position: relative;
+    min-height: 180rpx;
+}
+
+.imgtag {
+    position: absolute;
+    left: 0rpx;
+    top: 40rpx;
+    background-color: #000;
+    color: #fff;
+    opacity: 0.5;
+    padding: 0 10rpx;
+    font-size: 24rpx;
+}
+
+.imagetxt .item .img {
+    float: left;
+    width: 200rpx;
+    height: 150rpx;
+    margin-top: 10rpx;
+}
+
+.imagetxt .right2 {
+    margin-left: 230rpx;
+    display: block;
+}
+
+.newshop .housetitle .name {
+    font-weight: normal;
+}
+
+.imagetxt .housetitle {
+    line-height: 40rpx;
+}
+
+.imagetxt .address {
+    color: #666;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    overflow: hidden;
+}
+
+.imagetxt .btags {
+    line-height: 30rpx;
+    height: 40rpx;
+}
+
+.imagetxt .housetitle .ttype {
+    font-size: 26rpx;
+    padding: 0 10rpx;
+    margin-left: 5rpx;
+    border-radius: 6rpx;
+}
+
+.imagetxt .housetitle .onsale {
+    font-size: 26rpx;
+    padding: 0 10rpx;
+    margin-left: 10rpx;
+    border-radius: 5rpx;
+}
+
+.imagetxt .btags {
+    margin-top: 10rpx;
+}
+
+.imagetxt .btags text {
+    padding: 0rpx 5rpx;
+    text-align: center;
+    margin-right: 12rpx;
+    vertical-align: middle;
+}
+
+.imagetxt .btags .keybg1 {
+    background: #D7F2FB;
+    color: #67A4D9;
+}
+
+.imagetxt .btags .keybg0 {
+    background: #D7F2FB;
+    color: #2EA0F1;
+}
+
+.imagetxt .btags .keybg2 {
+    background: #FDF1DC;
+    color: #F6A800;
+}
+
+.imagetxt .btags .keybg3 {
+    background: #D7F2FB;
+    color: #67A4D9;
+}
+
+.imagetxt .pricebd {
+    position: absolute;
+    right: 0rpx;
+    top: 10rpx;
+    text-align: right;
+}
+
+.imagetxt .pricebd text {
+    display: block;
+}
+
+.imagetxt .num {
+    color: #ff0000;
+    font-size: 32rpx;
+    font-weight: 100;
+}
+
+.imagetxt .per {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.loadmore {
+    background-color: #f1f1f1;
+    text-align: center;
+    height: 60rpx;
+    vertical-align: middle;
+    line-height: 60rpx;
+    margin: 0rpx;
+    margin-bottom: 20rpx;
+}
+
+.loadmore .txt {
+    font-size: 26rpx;
+    font-weight: 100;
+    color: #0867B3;
+}

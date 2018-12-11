@@ -1,0 +1,84 @@
+<view class="container">
+    <view class="shophead">
+        <image class="banner" mode="scaleToFill" src="{{result.banner}}"></image>
+        <view class="shopname">
+            <view class="logo">
+                <image src="{{result.logo}}"></image>
+            </view>
+            <view class="t1">
+                <text class="ft32">{{result.settingdata.shopname}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="section">
+        <view class="bd mt20">
+            <view class="ulselect">
+                <text class="iconfont icon-dianhua2 blue"></text>
+                <text class="txt"> {{result.settingdata.com_tel}} </text>
+                <view bindtap="callbroker" class="more" data-phone="{{result.settingdata.com_tel}}">
+                    <text>  点击拨打 </text>
+                </view>
+            </view>
+            <view class="ulselect">
+                <text class="iconfont icon-qq blue"></text>
+                <text class="txt"> {{result.settingdata.com_qq}}  </text>
+                <view class="more">
+                    <text></text>
+                </view>
+            </view>
+            <view class="ulselect">
+                <text class="iconfont icon-duanxin1 blue"></text>
+                <text class="txt"> {{result.settingdata.com_email}}  </text>
+                <view class="more">
+                    <text></text>
+                </view>
+            </view>
+            <view class="ulselect">
+                <text class="iconfont icon-zuobiao blue"></text>
+                <text class="txt"> {{result.settingdata.address}}  </text>
+                <view bindtap="showMapLocation" class="more">
+                    <text> 地图导航  </text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{adinfo.aboutkefu.place.isshow}}">
+        <view class="bar-more">
+            <text class="bar">{{adinfo.aboutkefu.place.barname}}</text>
+        </view>
+        <view style="width:100%; overflow:hidden;">
+            <scroll-view class="housepicbd pdleft" scrollX="true" style="width:740rpx; overflow:hidden;">
+                <view class="housepic-item" wx:for="{{adinfo.aboutkefu.content}}" wx:key="index">
+                    <image bindtap="trigger_dialog" class="housepic-image" data-type="xc" data-view="{{item.ercode}}" src="{{item.thumb}}"></image>
+                    <view class="housepic-txt">
+                        <text class="ft28">{{item.txtname}}</text>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="section">
+        <view class="weui-cell__bd btn">
+            <button class="weui-btn" hoverClass="other-button-hover" openType="contact"> 在线客服 </button>
+        </view>
+        <view class="weui-cell__bd btn">
+            <view class="copy">
+                <text>© {{result.settingdata.shopname}} 点击联系我们</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="mask-bg" hidden="{{hiddendialog}}"></view>
+<view class="dialog-box" hidden="{{hiddendialog}}" style="{{positon}}">
+    <view class="dialog-title">
+        <text bindtap="trigger_dialog" class="close">关闭</text>
+        <text>截屏二维码关注TA</text>
+    </view>
+    <view class="dialog-bd">
+        <view class="dialog-image">
+            <image height="100%" src="{{kefu_ercode}}" width="100%"></image>
+        </view>
+    </view>
+</view>
+<import src="/wdl_weihouse/pages/templates/right_menu.wxml"></import>
+<template is="right_menu" data="{{showRightMenuOk:showRightMenuOk,rightmenu:adinfo.barlinkad.content}}"></template>

@@ -1,0 +1,175 @@
+page {
+    min-height: 100%;
+    background-color: #fff;
+    padding-bottom: 34rpx;
+}
+
+.container {
+    min-height: 100%;
+    background-color: #f4f4f4;
+    padding-top: 80rpx;
+}
+
+.search-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80rpx;
+    padding: 5rpx;
+    font-size: 29rpx;
+    color: #333;
+    background-color: #f1f1f1;
+    z-index: 1000;
+}
+
+.search-header .filter {
+    position: relative;
+    margin: 5rpx auto;
+    background-color: #fff;
+    border-radius: 15rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 29rpx;
+    width: 90%;
+}
+
+.search-header .search-btn {
+    position: absolute;
+    right: 5rpx;
+    top: 5rpx;
+    width: 80rpx;
+    background: #dadada;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 0;
+    margin: 0;
+    border-radius: 10rpx;
+    border-width: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 28rpx;
+}
+
+.search-header .icon {
+    position: absolute;
+    top: 1rpx;
+    left: 20rpx;
+    width: 40rpx;
+    height: 41rpx;
+    font-size: 32rpx;
+}
+
+.search-header .del {
+    position: absolute;
+    top: 3rpx;
+    right: 10rpx;
+    width: 53rpx;
+    height: 53rpx;
+    z-index: 10;
+}
+
+.bar_title {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 20rpx;
+}
+
+.search-header .keywrod {
+    position: absolute;
+    top: 0rpx;
+    left: 40rpx;
+    width: 376rpx;
+    height: 70rpx;
+    padding-left: 30rpx;
+}
+
+.broker {
+    background: #fff;
+    margin-top: 10rpx;
+    height: 150rpx;
+}
+
+.broker .bd {
+    padding: 10rpx 30rpx;
+}
+
+.broker .broker-head {
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 10rpx;
+    float: left;
+    margin-top: 0rpx;
+}
+
+.broker .name {
+    margin-left: 130rpx;
+    text-align: left;
+    vertical-align: top;
+}
+
+.broker .name .text {
+    display: block;
+    color: #333;
+    line-height: 45rpx;
+}
+
+.broker .name .text2 {
+    display: block;
+    color: #999;
+    line-height: 45rpx;
+}
+
+.broker .txt {
+    display: inline-block;
+    width: 75%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 35rpx;
+    text-align: left;
+}
+
+.broker .labelbd {
+    float: right;
+    width: 20%;
+}
+
+.broker .renzheng {
+    display: block;
+    text-align: left;
+    color: #508B37;
+}
+
+.broker .name .link {
+    text-align: right;
+    color: #bf0000;
+    display: block;
+    line-height: 40rpx;
+}
+
+.broker .name .link .gray {
+    color: #999;
+}
+
+.ele {
+    border-radius: 5rpx;
+    font-size: 24rpx;
+    padding: 0 10rpx;
+    line-height: 30rpx;
+    height: 30rpx;
+    color: #fff;
+    margin-left: 10rpx;
+    display: inline-block;
+}
+
+.loading {
+    text-align: center;
+    background-color: #f3f3f3;
+    padding: 10rpx;
+    margin-top: 90rpx;
+}
+
+.loading .msg {
+    color: #67A4D9;
+}

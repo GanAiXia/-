@@ -1,0 +1,15 @@
+<view class="container">
+    <view class="showtitle">
+        <view class="title">
+            <text class="ft45">{{article.title}}</text>
+        </view>
+        <view class="subtitle">
+            <text>发布：{{article.addtime}}</text>
+        </view>
+    </view>
+</view>
+<view class="weui-article">
+    <rich-text nodes="{{article.newstext}}" type="text"></rich-text>
+</view>
+<import src="/wdl_weihouse/pages/templates/right_menu.wxml"></import>
+<template is="right_menu" data="{{showRightMenuOk:showRightMenuOk,rightmenu:adinfo.barlinkad.content}}"></template>

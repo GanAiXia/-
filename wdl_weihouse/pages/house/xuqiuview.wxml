@@ -1,0 +1,104 @@
+<import src="/wdl_weihouse/pages/templates/right_menu.wxml"></import>
+<view class="container" scrollY="true">
+    <view class="goods-info" wx:if="{{house.id>0}}">
+        <view class="dtitle">
+            <view class="bd">
+                <text class="name">{{house.title}}</text>
+                <text class="ptype" wx:if="{{house.ptype==1}}">个人</text>
+            </view>
+        </view>
+        <view class="subtitle">
+            <view class="t1">基本信息</view>
+            <view class="t2">
+                <view class="share">
+                    <button class="share" openType="share">
+                        <view>
+                            <text class="iconfont icon-fenxiang1 ft40"></text>
+                            <text class="ft26"> 转发</text>
+                        </view>
+                    </button>
+                </view>
+                <view class="share">
+                    <view class="share2">
+                        <view>
+                            <text class=" ft30"></text>
+                            <text class="ft26"> {{house.onclick}}浏览   </text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="secinfo">
+            <view class="pitem">
+                <view class="ptitle">身高：<text class="ptxt">{{house.tags[0]}}</text>
+                </view>
+                <view class="ptitle">意向价格：<text class="ptxt">{{house.tags[1]}} </text>
+                </view>
+            </view>
+            <view class="pitem">
+                <view class="ptitle">类型：<text class="ptxt">{{house.house_type}}</text>
+                </view>
+                <view class="ptitle">意向是否有房：<text class="ptxt">{{house.room}}房{{house.hall}}厅{{house.garder}}卫</text>
+                </view>
+            </view>
+            <view class="pitem">
+                <view class="ptitle2">期望小区：
+ <text class="ptxt ">{{house.area}}{{house.quan}}{{house.village_name}}   </text>
+                </view>
+            </view>
+            <view class="pitem" wx:for="{{house.params}}" wx:key="index">
+                <view class="ptitle2">{{item.title}}：<text class="ptxt">{{item.value}}</text>
+                </view>
+            </view>
+            <view class="pitem">
+                <view class="ptitle2">发布时间：<text class="ptxt fred">{{house.update_time}}</text>
+                </view>
+            </view>
+            <view class="pitem">
+                <view class="ptitle2">
+                    <text class="ptxt ft26 fred"> {{house.helpinfo}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="section broker" wx:if="{{house.broker}}">
+        <view class="user-menu">
+            <view class="item broker-info">
+                <navigator url="../broker/broker?id={{house.broker.id}}">
+                    <image class="broker-head" src="{{house.broker.avatar}}"></image>
+                    <view class="broker-name">
+                        <view class="texto1" wx:if="{{house.broker.company}}">
+                            <text class="ft26" style="color:#999">{{house.broker.company}}</text>
+                        </view>
+                        <view wx:else>
+                            <text class="ft26" style="color:#999">个人</text>
+                        </view>
+                        <view>
+                            <text class="ft30">{{house.broker.nickname}}</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+            <view class="item">
+                <view bindtap="callbroker" class="link" data-phone="{{house.broker.mobile}}">
+                    <text class="ft40 iconfont icon-dianhua"></text>
+                    <text>打电话</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="section">
+        <view class="th3">
+            <view class="bd">
+                <view class="th3-title ft35">其他需求</view>
+            </view>
+        </view>
+        <view class="goods-info">
+            <view class="detail">
+                <video controls danmuBtn enableDanmu src="{{house.videoinfo}}" wx:if="{{house.videoinfo}}"></video>
+                <rich-text nodes="{{house.description}}"></rich-text>
+            </view>
+        </view>
+    </view>
+    <template is="right_menu" data="{{showRightMenuOk:showRightMenuOk,rightmenu:adinfo.barlinkad.content}}"></template>
+</view>

@@ -1,0 +1,140 @@
+<view class="container">
+    <view class="section">
+        <view class="head credit">
+            <view class="ft45">目前级别 ：
+          <text wx:if="{{prive.prive.group_name=='broker2'}}">VIP经纪人</text>
+                <text wx:elif="{{prive.prive.group_name=='broker'}}">经纪人</text>
+                <text wx:else>个人</text>
+            </view>
+        </view>
+        <view class="head">
+            <text class="ft34"></text>
+        </view>
+        <view class="plan-btn" wx:if="{{prive.prive.group_name=='per'}}">
+            <view style="float:left;">
+                <text class="ft30"> 如果你是房产中介的经纪人</text>
+            </view>
+            <view bindtap="manage" class="btn btn-default2" data-op="broker">
+                <text>开通经纪人</text>
+            </view>
+        </view>
+        <view class="plan-btn" wx:if="{{prive.prive.group_name=='broker'}}">
+            <view style="float:left;">
+                <text class="ft30">升级VIP需要{{prive.prive.credit.open_broker2}}元</text>
+            </view>
+            <view bindtap="manage" class="btn btn-default2" data-op="broker2">
+                <text>升级VIP</text>
+            </view>
+        </view>
+        <view class="plan-btn" wx:if="{{prive.prive.group_name=='broker2'}}">
+            <view style="float:left;">
+                <text class="ft30">有效期截止：{{prive.prive.broker.end_time}}</text>
+            </view>
+        </view>
+        <view class="planbox">
+            <view class="plan-title" style="margin:20rpx 0rpx;">
+                <text class="more iconfont icon-shezhi"></text>
+                <text wx:if="{{prive.prive.group_name=='broker2'}}">VIP经纪人的权益</text>
+                <text wx:elif="{{prive.prive.group_name=='broker'}}">经纪人的权益</text>
+                <text wx:else>个人的权益</text>
+            </view>
+            <view class="dline dth">
+                <view class="w3">
+                    <text>等级</text>
+                </view>
+                <view class="w2">
+                    <text>发布(条)</text>
+                </view>
+                <view class="w3">
+                    <text>刷新（次/条）</text>
+                </view>
+                <view class="w2">
+                    <text>置顶(条)</text>
+                </view>
+            </view>
+            <view class="bd">
+                <view class="dline ditem">
+                    <view class="w3">
+                        <text class="num" wx:if="{{prive.prive.group_name=='per'}}">个人</text>
+                        <text wx:else>个人</text>
+                    </view>
+                    <view class="w2">
+                        <text>{{prive.prive.leve.per.send_num}}</text>
+                    </view>
+                    <view class="w3">
+                        <text>{{prive.prive.leve.per.refresh_num}}</text>
+                    </view>
+                    <view class="w2">
+                        <text>{{prive.prive.leve.per.istop_num}}</text>
+                    </view>
+                </view>
+                <view class="dline ditem">
+                    <view class="w3">
+                        <text class="num" wx:if="{{prive.prive.group_name=='broker'}}">经纪人</text>
+                        <text wx:else>经纪人</text>
+                    </view>
+                    <view class="w2">
+                        <text>{{prive.prive.leve.broker.send_num}}</text>
+                    </view>
+                    <view class="w3">
+                        <text>{{prive.prive.leve.broker.refresh_num}}</text>
+                    </view>
+                    <view class="w2">
+                        <text>{{prive.prive.leve.broker.istop_num}}</text>
+                    </view>
+                </view>
+                <view class="dline ditem">
+                    <view class="w3">
+                        <text class="num" wx:if="{{prive.prive.group_name=='broker2'}}">VIP经纪人</text>
+                        <text wx:else>VIP经纪人</text>
+                    </view>
+                    <view class="w2">
+                        <text>{{prive.prive.leve.broker2.send_num}}</text>
+                    </view>
+                    <view class="w3">
+                        <text>{{prive.prive.leve.broker2.refresh_num}}</text>
+                    </view>
+                    <view class="w2">
+                        <text>{{prive.prive.leve.broker2.istop_num}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="planbox">
+            <view class="plan-title">
+                <text class="more iconfont icon-shezhi"></text>
+                <text>关于级别说明</text>
+            </view>
+            <view class="bd">
+                <view class="plan-desc">
+                    <view class="dline tips">
+                        <text class="ft28 label"> 房源发布： </text>
+                        <text class="ft28 txt">可以发布的女士征婚、男士征婚总条数。</text>
+                    </view>
+                    <view class="dline tips">
+                        <text class="ft28 label">  房源刷新： </text>
+                        <text class="ft28 txt"> 每条房源一天可以刷新次数。</text>
+                    </view>
+                    <view class="dline tips">
+                        <text class="ft28 label">房源置顶：</text>
+                        <text class="ft28 txt"> 可以设置置顶位置的条数，置顶在列表首位。</text>
+                    </view>
+                    <view class="dline tips">
+                        <text class="ft28 label"> 个  人： </text>
+                        <text class="ft28 txt"> 是平台给<text class="num">个人</text>卖房、女士征婚发布。</text>
+                    </view>
+                    <view class="dline tips">
+                        <text class="ft28  label"> 经纪 人：  </text>
+                        <text class="ft28 txt">
+                            <text class="num">（个人请勿申请）</text>填写申请资料后获得。在房源显示经纪人，经纪人是专业的房产销售人员。</text>
+                    </view>
+                    <view class="dline tips">
+                        <text class="ft28  label"> VIP经纪人：</text>
+                        <text class="ft28 txt">
+                            <text class="num">付费服务。</text>是平台为有大量发布需求的房产经纪人提供的</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

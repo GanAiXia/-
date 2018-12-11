@@ -1,0 +1,270 @@
+@import "../../../__wuBaseWxss__/6.wxss";
+
+page {
+    background: #fff;
+}
+
+.shophead {
+    position: relative;
+    height: 420rpx;
+}
+
+.shophead .banner {
+    width: 100%;
+    height: 420rpx;
+}
+
+.shopname {
+    position: absolute;
+    bottom: -20rpx;
+    height: 110rpx;
+    width: 580rpx;
+    left: 50%;
+    padding-top: 0rpx;
+    margin-left: -290rpx;
+    background: #fff;
+    text-align: center;
+    box-shadow: darkgrey 2rpx 2rpx 5rpx 2rpx;
+}
+
+.shopname .t1 {
+    line-height: 100rpx;
+    font-size: 40rpx;
+}
+
+.shopname text {
+    font-weight: bold;
+    color: #444;
+}
+
+.logo {
+    float: left;
+    height: 110rpx;
+    line-height: 100rpx;
+    padding-left: 15rpx;
+}
+
+.logo image {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    vertical-align: middle;
+}
+
+.shopnum {
+    display: flex;
+    flex-direction: row;
+    height: 80rpx;
+    background-color: #f1f1f1;
+}
+
+.shopnum .t1 {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.shopnum .t1 text {
+    font-size: 28rpx;
+    color: #888;
+}
+
+.shopnum .t1 text text {
+    color: #999;
+}
+
+.tmenu {
+    height: 90rpx;
+    background: #fff;
+    vertical-align: middle;
+}
+
+.tmenu .m1 {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    border-bottom: 2rpx solid #dadada;
+    height: 85rpx;
+    vertical-align: middle;
+    color: #888;
+}
+
+.tmenu .active {
+    border-bottom: 2rpx solid #00C683;
+    color: #00C683;
+    font-weight: bold;
+}
+
+.section {
+    height: 100%;
+    background-color: #fff;
+}
+
+.intro1 .bd {
+    padding: 30rpx 80rpx;
+    line-height: 40rpx;
+    text-align: justify;
+    font-size: 28rpx;
+}
+
+.intro1 .bd text {
+    color: #666;
+}
+
+.intro1 .title {
+    height: 60rpx;
+    line-height: 60rpx;
+    padding-left: 30rpx;
+    color: #999;
+    margin-top: 30rpx;
+}
+
+.intro1 .title .iconfont {
+    font-size: 40rpx;
+}
+
+.intro1 .title .txt {
+    font-size: 30rpx;
+    margin-left: 15rpx;
+}
+
+.tabbox {
+    padding-bottom: 20rpx;
+}
+
+.tabbox .intro1 {
+    display: none;
+}
+
+.tabbox .active {
+    display: block;
+}
+
+.bd {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid #dadada;
+    padding: 20rpx;
+}
+
+.ulselect {
+    border-bottom: 1px solid #f1f1f1;
+    padding-left: 0rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.ulselect text {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.ulselect text.iconfont {
+    font-size: 34rpx;
+}
+
+.ulselect .more {
+    float: right;
+    color: #999;
+    margin-right: 50rpx;
+    width: 130rpx;
+    text-align: right;
+}
+
+.ulselect .more text {
+    font-size: 28rpx;
+    color: #69AF4D;
+}
+
+.weui-cell__bd {
+    padding-right: 20rpx;
+    padding-left: 20rpx;
+}
+
+.weui-btn {
+    line-height: 60rpx;
+    font-size: 30rpx;
+    background-color: #f1f1f1;
+    color: #69AF4D;
+}
+
+.copy {
+    text-align: center;
+    padding-top: 30rpx;
+}
+
+.copy text {
+    font-size: 22rpx;
+    color: #999;
+}
+
+.bar-more {
+    height: 60rpx;
+    line-height: 60rpx;
+    border-left: 10rpx solid #69AF4D;
+    padding-left: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.bar-more .bar {
+    font-weight: 400;
+    color: #69AF4D;
+    font-size: 30rpx;
+}
+
+.bar-more .more {
+    float: right;
+    color: #999;
+    margin-right: 30rpx;
+    margin-top: 0rpx;
+}
+
+.housepicbd {
+    white-space: nowrap;
+    display: flex;
+    height: 350rpx;
+    padding-right: 10rpx;
+    width: 100%;
+}
+
+.hxtu {
+    white-space: nowrap;
+    display: flex;
+    height: 280rpx;
+    padding-right: 10rpx;
+    width: 100%;
+}
+
+.housepic-item {
+    display: inline-block;
+    width: 240rpx;
+    text-align: center;
+}
+
+.housepic-image {
+    width: 220rpx;
+    height: 260rpx;
+}
+
+.housepic-name {
+    line-height: 30rpx;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.housepic-txt {
+    line-height: 40rpx;
+}
+
+.dialog-image {
+    width: 100%;
+    text-align: center;
+}
+
+.dialog-image image {
+    width: 600rpx;
+    height: 600rpx;
+}

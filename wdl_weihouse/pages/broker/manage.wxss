@@ -1,0 +1,274 @@
+page {
+    min-height: 100%;
+    background-color: #fff;
+}
+
+.container {
+    min-height: 100%;
+    background-color: #fff;
+    padding-top: 75rpx;
+    padding-bottom: 100px;
+}
+
+.search-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80rpx;
+    padding: 5rpx;
+    font-size: 29rpx;
+    color: #333;
+    background-color: #dadada;
+    z-index: 1000;
+}
+
+.search-header .filter {
+    position: relative;
+    margin: 5rpx auto;
+    background-color: #FFFFFF;
+    border-radius: 15rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 29rpx;
+    width: 90%;
+}
+
+.search-header .search-btn {
+    position: absolute;
+    right: 5rpx;
+    top: 5rpx;
+    width: 80rpx;
+    background: #1BA9BA;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 0;
+    margin: 0;
+    border-radius: 10rpx;
+    border-width: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 28rpx;
+}
+
+.search-header .icon {
+    position: absolute;
+    top: 1rpx;
+    left: 20rpx;
+    width: 40rpx;
+    height: 41rpx;
+    font-size: 32rpx;
+}
+
+.search-header .del {
+    position: absolute;
+    top: 3rpx;
+    right: 10rpx;
+    width: 53rpx;
+    height: 53rpx;
+    z-index: 10;
+}
+
+.bar_title {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 20rpx;
+}
+
+.search-header .keywrod {
+    position: absolute;
+    top: 0rpx;
+    left: 40rpx;
+    width: 376rpx;
+    height: 70rpx;
+    padding-left: 30rpx;
+}
+
+.swiper-tab {
+    width: 100%;
+    text-align: center;
+    line-height: 80rpx;
+    padding-top: 10rpx;
+}
+
+.swiper-tab-list {
+    font-size: 32rpx;
+    display: inline-block;
+    width: 50%;
+    color: #333;
+    border-bottom: 5rpx solid #e1e1e1;
+}
+
+.on {
+    color: #1BA9BA;
+    border-bottom: 5rpx solid #00C884;
+}
+
+.th5 {
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-top: 20rpx;
+    padding-left: 30rpx;
+}
+
+.secshop {
+    background-color: #fff;
+}
+
+.section {
+    background-color: #fff;
+}
+
+.imagetxt .item:last-child {
+    border-bottom: 0rpx;
+}
+
+.imagetxt .item {
+    width: 100%;
+    display: block;
+    padding-top: 30rpx;
+}
+
+.item-bd {
+    clear: both;
+    position: relative;
+    min-height: 180rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    padding-bottom: 20rpx;
+}
+
+.imgtag {
+    position: absolute;
+    left: 0rpx;
+    top: 10rpx;
+    background-color: #000;
+    color: #fff;
+    opacity: 0.5;
+    padding: 0 10rpx;
+    font-size: 24rpx;
+}
+
+.imagetxt .item .img {
+    float: left;
+    width: 220rpx;
+    height: 180rpx;
+    margin-top: 10rpx;
+}
+
+.imagetxt .right2 {
+    margin-left: 250rpx;
+    display: block;
+}
+
+.newshop .housetitle .name {
+    font-weight: bold;
+}
+
+.imagetxt .housetitle {
+    line-height: 40rpx;
+}
+
+.imagetxt .address {
+    color: #666;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    line-height: 50rpx;
+}
+
+.imagetxt .housetitle .ttype {
+    font-size: 26rpx;
+    padding: 0 10rpx;
+    margin-left: 10rpx;
+    border-radius: 5rpx;
+}
+
+.imagetxt .housetitle .onsale {
+    font-size: 26rpx;
+    padding: 0 10rpx;
+    margin-left: 10rpx;
+    border-radius: 5rpx;
+}
+
+.imagetxt .btags {
+    border-top: 1rpx solid #e1e1e1;
+    border-bottom: 1rpx solid #e1e1e1;
+    vertical-align: middle;
+    height: 70rpx;
+    padding-top: 5rpx;
+}
+
+.imagetxt .btn {
+    padding: 5rpx 10rpx;
+    margin: 0 15rpx;
+    border-radius: 10rpx;
+    border: #F18459 1rpx solid;
+    text-align: center;
+    color: #F18459;
+    font-size: 28rpx;
+    display: inline-block;
+}
+
+.imagetxt .btags-bd {
+    float: right;
+    margin-right: 15rpx;
+}
+
+.imagetxt .keybg1 {
+    background: #D7F2FB;
+    color: #67A4D9;
+}
+
+.imagetxt .keybg0 {
+    background: #D7F2FB;
+    color: #2EA0F1;
+}
+
+.imagetxt .keybg2 {
+    background: #FDF1DC;
+    color: #F6A800;
+}
+
+.imagetxt .keybg3 {
+    background: #D7F2FB;
+    color: #67A4D9;
+}
+
+.imagetxt .keybg4 {
+    background: #ddd;
+    color: #bf0000;
+}
+
+.imagetxt .pricebd {
+    position: absolute;
+    right: 0rpx;
+    top: 10rpx;
+    text-align: right;
+}
+
+.imagetxt .pricebd text {
+    display: block;
+}
+
+.imagetxt .pricebd .num {
+    color: #ff0000;
+    font-size: 35rpx;
+    font-weight: 400;
+}
+
+.imagetxt .pricebd .per {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.loading {
+    text-align: center;
+    background-color: #f3f3f3;
+    padding: 10rpx;
+    margin-top: 90rpx;
+}
+
+.loading .msg {
+    color: #67A4D9;
+}

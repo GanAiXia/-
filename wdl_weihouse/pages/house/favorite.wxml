@@ -1,0 +1,34 @@
+<view class="comments">
+    <view class="h">
+        <view class="item {{ftype=='newshopfav'?'active':''}}">
+            <view bindtap="tabnav" class="txt" data-ftype="newshopfav">新房收藏</view>
+        </view>
+        <view class="item {{ftype=='fav'?'active':''}}">
+            <view bindtap="tabnav" class="txt" data-ftype="fav">男士征婚收藏</view>
+        </view>
+        <view class="item {{ftype=='view'?'active':''}} ">
+            <view bindtap="tabnav" class="txt" data-ftype="view">浏览历史</view>
+        </view>
+        <view class="item {{ftype=='feed'?'active':''}} ">
+            <view bindtap="tabnav" class="txt" data-ftype="feed">预约看房</view>
+        </view>
+    </view>
+    <view class="b">
+        <view class="item" wx:for="{{feedlist}}" wx:key="{{item.id}}">
+            <view class="info">
+                <view class="user">
+                    <navigator url="{{item.url}}">
+                        <view class="title">
+                            <text class="ft30">{{item.title}}</text>
+                        </view>
+                        <view>
+                            <text class="ft28">{{item.smalltext}}</text>
+                        </view>
+                    </navigator>
+                    <view bindtap="deleteinfo" class="time" data-infoid="{{item.id}}">  删除×  </view>
+                    <text class="addtime ft28"> {{item.detail}}  </text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

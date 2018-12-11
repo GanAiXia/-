@@ -1,0 +1,26 @@
+<import src="/wdl_weihouse/pages/templates/manage_house.wxml"></import>
+<view class="container">
+    <view class="search-header">
+        <view class="filter">
+            <view class="icon">
+                <text class="iconfont icon-sousuo"></text>
+            </view>
+            <input bindblur="search_keyword" class="keywrod" placeholder="请输入关键词" value="{{keyword}}"></input>
+            <button bindtap="search_goto" class="search-btn" formType="submit" type="default">搜索</button>
+        </view>
+    </view>
+    <view class="section">
+        <view class="swiper-tab">
+            <view bindtap="swichNav" class="swiper-tab-list {{currentTab==0?'on':''}}" data-current="0">出售房源</view>
+            <view bindtap="swichNav" class="swiper-tab-list {{currentTab==2?'on':''}}" data-current="2">出女士征婚源</view>
+        </view>
+        <view class="imagetxt">
+            <view class="item" wx:for="{{result}}" wx:key="index">
+                <template is="houselist" data="{{item:item,index:index}}"></template>
+            </view>
+        </view>
+    </view>
+    <view bindtap="load_salelist" class="loading">
+        <text class="msg ft30">{{loadmore}}</text>
+    </view>
+</view>

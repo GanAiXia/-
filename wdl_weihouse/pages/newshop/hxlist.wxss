@@ -1,0 +1,170 @@
+.container {
+    color: #333;
+    font-family: -apple-system-font,"Helvetica Neue",sans-serif;
+    padding-bottom: 80rpx;
+    background-color: #fff;
+}
+
+.section {
+    margin-bottom: 20rpx;
+    padding-top: 40rpx;
+    padding-left: 40rpx;
+    background-color: #fff;
+    padding-bottom: 40rpx;
+}
+
+.margin0 {
+    margin: 0px;
+}
+
+.mt10 {
+    margin-top: 10rpx;
+}
+
+.mt0 {
+    margin-top: 0px;
+    padding-top: 10px;
+}
+
+.cate {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cate .one {
+    display: inline-block;
+    padding-right: 20rpx;
+    height: 80rpx;
+    overflow: hidden;
+}
+
+.cate .one .btn {
+    border: 1px solid #dadada;
+    padding: 5rpx 20rpx;
+    font-size: 30rpx;
+    border-radius: 10rpx;
+    -webkit-boder-radius: 10rpx;
+}
+
+.cate .one .active {
+    border: 1px solid #37AA3A;
+    background-color: #37AA3A;
+    color: #fff;
+}
+
+.bar-tips {
+    padding-bottom: 20rpx;
+}
+
+.bar-tips .blue {
+    color: #67A4D9;
+}
+
+.borderbg {
+    border-bottom: 1px solid #dadada;
+    box-shadow: 0 1px 5px #dadada;
+}
+
+.th5 {
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.imagetxt .item:last-child {
+    border-bottom: 0px;
+}
+
+.imagetxt .item {
+    width: 730rpx;
+    display: block;
+    height: 265rpx;
+    border-bottom: 1rpx solid #dadada;
+    margin-bottom: 30rpx;
+}
+
+.imagetxt .item .img {
+    float: left;
+    width: 190rpx;
+    height: 140rpx;
+    margin-top: 15rpx;
+}
+
+.imagetxt .right2 {
+    margin-left: 230rpx;
+    margin-right: 10rpx;
+}
+
+.imagetxt .housetitle {
+    line-height: 40rpx;
+}
+
+.imagetxt .address {
+    line-height: 40rpx;
+    height: 50rpx;
+    color: #999;
+}
+
+.imagetxt .btags {
+    line-height: 50rpx;
+    height: 50rpx;
+}
+
+.imagetxt .btags text {
+    padding: 0rpx 5rpx;
+    text-align: center;
+    margin-right: 12rpx;
+    vertical-align: middle;
+}
+
+.imagetxt .keybg1 {
+    background: #D7F2FB;
+    color: #67A4D9;
+    margin-left: 10rpx;
+    padding: 2rpx 5rpx;
+}
+
+.imagetxt .keybg2 {
+    background: #FDF1DC;
+    color: #EEBA6C;
+    margin-left: 10rpx;
+    padding: 2rpx 5rpx;
+}
+
+.imagetxt .keybg3 {
+    background: #D7F2FB;
+    color: #67A4D9;
+    margin-left: 10rpx;
+    padding: 2rpx 5rpx;
+}
+
+.imagetxt .wordbox {
+    border: 1px solid #dadada;
+    margin-right: 10rpx;
+    background-color: #fff;
+    font-size: 24rpx;
+    color: #999;
+    border-radius: 5rpx;
+}
+
+.imagetxt .pricebd .num {
+    color: #ff0000;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.imagetxt .pricebd .per {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.loading {
+    margin-right: 30rpx;
+    text-align: center;
+    background-color: #f3f3f3;
+    padding: 10rpx;
+}
+
+.loading .msg {
+    font-size: 34rpx;
+    color: #67A4D9;
+}

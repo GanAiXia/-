@@ -1,0 +1,52 @@
+page {
+    background-color: #fff;
+}
+
+.done {
+    background-color: rgba(78,78,78,0.1);
+}
+
+.container {
+    width: 100%;
+    background: #fff;
+    height: 100%;
+}
+
+.weui-cells__title {
+    padding-top: 20rpx;
+    background: #f1f1f1;
+    margin-top: 0rpx;
+    margin-bottom: 0rpx;
+}
+
+.btn {
+    padding: 32rpx;
+}
+
+.feedtime {
+    display: flex;
+    padding: 20rpx 0rpx;
+}
+
+.fdate {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.ftime {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.picker1 {
+    font-size: 30rpx;
+}
+
+.picker2 {
+    font-size: 30rpx;
+    box-sizing: border-box;
+}
+
+.weui-input {
+    font-size: 30rpx;
+}

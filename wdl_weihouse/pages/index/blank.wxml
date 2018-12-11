@@ -1,0 +1,36 @@
+<view class="banner" wx:if="{{adinfo.myneedslide.place.isshow}}">
+    <swiper autoplay="true" class="bgbanner" duration="1000" indicatorDots="true" interval="3000">
+        <swiper-item wx:for="{{adinfo.myneedslide.content}}" wx:key="i">
+            <image bindtap="onDefRedirect" data-appid="{{item.appid}}" data-type="redirect" data-url="{{item.url}}" mode="widthFix" src="{{item.thumb}}" style="width:100%; "></image>
+        </swiper-item>
+    </swiper>
+</view>
+<view class="dialog-box">
+    <view class="dialog-title2">
+        <text class="close"></text>
+        <text>== 发布需求 ==</text>
+    </view>
+    <view class="dialog-bd">
+        <view class="dialog-item2">
+            <navigator url="../user/myneed?rent=2&zhutype=4">
+                <view class="item-icon">
+                    <view class="dao c2">
+                        <text class="iconfont icon-jianyuede"></text>
+                    </view>
+                </view>
+                <view class="dao-txt"> 女士征婚</view>
+            </navigator>
+        </view>
+        <view class="dialog-item2">
+            <navigator url="../user/myneed?rent=0&zhutype=4">
+                <view class="item-icon">
+                    <view class="dao c1">
+                        <text class="iconfont icon-jingjide"></text>
+                    </view>
+                </view>
+                <view class="dao-txt"> 男士征婚</view>
+            </navigator>
+        </view>
+    </view>
+   
+</view>

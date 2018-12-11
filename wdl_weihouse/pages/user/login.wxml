@@ -1,0 +1,41 @@
+<view class="container">
+    <view class="section">
+        <view class="broker">
+            <view class="bd">
+                <image class="broker-head" src="/wdl_weihouse/static/images/get_avatar.png"></image>
+                <view class="name">
+                    <view class="txt">
+                        <text class="ft34">您还未登录 </text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="method">
+            <view class="name">
+                <view class="txt">
+                    <text class="ft24">推荐登录方式</text>
+                </view>
+            </view>
+            <view class="bd">
+                <button bindgetuserinfo="updateUserInfo" openType="getUserInfo" size="mini">
+          允许微信授权登录</button>
+            </view>
+        </view>
+    </view>
+    <view class="section cp">
+        <view class="line bd">
+            <navigator openType="switchTab" url="../index/welcome">
+                <text class="ft30">继续浏览</text>
+                <text class="more">
+                    <text class="iconfont icon-xiayibu"></text>
+                </text>
+            </navigator>
+        </view>
+        <view class="line">
+            <text class="ft30">客服电话</text>
+            <text class="more">
+                <text class=" ft28">{{storage.phone}}</text>
+            </text>
+        </view>
+    </view>
+</view>

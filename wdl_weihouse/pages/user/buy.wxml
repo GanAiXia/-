@@ -1,0 +1,60 @@
+<view class="container">
+    <form bindreset="formReset" bindsubmit="formSubmit">
+        <view class="section mb10">
+            <view class="head">
+                <text class="ft34">账号余额充值:</text>
+            </view>
+            <view class="planbox">
+                <view class="plan-title">
+                    <view class="label">
+                        <text>充值金额：</text>
+                    </view>
+                    <view class="inputbox">
+                        <input bindinput="inputvalue" class="oneinput" cursor="0" maxlength="5" name="money" placeholder="请输入金额" type="number" value="{{money}}"></input>
+                    </view>
+                </view>
+                <view class="bd">
+                    <view class="item">
+                        <view bindtap="selectmoney" class="num {{active[1]}}" data-index="1">
+                            <text>1元</text>
+                        </view>
+                        <view bindtap="selectmoney" class="num {{active[5]}}" data-index="5">
+                            <text>5元</text>
+                        </view>
+                        <view bindtap="selectmoney" class="num {{active[10]}}" data-index="10">
+                            <text>10元</text>
+                        </view>
+                    </view>
+                    <view class="item">
+                        <view bindtap="selectmoney" class="num {{active[20]}}" data-index="20">
+                            <text>20元</text>
+                        </view>
+                        <view bindtap="selectmoney" class="num {{active[50]}}" data-index="50">
+                            <text>50元</text>
+                        </view>
+                        <view bindtap="selectmoney" class="num {{active[100]}}" data-index="100">
+                            <text>100元</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="section">
+            <view class="resultbox" wx:if="{{money}}">
+                <view class="head">
+                    <text class="ft34">充值奖励积分信息：</text>
+                </view>
+                <view class="result">
+                    <text>充值</text>
+                    <text>{{money}}</text>
+                    <text>元 </text>
+                    <text wx:if="{{credit>0}}">同时奖励{{credit}}积分</text>
+                    <text wx:else>暂无奖励</text>
+                </view>
+            </view>
+            <view class="btn-area">
+                <button class="button" formType="submit" type="primary">微信支付</button>
+            </view>
+        </view>
+    </form>
+</view>

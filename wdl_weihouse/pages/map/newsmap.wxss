@@ -1,0 +1,195 @@
+page {
+    background-color: #f1f1f1;
+}
+
+.section {
+    padding: 30rpx;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.search-con {
+    border-top: 1px solid #e1e1e1;
+    width: 100%;
+    background: #fff;
+    padding: 12rpx 0rpx;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.search-scroll {
+    white-space: nowrap;
+    display: flex;
+}
+
+.menuitem {
+    display: inline-block;
+    margin-left: 25rpx;
+    margin-right: 15rpx;
+}
+
+.menuitem text {
+    padding: 5rpx 10rpx;
+    background-color: #f1f1f1;
+}
+
+.search-con text.active {
+    background-color: #0867B3;
+    color: #fff;
+    padding: 5rpx 10rpx;
+    border-radius: 10%;
+}
+
+.houseinfo {
+    padding: 20rpx;
+    background-color: #fff;
+}
+
+.imagetxt .item:last-child {
+    border-bottom: 0rpx;
+}
+
+.imagetxt .item {
+    width: 100%;
+    display: block;
+    border-bottom: 1rpx solid #f1f1f1;
+    padding-top: 30rpx;
+    padding-bottom: 40rpx;
+    position: relative;
+    min-height: 180rpx;
+}
+
+.imgtag {
+    position: absolute;
+    left: 0rpx;
+    top: 40rpx;
+    background-color: #000;
+    color: #fff;
+    opacity: 0.5;
+    padding: 0 10rpx;
+    font-size: 24rpx;
+}
+
+.imagetxt .item .img {
+    float: left;
+    width: 200rpx;
+    height: 150rpx;
+    margin-top: 10rpx;
+}
+
+.imagetxt .right2 {
+    margin-left: 230rpx;
+    display: block;
+    padding-top: 10rpx;
+}
+
+.newshop .housetitle .name {
+    font-weight: bold;
+}
+
+.imagetxt .housetitle {
+    line-height: 40rpx;
+}
+
+.imagetxt .address {
+    color: #666;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.imagetxt .btags {
+    line-height: 30rpx;
+    height: 40rpx;
+}
+
+.imagetxt .housetitle .ttype {
+    font-size: 26rpx;
+    padding: 0 10rpx;
+    margin-left: 10rpx;
+    border-radius: 5rpx;
+}
+
+.imagetxt .housetitle .onsale {
+    font-size: 26rpx;
+    padding: 0 10rpx;
+    margin-left: 10rpx;
+    border-radius: 5rpx;
+}
+
+.imagetxt .btags {
+    margin-top: 10rpx;
+}
+
+.imagetxt .btags text {
+    padding: 0rpx 5rpx;
+    text-align: center;
+    margin-right: 12rpx;
+    vertical-align: middle;
+}
+
+.imagetxt .btags .keybg1 {
+    background: #D7F2FB;
+    color: #67A4D9;
+}
+
+.imagetxt .btags .keybg0 {
+    background: #D7F2FB;
+    color: #2EA0F1;
+}
+
+.imagetxt .btags .keybg2 {
+    background: #FDF1DC;
+    color: #F6A800;
+}
+
+.imagetxt .btags .keybg3 {
+    background: #D7F2FB;
+    color: #67A4D9;
+}
+
+.imagetxt .pricebd {
+    position: absolute;
+    right: 0rpx;
+    top: 10rpx;
+    text-align: right;
+}
+
+.imagetxt .pricebd text {
+    display: block;
+}
+
+.imagetxt .pricebd .num {
+    color: #bf0000;
+    font-size: 35rpx;
+    font-weight: 400;
+}
+
+.imagetxt .pricebd .per {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.imagetxt .housetitle .ele {
+    border-radius: 100%;
+    font-size: 24rpx;
+    padding: 0 10rpx;
+    color: #fff;
+    margin-left: 10rpx;
+    display: inline-block;
+}
+
+.imagetxt .housetitle .c1 {
+    background-color: #ff0000;
+}
+
+.imagetxt .housetitle .c2 {
+    background-color: #0243AB;
+}
+
+.imagetxt .housetitle .c3 {
+    background-color: #009A44;
+}
+
+.imagetxt .housetitle .c4 {
+    background-color: #F5C707;
+}

@@ -1,0 +1,65 @@
+<view class="container">
+    <view class="section" wx:if="{{type==2}}">
+        <view class="head credit">
+            <view class="ft45">
+                <text>积分兑换规则</text>
+            </view>
+        </view>
+        <view class="head">
+            <text class="ft34"></text>
+        </view>
+        <view class="planbox">
+            <view class="plan-title" style="margin:20rpx 0rpx;">
+                <text class="more iconfont icon-xinxi"></text>
+                <text>说明</text>
+            </view>
+            <view class="bd">
+                <view class="plan-desc">
+                    <text>1、积分兑换的同时扣除您相应的积分。  </text>
+                </view>
+                <view class="plan-desc">
+                    <text>2、每{{prive.prive.credit.duihuan}}个积分起兑（兑换积分值是{{prive.prive.credit.duihuan}}的整数倍）。</text>
+                </view>
+                <view class="plan-desc">
+                    <text>3、{{prive.prive.credit.duihuan}}个积分可以兑换1元，所兑换的金额我们会充值进你的账户余额里，账户余额可用于刷新和置顶房源信息，不能提现余额。  </text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{type==1}}">
+        <view class="head credit">
+            <view class="ft45">
+                <text>发布规则</text>
+            </view>
+        </view>
+        <view class="planbox">
+            <view class="plan-title" style="margin:20rpx 0rpx;">
+                <text class="more iconfont icon-xinxi"></text>
+                <text>关于平台房源发布规则说明：</text>
+            </view>
+            <view class="bd">
+                <view class="plan-desc">
+                    <text>1、当你首次使用小程序或发布房源时，默认为<text class="red">个人会员</text>。  </text>
+                </view>
+                <view class="plan-desc">
+                    <text>2、发布房源之前，请先进行<text class="red">手机号绑定</text>。手机号绑定后，发布房源或申请成为经纪人时，手机号一栏中，手机号码默认为绑定的手机号。</text>
+                </view>
+                <view class="plan-desc">
+                    <text>3、若你为<text class="red">中介经纪人</text>，也请先进行手机号绑定，然后申请成为经纪人会员，再进行房源的发布。  </text>
+                </view>
+                <view class="plan-desc">
+                    <text>4、VIP经纪人是平台为有大量发布需求的房产经纪人提供的<text class="red">付费升级服务</text> 。若你已经是中介经纪人会员，想成为VIP经纪人，请点击 </text>
+                    <navigator url="../user/prive">
+                        <text class="red" style="margin-left:60rpx;">升级成为VIP经纪人。</text>
+                    </navigator>
+                </view>
+                <view class="plan-desc">
+                    <text>5、<text class="red">商业房的发布</text>，请在“发女士征婚”或“发男士征婚”的发布界面“类型”中选择“商铺”或写字楼。  </text>
+                </view>
+                <view class="plan-desc">
+                    <text>6、各级别会员的房源发布数量和刷新次数细则，在“我的”界面“会员类型”<text class="red">《我的权益》</text>里有详细说明。  </text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,30 @@
+<template name="house_sp">
+    <navigator url="../house/index?id={{item.id}}">
+        <image backgroundSize="cover" class="img" src="{{item.thumb}}"></image>
+        <view class="right2">
+            <view class="housetitle">
+                <text class="name ft30">{{item.title}}</text>
+                <text class="ele c1" wx:if="{{item.istop==1}}"> 顶 </text>
+                <text class="ele c3" wx:elif="{{item.isjingpin==1}}"> 精 </text>
+                <text class="ele c2" wx:elif="{{item.ishot==1}}"> 热 </text>
+                <text class="ele c4" wx:elif="{{item.show_jiaji==1}}"> 急 </text>
+            </view>
+            <view class="address lin1 xie">
+                <text class="ft26" wx:if="{{item.village_name}}">{{item.village_name}} </text>
+                <text class="ft26" wx:if="{{item.superficie}}"> / {{item.superficie}}㎡</text>
+                <view class="pricebd">
+                    <text class="num"> {{item.loyer}} {{item.prix_unitaire}}  </text>
+                    <text class="per" wx:if="{{item.perprice}}">{{item.perprice}} {{item.perprice_unit}}</text>
+                </view>
+            </view>
+            <view class="address lin2">
+                <text class="iconfont icon-zuobiao ft30 red"></text>
+                <text class="ft26" wx:if="{{item.area}}"> {{item.area}}   </text>
+                <text class="ft26" wx:if="{{item.quan!='-'}}">{{item.quan}} </text>
+            </view>
+            <view class="address lin3">
+                <text class="ft26"> {{item.refresh_time}} 更新</text>
+            </view>
+        </view>
+    </navigator>
+</template>
