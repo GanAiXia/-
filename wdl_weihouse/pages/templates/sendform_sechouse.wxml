@@ -10,7 +10,7 @@
     </view>
     <view class="pline">
         <view class="pline-label tright pull-left w20">
-            <text>所在区域：</text>
+            <text>性别：</text>
         </view>
         <view class="pull-left pickerbd w30 rel">
             <picker bindchange="bindPicker_areas" range="{{search_areas}}" value="{{areas_index}}">
@@ -22,7 +22,7 @@
         </view>
         <view class="pull-left w50" wx:if="{{search_quan.length>0}}">
             <view class="pline-label tright pull-left w30">
-                <text> 街道 ： </text>
+                <text> 婚否： </text>
             </view>
             <view class="pull-left pickerbd w70 rel">
                 <picker bindchange="bindPicker_quan" range="{{search_quan[areas_index]}}" value="{{quan_index}}">
@@ -166,7 +166,7 @@
     </view>
     <view class="pline">
         <view class="pline-label tright pull-left w20">
-            <text>所在区域：</text>
+            <text>性别：</text>
         </view>
         <view class="pull-left pickerbd w30 rel">
             <picker bindchange="bindPicker_areas" range="{{search_areas}}" value="{{areas_index}}">
@@ -178,7 +178,7 @@
         </view>
         <view class="pull-left w50" wx:if="{{search_quan.length>0}}">
             <view class="pline-label tright pull-left w30">
-                <text> 街道 ： </text>
+                <text> 婚否： </text>
             </view>
             <view class="pull-left pickerbd w70 rel">
                 <picker bindchange="bindPicker_quan" range="{{search_quan[areas_index]}}" value="{{quan_index}}">
